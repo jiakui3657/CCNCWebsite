@@ -1,0 +1,61 @@
+<header>
+    <a href="${siteurl}index.htm"><img src="${siteurl}views/ccncmobile/images/logo.png"></a>
+    <i class="iconfont icon-chakangengduo"></i>
+</header>
+
+<!--头部菜单-->
+[#macro channelItem index]
+<section class="header_menu_layout">
+    <div class="layout_left"></div>
+    <div class="layout_right"></div>
+</section>
+<section class="header_menu">
+    <ul>
+        <li class="[#if index == 0]curr[/#if]"><a href="${siteurl}index.htm"><i>中北首页</i></a></li>
+        <li class="[#if index == 1]curr[/#if]"><a href="${siteurl}history.htm?dicts=companyIntroduction"><i>关于中北</i></a></li>
+        <li class="[#if index == 2]curr[/#if]"><a href="${siteurl}aptitude.htm"><i>资质能力</i></a></li>
+        <li class="[#if index == 3]curr[/#if]"><a href="${siteurl}product.htm"><i>解决方案</i></a></li>
+        <li class="[#if index == 4]curr[/#if]"><a href="${siteurl}project.htm"><i>项目案例</i></a></li>
+        <li class="[#if index == 5]curr[/#if]"><a href="${siteurl}news.htm"><i>新闻活动</i></a></li>
+        <li class="[#if index == 6]curr[/#if]"><a href="${siteurl}we.htm"><i>加入我们</i></a></li>
+    </ul>
+</section>
+[/#macro]
+<!--头部菜单-->
+<script src="${siteurl}plugins/jQuery/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var flag = true;
+        $("header i").on("click",function(){
+            if(flag){
+                $(".header_menu_layout").css("left","0");
+                $(".header_menu").css("left","40%");
+                $("body,html").css({
+                    "display":"fixed",
+                    "height":"100%",
+                    "overflow":"hidden"
+                });
+                flag = false;
+            }else {
+                $(".header_menu_layout").css("left","100%");
+                $(".header_menu").css("left","100%");
+                $("body,html").css({
+                    "position":"static",
+                    "height":"auto",
+                    "overflow":"auto"
+                });
+                flag = true;
+            }
+        });
+        $(".header_menu_layout").on("touchstart",function () {
+            $(".header_menu_layout").css("left","100%");
+            $(".header_menu").css("left","100%");
+             $("body,html").css({
+                    "position":"static",
+                    "height":"auto",
+                    "overflow":"auto"
+                });
+            flag = true;
+        });
+    })
+</script>

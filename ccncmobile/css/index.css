@@ -1,0 +1,267 @@
+body {
+    color: #666;
+    position: relative;
+}
+a {
+    color: #666;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color: #666;
+}
+.banner img {
+    width:100%;
+    margin-top: 60px;
+}
+section h4 {
+    font-size:0.4rem;
+    font-weight:600;
+    color: #333;
+    width:100%;
+    text-align: center;
+    line-height: 56px;
+    position: relative;
+    margin:30px 0;
+}
+section h4 span {
+    width:40px;
+    height:2px;
+    display: inline-block;
+    background: #496dd6;
+    position:absolute;
+    left:50%;
+    bottom:0;
+    margin-left:-20px;
+}
+/*资质能力*/
+.qualifying_ability {
+    padding: 0 10px;
+    overflow: hidden;
+}
+.qualifying_ability ul {
+    width: 100%;
+    overflow: hidden;
+}
+.qualifying_ability ul li {
+    width: 33.3%;
+    float: left;
+    background: #effafa;
+}
+.qualifying_ability ul li:nth-child(2n) {
+    background: #e5eaf5;
+}
+.qualifying_ability ul li i {
+    display: block;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.24rem;
+}
+.qualifying_ability ul li i.iconfont {
+    line-height: 0.7rem;
+    font-size: 0.8rem;
+}
+/*资质能力*/
+/*新闻动态*/
+.news {
+    position:relative;
+    overflow: hidden;
+}
+.news img {
+    width:100%;
+}
+.news ol li {
+    padding:0 10px;
+}
+.news ul {
+    overflow: hidden;
+    padding:0 10px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+.news ul i {
+    float: left;
+    line-height:1rem;
+    padding-right: 15px;
+    font-size: 0.3rem;
+    color: #dcdcdc;
+}
+.news ul a {
+    display: block;
+    line-height: 1rem;
+    font-size: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+    text-overflow: ellipsis;
+    color:#666;
+}
+/*新闻动态*/
+/*经典案列*/
+.classic_case {
+    padding: 0 10px;
+    position:relative;
+    overflow: hidden;
+}
+.classic_case div {
+    float: left;
+    margin-bottom: 50px;
+}
+.classic_case p {
+    text-align: center;
+    color: #333;
+    font-size: 0.3rem;
+    margin-bottom: 30px;
+}
+.classic_case div a {
+    overflow: hidden;
+    float:left;
+    padding-right:5px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+.classic_case div a:nth-child(2n) {
+    padding-left:5px;
+    padding-right: 0;
+}
+.classic_case div a em {
+    width: 100%;
+    float: left;
+}
+.classic_case div a em i {
+    width: 100%;
+    float: left;
+}
+.classic_case div a em span{
+    width: 100%;
+    float: left;
+    line-height: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    padding:0 10px;
+    font-size: 0.24rem;
+    text-overflow: ellipsis;
+    background: #ebedf6;
+    color: #666;
+}
+.classic_case div a em i img {
+    width: 100%;
+    float: left;
+}
+.more {
+    line-height:0.5rem;
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+    border:1px solid #bfbfbf;
+    color: #666;
+    position: absolute;
+    bottom: 0;
+    left:49%;
+    font-size: 0.26rem;
+    margin-left: -40px;
+}
+/*经典案列*/
+/*解决方案*/
+.solution {
+    padding: 0 10px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+.solution div {
+    width: 100%;
+    overflow: hidden;
+}
+.solution div a {
+    float: left;
+    width:33.3%;
+    padding: 10px;
+    background: #e5eaf5;
+    color: #666;
+}
+.solution div a:nth-child(2n) {
+    background: #effafa;
+}
+.solution div a i {
+    display: block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 0.24rem;
+}
+.solution div a i.iconfont {
+    font-size:0.8rem;
+
+}
+/*解决方案*/
+/*首页二级菜单*/
+.index_menu {
+    overflow: hidden;
+    width:100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+.index_menu ul {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    border-top:1px solid #ebebeb;
+    border-bottom:1px solid #ebebeb;
+    background-color: #fff;
+    opacity: .8;
+}
+.index_menu ul li {
+    width: 25%;
+    float: left;
+    background: #fdfefe;
+    overflow: hidden;
+    border-right:1px solid #ebebeb;
+}
+.index_menu ul li:last-child {
+    border: none;
+}
+.index_menu ul li a {
+    float: left;
+    overflow: hidden;
+    width:100%;
+    padding-top:8px;
+    text-align: center;
+    padding-bottom: 2px;
+}
+.index_menu ul li a img {
+    display: inline-block;
+        width: 20px;
+}
+.index_menu ul li a img.activeIcon {
+    display: none;
+}
+.index_menu ul li a span {
+    display: block;
+    font-size: 0.22rem;
+    line-height: 0.4rem;
+}
+.index_menu ul li.curr {
+    background: #1947d1;
+}
+.index_menu ul li.curr a img.defaultIcon {
+    display: none;
+}
+.index_menu ul li.curr a img.activeIcon {
+    display: block;
+}
+.index_menu ul li.curr a span {
+    color: #fff;
+}
+footer {
+    margin-bottom:1.4rem;
+}
+/*首页二级菜单*/
+.swiper-pagination span {
+    display:inline-block;
+    width:0.6rem;
+    height:2px;
+    background-color:#fff;
+    border-radius: 0px;
+}

@@ -1,0 +1,191 @@
+/*首页顶部banner图*/
+.banner img {
+    width:100%;
+    overflow: hidden;
+}
+.swiper-pagination span {
+    display:inline-block;
+    width:0.6rem;
+    height:2px;
+    background-color:#fff;
+    border-radius: 0;
+}
+/*首页经典案列*/
+.classic-case {
+    width: 100%;
+    overflow: hidden;
+}
+.swiper-container1 {
+    width: 100%;
+}
+.classic-case ol {
+}
+.classic-case ol li {
+    text-align: center;
+    line-height: 0.6rem;
+    padding: 0 0.2rem;
+}
+.classic-case ol a {
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+.classic-case ol a img {
+    width: 100%;
+}
+.classic-case ol li em {
+    display: inline-block;
+    font-size: 0.3rem;
+    margin-top: 0.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid #1791ee;
+}
+.classic-case ol li b {
+    border-top: 1px solid #dcdcdc;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+/*公司简介*/
+.about-company {
+    width: 100%;
+    overflow: hidden;
+}
+.about-company .head-title {
+    margin-top: 0.2rem;
+}
+.about-content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.about-content img.background {
+    width: 100%;
+}
+.about-decription {
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+    text-align: center;
+    color: #fff;
+}
+.about-decription p {
+    text-align: left;
+    line-height: 0.5rem;
+    font-size: 0.28rem;
+}
+.about-decription a {
+    color: #fff;
+    padding: 0 0.15rem;
+    line-height: 0.6rem;
+    border: 1px solid #fff;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    height: 0.6rem;
+}
+.about-decription a i {
+    float: right;
+    padding-left: 0.1rem;
+    font-size: 26px;
+    font-weight: bold;
+}
+/*新闻活动*/
+.news-activities {
+    width: 100%;
+    overflow: hidden;
+}
+.news-activities ul {
+    width: 100%;
+    overflow: hidden;
+}
+.news-activities ul li {
+    width: 100%;
+    padding: 0 0.2rem;
+    line-height: 1rem;
+}
+.news-activities ul li i {
+    float: left;
+    padding-right: 0.2rem;
+    color: #dcdcdc;
+}
+.news-activities ul li a.brief {
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.3rem;
+}
+.news-activities ul li.details {
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+.news-activities ul li.details  img {
+    width: 100%;
+}
+.title-day {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    padding:0 0.4rem;
+    color: #fff;
+}
+.title-day span {
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    width: 22%;
+}
+.title-day span em {
+    display: block;
+    font-size: 0.45rem;
+    line-height: 0.7rem;
+    border-bottom: 1px solid #fff;
+}
+.title-day span b {
+    display: block;
+    line-height: 0.5rem;
+}
+.title-day a {
+    float: right;
+    color: #fff;
+    width: 75%;
+    line-height:1.2rem;
+    font-size: 0.3rem;
+}
+/*资质能力*/
+.qualification {
+    width: 100%;
+    overflow: hidden;
+}
+.qualification  ul li {
+    padding: 0 0.2rem;
+}
+.qualification  ul li a {
+    overflow: hidden;
+    display: block;
+}
+.qualification  ul li a img {
+    width: 100%;
+}
+.qualf-layout {
+    background-color: rgba(37,109,217,.8);
+    position: absolute;
+    bottom: 0;
+    left: 0.2rem;
+    color: #fff;
+    right: 0.2rem;
+    z-index: 99;
+    padding: 0 0.3rem;
+}
+.qualf-layout a {
+    text-align: center;
+    color: #fff;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    display: block;
+}

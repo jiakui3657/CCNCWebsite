@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+ 	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--资质能力样式引入-->
+	<link href="${siteurl}views/zbjg/css/news.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 5 /]
+
+	<img src="${siteurl}views/zbjg/images/news.jpg"class="sign-photo"/>
+	<!--新闻列表-->
+	<div class="news-activities">
+		<div class="news-content">
+			<ul>
+				[#if list??]
+				[#list list as item]
+					<li>
+					<span class="date">
+						<i class="day">
+							[#if item.publishDate??]
+								${item.publishDate?string('dd')}
+							[/#if]
+						</i>
+						<i class="years">
+							[#if item.publishDate??]
+								${item.publishDate?string('yyyy / MM')}
+							[/#if]
+						</i>
+					</span>
+					<span class="news-bg">
+						<a href="${siteurl}newsdetails.htm?id=${item.id}"><img src="${siteurl}${item.iconUrl!''}" alt="" /></a>
+					</span>	
+					<span class="news-description">
+						<h4 class="overflow-wrap"><a href="${siteurl}newsdetails.htm?id=${item.id}">${item.title}</a></h4>
+						<p>
+							<a href="${siteurl}newsdetails.htm?id=${item.id}">
+								[#if item.intro?? && item.intro?length gt 120]
+                                    ${item.intro[0..121]}...
+                                [#else]
+                                    ${item.intro!''}
+                                [/#if]
+							</a>
+						</p>
+						<a href="${siteurl}newsdetails.htm?id=${item.id}" class="currnews-more">了解更多 >></a>
+					</span>
+				</li>
+				[/#list]
+				[/#if]
+			</ul>
+		</div>
+		</div>
+	</div>
+	<!--页码-->
+	<div class="news-page">
+		<div class="inside-page">
+			<div class="page-number page-curr">
+				[@pager page=page   /]
+			</div>
+		</div>
+	</div>
+
+	<!--遮罩层-->
+	<div class="layout"></div>
+
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script src="${siteurl}views/zbjg/js/news.js"></script>
+</body>
+</html>

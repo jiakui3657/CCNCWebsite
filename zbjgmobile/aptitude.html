@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/aptitude.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/aptitude_header.jpg" alt="">
+<!--资质证书-->
+<section class="certificate">
+    <h3 class="head-title">资<i>|</i>质<i>|</i>证<i>|</i>书</h3>
+    <div class="certificate-img">
+        [@qualificationcerts]
+        [#if list??]
+        [#list list as qualicert]
+        <span class="certificate-list">
+            <img src="${siteurl}${(qualicert.iconUrl)!''}" title="点击查看大图" alt="图片找不到了，刷新一下试试"/>
+        </span>
+        [/#list]
+        [/#if]
+        [/@qualificationcerts]
+    </div>
+</section>
+<!--文字证书描述-->
+<section class="classification">
+    <div class="classification-content">
+        [#if list??]
+        [#list list as quFrontVo]
+        <!--分类及其列表-->
+        <div class="classifi-item">
+            <p>
+                <i class="iconfont">&${quFrontVo.fontIcon!''}</i>
+                <b>${(quFrontVo.catalogName)!''}</b>
+            </p>
+            <ul class="classifi-list">
+                [#list quFrontVo.quList as item]
+                <li class="[#if item?is_last]curr[/#if]">
+                    <i>${(item.name)!''}</i>
+                    <b>${(item.catalogQualificationsLevel.name)!''}</b>
+                </li>
+                [/#list]
+            </ul>
+        </div>
+        [/#list]
+        [/#if]
+    </div>
+</section>
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script src="${siteurl}views/zbjgmobile/js/jquery.waterfall.min.js"></script>
+<script src="${siteurl}views/zbjgmobile/js/aptitude.js"></script>
+</body>
+</html>

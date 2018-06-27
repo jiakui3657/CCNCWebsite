@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;公司资质</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/ednc/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/Global.css"/>
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/wedetails.css">
+</head>
+<body>
+<!--顶部-->
+[#include "/theme/ednc/common/header.html"]
+<!--banner图-->
+<div class="banner">
+    <img src="${siteurl}views/ednc/img/aptitude.jpg" alt="">
+</div>
+<div class="content">
+    <div class="container">
+        <p><span>招贤纳士</span><i>当前：首页 > 招贤纳士 > 招聘详情</i></p>
+        <div class="aptitude">
+            <div class="tab">${(model.name)!''} <a href="${siteurl}we.htm?index=6"> < 返回列表</a></div>
+            <div class="cen">
+                <ul>
+                    <li>工作地点: <span>${(model.workCity)!''}</span></li>
+                    <li>发布日期: <span>${model.lastDate?string('yyyy-MM-dd')}</span></li>
+                    <li>工作经验: <span>${(model.workExperience)!''}</span></li>
+                    <li>最低学历: <span>${(model.education.name)!''}</span></li>
+                    <li>工作性质: <span>${(model.workNature)!''}</span></li>
+                    <li>招聘人数: <span>${(model.persionNum)!''}</span></li>
+                </ul>
+                <h4>职位描述</h4>
+                <p>${(model.jobDuty)!''}</p>
+                <h4>任职资格</h4>
+                <p>${(model.qualifications)!''}</p>
+                <h4>简历投递方式方式</h4>
+                <p>发送简历至   hr@ccnc.cc   的邮箱，我们的人事会经过删选，尽快给你回复，期待您的加入！</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+[#include "/theme/ednc/common/footer.html"]
+<script src="${siteurl}views/ednc/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/ednc/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ednc/js/wedetails.js"></script>
+</body>
+</html>

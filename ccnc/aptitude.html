@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <title>资质能力 - 中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${siteurl}views/ccnc/css/public.css" rel='stylesheet' type='text/css' />
+    <!--首页样式-->
+    <link href="${siteurl}views/ccnc/css/ccnc_aptitude.css" rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--主内容-banner区-->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 2 /]
+<div class="container-fluid">
+    <div class="container">
+        <ul class="list-unstyle">
+            [#if catalogs??]
+            [#list catalogs as item]
+            <li class="li [#if item.id == defId]active[/#if]" >${item.name!''}</li>
+            [/#list]
+            [/#if]
+            <li class="li" >更多资质</li>
+        </ul>
+
+        <div class="info">
+            <div class="cont5_three_bottom">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        [#if list??]
+                        [#list list as quFrontVo]
+                        [#if quFrontVo.catalogId == defId]
+                        <div class="certificate curr">
+                            <ul class="item">
+                                [#list quFrontVo.quaCertList as quCert]
+                                <li><img src="${siteurl}${quCert.iconUrl!''}" title="点击查看大图"></li>
+                                [/#list]
+                            </ul>
+                        </div>
+                        [#else]
+                        <div class="certificate">
+                            <ul class="item">
+                                [#list quFrontVo.quaCertList as quCert]
+                                <li><img src="${siteurl}${quCert.iconUrl!''}" title="点击查看大图"></li>
+                                [/#list]
+                            </ul>
+                        </div>
+                        [/#if]
+                        [/#list]
+                        [/#if]
+                    </div>
+                    [#if list??]
+                    [#list list as quFrontVo]
+                        [#if quFrontVo.catalogId == defId && (quFrontVo.quaCertList)?size > 3]
+                        <ol class="carousel-indicators" style="display: block">
+                            [#list quFrontVo.quaCertList as quCert]
+                            [#if quCert_index % 3 == 0]
+                            <li class="[#if quCert_index == 0]active[/#if]"></li>
+                            [/#if]
+                            [/#list]
+                        </ol>
+                        [#else]
+                        <ol class="carousel-indicators" style="display: none">
+                            [#list quFrontVo.quaCertList as quCert]
+                            [#if quCert_index % 3 == 0]
+                            <li class="[#if quCert_index == 0]active[/#if]"></li>
+                            [/#if]
+                            [/#list]
+                        </ol>
+                        [/#if]
+                    [/#list]
+                    [/#if]
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            [#if list??]
+            [#list list as quFrontVo]
+            <div [#if quFrontVo.catalogId == defId]style="display: block"[/#if] class="p">
+            <ul>
+                [#list quFrontVo.quList as item]
+                <li class="lis">
+                    <div class="left" title="${(item.name)!''}">${(item.name)!''}</div>
+                    <div class="right">
+                        [#if (item.catalogQualificationsLevel.name)?? && (item.catalogQualificationsLevel.name) != "不显示"]
+                            ${(item.catalogQualificationsLevel.name)!''}
+                        [/#if]
+                    </div>
+                </li>
+                [/#list]
+            </ul>
+        </div>
+        [/#list]
+        [/#if]
+    </div>
+</div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<div class="layout">
+
+</div>
+<div class="layoutImg">
+    <img  src="${siteurl}views/ccnc/images/honor9.jpg" >
+</div>
+<!-- Bootstrap 3.3.6 -->
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_aptitude.js"></script>
+
+</body>
+</html>

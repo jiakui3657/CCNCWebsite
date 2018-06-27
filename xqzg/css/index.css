@@ -1,0 +1,518 @@
+﻿body,html{
+    transition:all .5s
+}
+/*首页公共部分start*/
+h3 {
+    height: 23px;
+    line-height: 23px;
+    font-weight: 600;
+    border-left: 6px solid #1388f5;
+    display: inline-block;
+    padding-left: 16px;
+}
+/*首页公共部分end*/
+/*banner * start*/
+.banner{
+    /*width:100%;*/
+}
+.banner .swiper-container {
+    width:100%;
+    cursor:pointer;
+}
+.banner swiper-wrapper {
+    width:100%;
+}
+.banner .swiper-slide {
+    width:100%;
+}
+.banner .swiper-slide img {
+    width:100%;
+}
+.banner .pagination,.swiper-pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 44px;
+  width: 100%;
+  text-align: center;
+}
+.banner .swiper-pagination-switch {
+  display: inline-block;
+  width: 58px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 8px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.banner .swiper-active-switch {
+  background: #fff;
+}
+/*banner * end*/
+/*版心 * end*/
+.boardHeart {
+    width:1200px;
+    margin:0 auto;
+}
+/*解决方案 * start*/
+.boardHeart {
+    width:1200px;
+    margin:0 auto;
+}
+.boardHeart .product{
+    width:100%;
+    margin-top:80px;
+    padding-bottom: 80px;
+}
+.boardHeart .product ul {
+    overflow:hidden;
+}
+.boardHeart .product ul li {
+    float:left;
+    margin:0 30px;
+    width:28%;
+}
+.boardHeart .product ul li .title {
+
+}
+.boardHeart .product ul li .title span {
+    display:inline-block;
+    width:44px;
+    height:44px;
+    border:2px solid #ffe63d;
+    text-align:center;
+    line-height:44px;
+    color:#ffe63d;
+    border-radius:28px;
+    font-size:26px;
+    margin-left:5px;
+}
+.boardHeart .product ul li .title i {
+    font-size:16px;
+    color:#000;
+    font-weight:600;
+    margin-left:28px;
+    display:inline-block;
+}
+.boardHeart .product ul li .content {
+    overflow:hidden;
+    position:relative;
+}
+.boardHeart .product ul li .content span {
+    font-size:48px;
+    color:#eee;
+    font-weight:400;
+    display:inline-block;
+     width:58px;
+     height:58px;
+     text-align:center;
+     line-height:46px;
+     position:absolute;
+     top:15px;
+     left:left;
+}
+.boardHeart .product ul li .content i {
+    margin-left:82px;
+    display:inline-block;
+    color:#999;
+    font-size:14px;
+    line-height:28px;
+    word-wrap:break-word;
+    float:left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; //文本行数
+    overflow: hidden;
+}
+.boardHeart .product .pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+/*解决方案 * end*/
+/*公司介绍*/
+.company {
+
+}
+.company h3 {
+
+}
+.company .content {
+
+}
+.company .content ul {
+    padding:0 55px;
+
+}
+.company .content ul li {
+    margin-top:60px;
+    overflow:hidden;
+}
+.company .content ul li img {
+    float:left;
+}
+.company .content ul li .introduce {
+    width:340px;
+    float:left;
+    margin-left:100px;
+}
+.company .content ul li .introduce .title {
+    height:36px;
+    line-height:30px;
+    font-size:18px;
+    font-weight:600;
+    border-bottom:2px solid #eee;
+    display:inline-block;
+    margin-bottom:34px;
+}
+.company .content ul li .introduce .text {
+    font-size:14px;
+    line-height:28px;
+    color:#999;
+}
+.company .content ul li .introduce a {
+    font-size:14px;
+    margin-top:32px;
+    font-weight:400;
+    display:inline-block;
+}
+.company .content ul li:nth-child(2n) img {
+    float:right;
+}
+.company .content ul li:nth-child(2n) .introduce {
+    float:left;
+}
+/*新闻活动*/
+.news {
+    margin-top:80px;
+}
+.news  .content {
+    margin-top:40px;
+}
+.news  .content ul {
+    overflow:hidden;
+}
+.news  .content ul li {
+    margin-top:26px;
+    float:left;
+    padding:0 25px 0 15px;
+    cursor:pointer;
+}
+.news  .content ul li .max {
+    width:180px;
+    height:120px;
+    float:left;
+    overflow:hidden;
+}
+.news  .content ul li img {
+    width:180px;
+    transition: all 300ms;
+}
+.news  .content ul li img:hover {
+    transform: scale(1.5);
+}
+.news  .content ul li:nth-child(2n) {
+    /*padding:0 50px 0 50px;*/
+}
+.news  .content ul li .text {
+    width:350px;
+    float:right;
+    margin-left:30px;
+}
+.news  .content ul li .text span {
+    display:block;
+    font-size:16px;
+    color:#666;
+    font-weight:600;
+    transition: all .3s;
+    margin-bottom: 12px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .content ul li .text span:hover{
+    color:#1791ee;
+}
+.news  .content ul li .text i {
+    display:block;
+    font-size:12px;
+    color:#666;
+    line-height:20px;
+    transition: all .3s;
+}
+.news .content ul li .text i:hover {
+    color:#1791ee;
+}
+.news  .content ul li:last-child a {
+        float: right;
+        padding: 0 15px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        border: 1px solid #666;
+        display: inline-block;
+        color: #666;
+        text-decoration: none;
+        transition: all .3s;
+}
+.news  .content ul li:last-child a i {
+    display:none;
+    transition:all .3s;
+}
+.news  .content ul li:last-child a:hover {
+
+}
+.news  .content ul li:last-child a:hover{
+    padding:0 30px;
+    color:#1791ee;
+    border:1px solid #1791ee;
+}
+.news  .content ul li:last-child a:hover:hover i {
+    display:inline-block;
+    color:#1791ee;
+}
+/*项目*/
+.project {
+    margin-top:80px;
+}
+.project a {
+
+    padding:0 15px;
+    height:34px;
+    line-height:34px;
+    text-align:center;
+    border:1px solid #666;
+    display:inline-block;
+    color:#666;
+    text-decoration: none;
+    transition:all .3s;
+    position: absolute;
+    left: 85%;
+}
+.project a i{
+    display:none;
+    transition:all .3s;
+}
+.project a:hover{
+    padding:0 30px;
+    color:#1791ee;
+    border:1px solid #1791ee;
+}
+.project a:hover i {
+    display:inline-block;
+    color:#1791ee;
+}
+/*版心 * end*/
+/*项目*案例*/
+.projectCase {
+    margin-top:60px;
+}
+.projectCase .swiper-container {
+    width:100%;
+    padding-bottom:100px;
+}
+.projectCase swiper-wrapper {
+    width:100%;
+}
+.projectCase .swiper-slide {
+    width:100%;
+}
+.projectCase .swiper-slide ul {
+    width:100%;
+    overflow:hidden;
+}
+.projectCase .swiper-slide ul li {
+    float:left;
+    margin:0 1%;
+    width:23%;
+    position:relative;
+    cursor:pointer;
+}
+.projectCase .swiper-slide ul li img {
+    width:100%;
+}
+.projectCase .swiper-slide ul li a {
+    display:inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align:center;
+    background-color:rgba(255,255,255,1);
+    color:#000;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
+.projectCase .swiper-slide ul li a i {
+    font-size:24px;
+    display:inline-block;
+    transition: all 0.5s;
+    z-index:101;
+}
+.projectCase .swiper-slide ul li .mask {
+    width:100%;
+    height:100%;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    background-color:rgba(37,109,215,.8);
+    display:none;
+    padding:30px 40px 30px 40px;
+}
+.projectCase .swiper-slide ul li .mask .title {
+    font-size:18px;
+    line-height:36px;
+    padding:0 15px;
+    border-bottom:1px solid #aeddff;
+    text-align:center;
+    color:#fff;
+    display:none;
+    padding-bottom:20px;
+}
+.projectCase .swiper-slide ul li .mask p {
+    font-size:14px;
+    line-height:28px;
+    color:#fff;
+    display:none;
+    float: left;
+    word-wrap: break-word;
+    float: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow:hidden;
+    padding-top:20px;
+}
+/*.projectCase .swiper-slide ul li:hover .mask {
+    width:100%;
+    height:100%;
+    transition: width height 2s;
+}*/
+.projectCase .swiper-container .pagination {
+  position: absolute;
+  z-index: 20;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+.projectCase .swiper-pagination-switch {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 3px;
+  background: #b7b7b7;
+  margin: 0 8px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.projectCase .swiper-active-switch {
+  background: #eede12;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+/*
+ 联系我们
+ * */
+.address {
+	/*width: 100%;
+	overflow: hidden;*/
+}
+.address-content {
+	width: 1200px;
+	overflow: hidden;
+}
+.location {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	margin-top:60px;
+}
+.location img {
+	width: 100%;
+}
+.map{
+    height:420px;
+}
+.map1{
+    height:420px;
+}
+.location-details {
+	position: absolute;
+	background: #256dd9;
+	overflow: hidden;
+	top: 14%;
+	left: 56%;
+	color: #fff;
+	width: 286px;
+	padding: 40px 10px;
+	z-index: 999;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+.location-details p {
+	line-height: 40px;
+}
+.location-details p em {
+	display: inline-block;
+	font-size: 22px;
+	line-height: 60px;
+	border-bottom: 1px solid #dddddd;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	letter-spacing: 2px;
+}
+.location-details p i {
+	float: left;
+	padding:  0 15px;
+	font-size: 22px;
+}
+@media screen and (max-width:1320px){
+    .boardHeart{
+        width:900px;
+    }
+    .address-content{
+        width:900px;
+    }
+    .boardHeart .product .swiper-slide ul li {
+        width: 26%;
+    }
+    .company .content {
+        padding-left: 0px;
+    }
+    .company .content ul li img {
+        width: 500px;
+        height: 350px;
+        float: left;
+    }
+    .company .content ul li:nth-child(2n) .introduce {
+        float: left;
+        margin-left: 0;
+    }
+    .company .content ul {
+        padding: 0 0px;
+    }
+    .company .content ul li .introduce {
+        width: 350px;
+        float: right;
+    }
+    .news .content ul li .text {
+        width: 200px;
+    }
+    .projectCase .swiper-slide ul li .mask .title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .projectCase .swiper-slide ul li .mask p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .boardHeart .product ul li {
+        float:left;
+        margin:0 0px;
+        width:33%;
+    }
+}

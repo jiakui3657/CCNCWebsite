@@ -1,0 +1,129 @@
+/*新闻内容头部*/
+.news {
+	width: 100%;
+	overflow: hidden;
+}
+.news_header {
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #dcdcdc;	
+}
+.back {
+    font-size: 16px;
+    color: #666;
+    line-height: 80px;
+    height: 80px;
+    padding-left: 10px;
+    margin: 0;
+    float:left;
+    text-decoration: none;
+}
+.back:hover {
+	color: #666;
+}
+.back i {
+	float: left;
+	padding-right: 10px;
+	color: #000;
+	font-size: 24px;
+}
+.share {
+    height: 80px;
+    font-size: 12px;
+    color: #999;
+    width: 100%;
+	padding: 0 100px;
+    line-height: 35px;
+    border: none;
+    cursor: pointer; 
+}
+.bshare-custom {
+    overflow: hidden;
+    float: right;
+    margin-top:30px;
+    margin-right: 20px;
+}
+.bshare-custom i {
+    color: #333;
+    font-style: normal;
+    line-height:21px;
+    margin-right:10px;
+    float: left;
+}
+/*新闻内容*/
+.news_content {
+	width: 1200px;
+	overflow: hidden;
+	text-align: center;
+}
+.news_content strong,.news_content b {
+	font-weight: 700;
+}
+.news_content h3 {
+	line-height: 60px;
+	font-size: 24px;
+	margin-top: 30px;
+	padding: 0 100px;
+	color: #333;
+}
+.time {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+.time i {
+	display: inline-block;
+	color: #999;
+	line-height: 28px;
+}
+.formal-content {
+	width: 100%;
+	overflow: hidden;
+	color: #333;
+	line-height: 28px;
+}
+/*切换新闻*/
+.switch-news {
+	width: 1200px;
+	overflow: hidden;
+	background: #ebf3fb;
+	padding: 30px 0;
+	margin-top: 20px;
+}
+.switch-news a {
+	width: 45%;
+	float: left;
+	line-height: 28px;
+}
+.switch-news a.next {
+	float: right;
+}
+.switch-news a i {
+	padding:0 2px;
+	border-radius: 3px;
+	border: 1px solid #666;
+	float: left;
+	line-height: 22px;
+	margin: 0 20px;
+}
+.switch-news a:hover i {
+	border: 1px solid #014099;
+}
+.switch-news a em {
+	display: inline-block;
+	width: 60%;
+}
+.switch-news a b {
+	float: right;
+}
+.switch-news a.next i {
+	float: right;
+}
+@media only screen and (max-width: 1400px) {
+	.news_content {
+		width: 900px;
+	}
+	.switch-news {
+		width: 900px;
+	}
+}

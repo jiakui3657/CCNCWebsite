@@ -1,0 +1,69 @@
+/*内容*/
+.text {
+    height: 1.11rem;
+    line-height: 1.11rem;
+    font-size: 0.28rem;
+    color: #999;
+    margin-left: 0.49rem;
+    margin-top: 1rem;
+}
+.text a {
+    float: right;
+    display: inline-block;
+    width: 1.58rem;
+    height: 0.57rem;
+    color: #1573bf;
+    border: 1px solid #1573bf;
+    line-height: 0.57rem;
+    text-align: center;
+    margin-top: 0.3rem;
+    margin-right: 0.35rem;
+}
+.content {
+    padding: 0 0.35rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+.content h2 {
+    font-size: 0.4rem;
+    color: #333;
+    margin-top: 0.6rem;
+    line-height: 0.6rem;
+    text-align:center;
+}
+.content span{
+    display: block;
+}
+.content p{
+    font-size: 0.28rem;
+    color: #666666;
+    line-height: 0.48rem;
+}
+.content p strong{
+    font-weight: 700;
+}
+.content img {
+    width: 100%;
+    margin: 0.4rem 0 0.15rem 0;
+}
+.content i{
+    margin-bottom: 0.55rem;
+    display: block;
+    text-align: center;
+}
+.content .time{
+    margin-top: 0.6rem;
+    border-top: 1px solid #e0e0e0;
+    padding: 0.45rem 0;
+}
+.content .time p{
+    display: block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+video {
+    width: 100%;
+    height: 4rem;
+}

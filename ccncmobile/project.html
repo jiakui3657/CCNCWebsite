@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>项目案例 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}views/ccnc/css/Global.css" rel="stylesheet">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/project.css">
+    <script src="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript">
+        var siteurl = "${siteurl}";
+        console.log("sieturl:" + siteurl);
+    </script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 4 /]
+<section class="header_bg">
+    <img src="${siteurl}views/ccncmobile/images/4.jpg" alt="">
+</section>
+<section class="project_tab swiper-container" id="swiper-container1">
+    <div class="swiper-wrapper">
+        [#if catalogProjectVoList??]
+        [#list catalogProjectVoList as catalogProjectVo]
+            <div class="[#if catalogProjectVo_index == 0]curr[/#if] project_name swiper-slide" id="${(catalogProjectVo.catId!'')}">${catalogProjectVo.catalogName!''}</div>
+            [#if catalogProjectVo_index == 6]
+                <div class="swiper-slide project_name" id="-1">更多项目</div>
+                [#break]
+            [/#if]
+        [/#list]
+        [/#if]
+    </div>
+</section>
+<section id="swiper-container2" class="swiper-container">
+    <section class="swiper-wrapper">
+        <!--中北项目案例-->
+        [#if catalogProjectVoList??]
+        [#list catalogProjectVoList as catalogProjectVo]
+            <section class="project_det swiper-slide">
+                <ul>
+                    [#list catalogProjectVo.projectList as project]
+                    <li>
+                        <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                            <b><img src="${siteurl}${project.iconUrl!''}" alt=""></b>
+                            <i>${project.name!''}</i>
+                        </a>
+                    </li>
+                    [/#list]
+                </ul>
+                <div class="down_refresh">
+                    <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+                    <i class="release" page = "1">上拉加载更多</i>
+                </div>
+            </section>
+        [#if catalogProjectVo_index == 6]
+        <!--更多项目-->
+            <section class="project_det swiper-slide">
+                <ul>
+                    [#list projectMoreList as project]
+                    <li>
+                        <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                            <b><img src="${siteurl}${project.iconUrl!''}" alt=""></b>
+                            <i>${project.name!''}</i>
+                        </a>
+                    </li>
+                    [/#list]
+                </ul>
+                <div class="down_refresh" page="1">
+                    <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+                    <i class="release">上拉加载更多</i>
+                </div>
+            </section>
+        <!--更多项目-->
+        [/#if]
+        [/#list]
+        [/#if]
+        <!--中北项目案例-->
+
+    </section>
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+<script src="${siteurl}views/ccncmobile/js/project.js"></script>
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+      function show(){
+              var scrollHeight=$(window).scrollTop();
+              var headerHeight=$('header').height();
+              var height=$('.project_tab').offset().top;
+              var aptitudeHeight=$(".header_bg").height();
+              var tt=$('.history_tab').height();
+              if(scrollHeight+headerHeight>=height) {
+                   $(".jk").remove();
+                   $('.project_tab').addClass("tabActive");
+                   $('.header_bg img').after('<div class="jk"></div>');
+              }
+              if(scrollHeight<=headerHeight+tt) {
+                   $(".jk").remove();
+                   $('.project_tab').removeClass("tabActive");
+              }
+              if(scrollHeight==0) {
+                   $(".jk").remove();
+                   $('.project_tab').removeClass("tabActive");
+              }
+        }
+        var timer=setInterval(show,1);
+      var url = encodeURIComponent(location.href.split('#')[0]);
+      var incomingTitle = '中北集团设计院-项目案例';
+      var incomingDesc = '在公路、市政、建筑、电力等多项领域取得重大成果';
+      getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

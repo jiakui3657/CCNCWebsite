@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>${(model.name)!''} - 项目案例 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}views/ccnc/css/Global.css" rel="stylesheet">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/projectdetails.css">
+    <script src="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.js"></script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 4 /]
+<section class="header_bg">
+    <img src="${siteurl}views/ccncmobile/images/4.jpg" alt="">
+</section>
+<section class="back">
+    <a href="${siteurl}project.htm" class="back">返回列表</a>
+</section>
+<section class="details_cont">
+    <h3>${(model.name)!''}</h3>
+    <div id="swiper-container1" class="swiper-container">
+        <div class="swiper-wrapper">
+            [#list model.projectFiles as projectFile]
+            <div class="swiper-slide">
+                <img src="${siteurl}${projectFile.url!''}" />
+            </div>
+            [/#list]
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <p style="margin-top: 1.5rem;">项目名称 :<span>${model.name!''}</span></p>
+    <p>项目类型 :<span>${(model.catalogProject.name)!''}</span></p>
+    <p class="curr">项目概况 :<br /><span>${model.content!''}</span></p>
+    <p class="active">
+        [#if preProject??]
+        <a href="${siteurl}projectdetails.htm?id=${preProject.id}">上一个项目：${preProject.name!''}</a>
+        [#else]
+        <a href="javascript:void(0)" class="curr">上一个项目：没有了</a>
+        [/#if]
+    </p>
+    <p class="active">
+        [#if nextProject??]
+        <a href="${siteurl}projectdetails.htm?id=${nextProject.id}">下一个项目：${nextProject.name!''}</a>
+        [#else]
+        <a href="javascript:void(0)" class="curr">下一个项目：没有了</a>
+        [/#if]
+    </p>
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+<script src="${siteurl}views/ccncmobile/js/projectdetails.js"></script>
+[#list model.projectFiles as photo]
+<input id="p${photo_index}" type="hidden" value="${siteurl}${photo.url!''}">
+[/#list]
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+var mySwiper1 = new Swiper('#swiper-container1',{
+autoplay: 3000,
+resistanceRatio : 0,
+loop : true,
+pagination: '.swiper-pagination',
+paginationClickable: true,
+autoplayDisableOnInteraction : false,
+  paginationBulletRender: function (swiper, index, className) {
+        return '<span class=' + className + '><img src="'+$("#p"+index).val()+'"/></span>';
+  }
+});
+var url = encodeURIComponent(location.href.split('#')[0]);
+var incomingTitle = '中北集团设计院-项目案例';
+var incomingDesc = $(".details_cont h3").text();
+//console.log(incomingDesc);
+getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

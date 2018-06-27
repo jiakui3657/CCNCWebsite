@@ -1,0 +1,106 @@
+html,body {
+    font-family:"Microsoft YaHei";
+    font-size: 0.24rem;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
+/*顶部*/
+header {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+    position: fixed;
+    top: 0px;
+    z-index: 1001;
+}
+header img {
+    width: 2.52rem;
+    margin-top: 0.35rem;
+}
+header i {
+    position: absolute;
+    left:0rem;
+    height: 100%;
+    width: 1.35rem;
+    text-align: center;
+}
+/*底部*/
+footer {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 0.38rem;
+    border-top: 1px solid #f5f5f5;
+    padding: 0.32rem 0.35rem 0.35rem 0.35rem;
+    overflow: hidden;
+    display:flex;
+     justify-content: space-between;
+}
+footer .footer-left {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 2.7rem;
+    min-height: 1px;
+}
+footer .footer-left i {
+    position: absolute;
+    top: 0.6rem;
+    left: 0rem;
+    font-size:0.8rem;
+    color:green;
+}
+footer .footer-left img:nth-child(2) {
+    width: 1.8rem;
+    margin-left: 0.5rem;
+    margin-top: 0.1rem;
+}
+footer .footer-right {
+    float: left;
+    height: 100%;
+    position: relative;
+    margin-left: 0.35rem;
+}
+footer .footer-right img {
+    width: 2rem;
+    margin-top: 0.4rem;
+}
+footer .footer-right p {
+    color: #666;
+    margin-top: 0.3rem;
+}
+footer .footer-right p:nth-child(3) {
+    margin-top: 0.15rem;
+    font-size: 0.23rem;
+    color: #999;
+}
+/*左侧阴影栏*/
+.slidDown {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    left: -50%;
+    top: 0px;
+    -webkit-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
+    padding-top: 1rem;
+    z-index: 1001;
+}
+.slidDown ul li {
+    width: 100%;
+    height: 1.1rem;
+    line-height: 1.1rem;
+}
+.slidDown ul li a {
+    color: #f7f7f7;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.34rem;
+}

@@ -1,0 +1,233 @@
+/*
+ 公司地址
+ * */
+.address {
+	width: 100%;
+	overflow: hidden;
+}
+.address-content {
+	width: 1200px;
+	overflow: hidden;	
+}
+.location {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.location img {
+	width: 100%;
+}
+.location-details {
+	position: absolute;
+	background: #256dd9;
+	overflow: hidden;
+	top: 14%;
+	left: 56%;
+	color: #fff;
+	width: 250px;
+	padding: 40px 10px;
+	z-index: 999;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+.location-details p {
+	line-height: 40px;
+}
+.location-details p em {
+	display: inline-block;
+	font-size: 22px;
+	line-height: 60px;
+	border-bottom: 1px solid #dddddd;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	letter-spacing: 2px;
+}
+.location-details p i {
+	float: left;
+	padding:  0 10px;
+	font-size: 22px;
+}
+/*填写需求*/
+.demand {
+	width: 100%;
+	overflow: hidden;
+}
+.demand-content {
+	width: 1200px;
+	overflow: hidden;	
+	text-align: center;
+}
+.demand-list {
+	width: 100%;
+	overflow: hidden;
+}
+.demand-list li {
+	width: 33.3%;
+	float: left;
+	line-height: 45px;	
+	padding-right: 100px;
+}
+.demand-list li span {
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid #dcdcdc;
+	position: relative;
+}
+.demand-list li label {
+	float: left;
+	width: 100px;
+	font-weight: normal;
+	text-align: left;
+}
+.demand-list li input {
+	border: none;
+	float: left;
+	position: absolute;
+	right: 0;
+	width: 200px;
+	font-size: 14px;
+	z-index: 999;
+	background: none;
+}
+.demand-list li span b {
+	position: absolute;
+	left: 100px;
+	top: 0;
+	padding-left: 0.5rem;
+	text-align: left;
+	font-size: 12px;
+	background: #fff;
+	color: #c3c3c3;
+}
+.demand-body {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.demand-body label {
+	display: inline-block;
+	float: left;
+	line-height: 30px;
+	margin: 30px 0 10px 0;
+	font-weight: normal;
+	text-align: left;
+}
+.demand-body textarea {
+	width: 100%;
+	border: 1px solid #dcdcdc;
+	padding: 10px;
+	line-height: 28px;
+	resize: none;
+	font-size: 14px;
+}
+.demand-body  b {
+	position: absolute;
+	left: 0;
+	background: none;
+	top: 70px;
+	padding-left: 20px;
+	text-align: left;
+	line-height: 50px;
+	color: #c3c3c3;
+}
+/*验证码*/
+.verificationCode {
+	line-height: 40px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+.verificationCode span {
+	float: left;
+	overflow: hidden;
+	border-bottom: 1px solid #dcdcdc;
+	position: relative;
+}
+.verificationCode span label {
+	float: left;
+	width: 100px;
+	font-weight: normal;
+	text-align: left;
+	margin: 0;
+}
+.verificationCode span b {
+	position: absolute;
+	left: 100px;
+	top: 0;
+	padding-left: 0.5rem;
+	text-align: left;
+	font-size: 0.28rem;
+	background: #fff;
+	color: #c3c3c3;
+}
+#verificationCode {
+	border: none;
+	float: left;
+	width: 180px;
+	font-size: 12px;
+	margin: 0;
+}
+#checkCode {
+	float: left;
+	background: #fff;
+	border:1px solid #f1f1f1;
+	font-weight: bold;
+	padding:0 20px;
+	letter-spacing: 8px;
+	font-size: 20px;
+	font-style: italic;
+	margin-left: 25px;
+}
+.verificationCode a {
+	color: #000ad9;
+	float: left;
+	padding:0 20px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+#promit {
+	float: left;
+	padding: 0 20px;
+	text-align: center;
+	color: #f12c4d;
+	display: none;
+}
+#submit {
+	display: inline-block;
+	background: #256dd9;
+	color: #fff;
+	line-height: 40px;
+	font-size: 16px;
+	padding: 0 50px;
+	margin-top: 40px;
+	border: none;
+	outline: none;
+}
+@media only screen and (max-width: 1200px) {
+	.address-content {
+		width: 900px;
+	}
+	.location-details {
+		width: 230px;
+		padding: 25px 10px;
+	}
+	.location-details p em {
+		margin-left: 35px;
+	}
+	.location-details p i {
+		font-size: 14px;
+	}
+	.demand-content {
+		width: 900px;
+	}
+	.demand-list li {
+		padding-right: 50px;
+	}
+	.demand-list li label {
+		font-size: 14px;
+		width: 89px;
+	}
+	.demand-list li input {
+		width: 160px;
+	}
+}

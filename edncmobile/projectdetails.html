@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;公路</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/Global.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/projectdetails.css">
+</head>
+<body>
+
+<div class="coo">
+    <!--顶部-->
+    [#include "/theme/edncmobile/common/header.html"]
+    <!--导航二-->
+    <div class="text">当前：<span>首页</span> > 项目详情<a href="${siteurl}project.htm">返回列表</a></div>
+    <div class="content">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2>${(model.name)!''}</h2>
+                    <div class="swiper-container1">
+                        <div class="swiper-wrapper">
+                            [#list model.projectFiles as projectFile]
+                                <div class="swiper-slide"><img src="${siteurl}${projectFile.url!''}" alt=""></div>
+                            [/#list]
+                        </div>
+                    </div>
+                    <p><span>项目地点 : </span>${(model.address)!''}</p>
+                    <p><span>项目介绍 : </span>${(model.content)!''}</p>
+                </div>
+            </div>
+            <!-- 如果需要导航按钮 -->
+            <!--[#if preProject??]
+                <a href="${siteurl}projectdetails.htm?id=${preProject.id}" class="a1 iconfont">&#xe64b;</a>
+                &lt;!&ndash;<div class="swiper-button-prev swiper-button-white"><span class="iconfont icon-icon1"></span></div>&ndash;&gt;
+            [#else]
+                <a href="javascript:void(0)" class="a1 curr iconfont">&#xe64b;</a>
+            [/#if]
+            [#if nextProject??]
+                &lt;!&ndash;<div class="swiper-button-next swiper-button-white"><span class="iconfont icon-icon1"></span></div>&ndash;&gt;
+                <a href="${siteurl}projectdetails.htm?id=${nextProject.id}" class="a2 iconfont">&#xe64b;</a>
+            [#else]
+                <a href="javascript:void(0)" class="a2 curr iconfont">&#xe64b;</a>
+            [/#if]-->
+        </div>
+    </div>
+    <!--底部-->
+    [#include "./common/footer.html"]
+</div>
+<!--遮罩-->
+[#include "/theme/edncmobile/common/mask.html"]
+<script src="${siteurl}views/edncmobile/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/edncmobile/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.js"></script>
+<script src="${siteurl}views/edncmobile/js/http.js"></script>
+<script src="${siteurl}views/edncmobile/js/public.js"></script>
+<script src="${siteurl}views/edncmobile/js/projectdetails.js"></script>
+</body>
+</html>

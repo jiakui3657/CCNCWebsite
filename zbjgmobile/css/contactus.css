@@ -1,0 +1,223 @@
+/*公司地址*/
+.address {
+    width: 100%;
+}
+.location {
+    width: 100%;
+    position: relative;
+}
+.location img {
+    width: 100%;
+}
+.location-details {
+    position: absolute;
+    background: #256dd9;
+    overflow: hidden;
+    padding: 0.2rem 0;
+    top: 60%;
+    left: 0.3rem;
+    right: 0.3rem;
+    color: #fff;
+    z-index: 999;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+.location-details p {
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+}
+.location-details p.title {
+    text-align: center;
+}
+.location-details p em {
+    display: inline-block;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 0.2rem;
+    letter-spacing: 2px;
+}
+.location-details p i {
+    display: inline-block;
+    padding-left: 0.8rem;
+    padding-right: 0.2rem;
+    font-size: 0.4rem;
+}
+
+/*填写需求*/
+.demand {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2.6rem;
+    text-align: center;
+}
+.demand-content {
+    width: 1200px;
+    overflow: hidden;
+    text-align: center;
+}
+.demand-list {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2rem;
+}
+.demand-list li {
+    float: left;
+    width: 100%;
+    line-height: 1rem;
+    padding-top: 0.2rem;
+}
+.demand-list li span {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+    position: relative;
+}
+.demand-list li label {
+    float: left;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+    width: 30%;
+}
+.demand-list li input {
+    border: none;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+    padding: 0.25rem 0 0.25rem 0.5rem;
+    background: none;
+    z-index: 999;
+}
+.demand-list li span b {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-size: 0.28rem;
+    background: #fff;
+    color: #c3c3c3;
+}
+.demand-body {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2rem;
+    position: relative;
+}
+.demand-body label {
+    display: block;
+    line-height: 0.8rem;
+    font-weight: normal;
+    margin: 0.3rem 0 0 0;
+    text-align: left;
+}
+.demand-body textarea {
+    width: 100%;
+    border: 1px solid #dcdcdc;
+    padding: 0.2rem;
+    line-height: 0.6rem;
+    resize: none;
+    border-radius: 0;
+    appearancs: none;
+    -webkit-appearance: none;
+    font-size: 0.28rem;
+    background: none;
+}
+.demand-body b {
+    position: absolute;
+    left: 0.25rem;
+    top: 1.2rem;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-size: 0.28rem;
+    background: #fff;
+    display: inline-block;
+    z-index: 99;
+    color: #c3c3c3;
+    line-height: 1rem;
+}
+/*验证码*/
+.verificationCode {
+    line-height: 1rem;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.3rem;
+    padding: 0 0.2rem;
+}
+.verificationCode span {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+.verificationCode span.five-code {
+    border: none;
+}
+.verificationCode span label {
+    float: left;
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+    width: 30%;
+}
+#verificationCode {
+    border: none;
+    float: left;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+    padding: 0.25rem 0 0.25rem 0.7rem;
+    margin: 0;
+    z-index: 999;
+    background: none;
+}
+.verificationCode span b {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-size: 0.28rem;
+    background: #fff;
+    z-index: 99;
+    color: #c3c3c3;
+}
+#checkCode {
+    float: left;
+    background: #ebf9fe;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 0.35rem;
+    font-style: italic;
+    border: none;
+    padding: 0 0.3rem;
+    color: #963a2a;
+    line-height: 0.8rem;
+}
+.verificationCode a {
+    color: #1791ee;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    padding: 0 0.3rem;
+    line-height: 0.8rem;
+}
+#submit {
+    display: inline-block;
+    background: #256dd9;
+    color: #fff;
+    line-height: 0.8rem;
+    font-size: 0.30rem;
+    padding: 0 0.8rem;
+    letter-spacing: 5px;
+    margin-top: 0.4rem;
+    border: none;
+    outline: none;
+}
+

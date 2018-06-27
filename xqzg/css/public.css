@@ -1,0 +1,212 @@
+﻿/*公共css*/
+.row,.col-lg-8,.col-md-3,.col-lg-5,.col-md-6{
+    padding:0;
+}
+.container,.row {
+    padding:0;
+    margin:0 auto;
+    width:100%;
+}
+body,html{
+    font-family: "微软雅黑";
+}
+.sign-photo{
+    width:100%;
+}
+/*header顶部*/
+header {
+    width:1200px;
+    margin:0 auto;
+    height:80px;
+    line-height:85px;
+}
+header .logo {
+    margin-top:34px;
+}
+header .navigation {
+    overflow:hidden;
+}
+header .navigation li {
+    font-size:16px;
+    color:#666;
+    cursor:pointer;
+}
+header .navigation li a {
+    text-decoration: none;
+}
+header .navigation li:hover {
+    color:#000;
+    font-weight:600;
+}
+header .navigation .active{
+    color:#000;
+    font-weight:600;
+}
+/*内容区*/
+.container-fluid {
+    padding:0 60px;
+    padding-bottom:110px;
+    min-width:1006px;
+}
+/*footer底部*/
+footer{
+    background: url(../img/footer.jpg) no-repeat center;
+    background-size: cover;
+    height: 200px;
+    min-width: 1006px;
+}
+footer .footerContent {
+    width:1200px;
+    margin:0 auto;
+    padding: 70px 0;
+    overflow:hidden;
+}
+footer .footerContent img {
+    float:left;
+}
+footer .footerContent .midden {
+    float:right;
+}
+footer .footerContent .midden ul {
+    padding-bottom:15px;
+    border-bottom:1px solid #666;
+    overflow:hidden;
+}
+footer .footerContent .midden ul li{
+    font-size:16px;
+    color:#fff;
+    margin-right:54px;
+    float:left;
+}
+footer .footerContent .midden ul li:last-child {
+    margin-right:0px;
+}
+footer .footerContent .midden ul li a {
+    color:#fff;
+}
+footer .footerContent .midden .support {
+    font-size:12px;
+    color:#ececec;
+    margin-top:15px;
+}
+footer .footerContent .midden .support a {
+    font-size: 12px;
+    color: #ececec;
+}
+footer .footerContent .mail {
+    font-size:12px;
+    color:#ececec;
+    line-height:32px;
+    width:235px;
+    float:right;
+}
+footer .footerContent .mail .phone {
+    margin-bottom:45px;
+}
+footer .footerContent .mail .phone span {
+    width:40px;
+    height:40px;
+    border-radius: 20px;
+    background-color:#2794f6;
+    line-height:40px;
+    text-align:center;
+    display:inline-block;
+    color:#fff;
+    vertical-align: middle;
+}
+footer .footerContent .mail .phone i {
+    font-size:24px;
+    color:#ececec;
+    margin-left:28px;
+    display:inline-block;
+    vertical-align: middle;
+}
+/*页码公用样式*/
+.news-page {
+	width: 100%;
+	overflow: hidden;
+}
+.inside-page {
+	width: 1200px;
+	overflow: hidden;
+	text-align: center;
+	margin-top:50px;
+}
+.page-number {
+	overflow: hidden;
+	line-height: 32px;
+	display: inline-block;
+}
+.page-number a {
+	float: left;
+	line-height: 32px;
+	padding: 0 10px;
+	border: 1px solid #efefef;
+	margin:0 5px;
+}
+.page-number a.curr {
+	background: #1791ee;
+	color: #fff;
+}
+.page-number a.curr:hover {
+	color: #fff;
+}
+.page-number a.up-down {
+	border: 1px solid #83c4f6;
+}
+.page-number a.up {
+	margin-right: 40px;
+}
+.page-number a.down {
+	margin-left: 40px;
+}
+.page-number a:hover {
+	color: #666;
+}
+.page-number ul {
+	overflow: hidden;
+	float: left;
+}
+.page-number ul li {
+	float: left;
+}
+.page-number ul li i {
+	float: left;
+	padding:0 5px;
+}
+.page-number span {
+	float: left;
+	padding-left:20px;
+}
+@media screen and (max-width:1320px){
+    footer .footerContent {
+        width:900px;
+    }
+    .row{
+        width:900px;
+    }
+    header{
+        width:900px;
+    }
+}
+@media screen and (max-width:1024px){
+    .sign-photo{
+        width:1006px;
+    }
+}
+/*返回顶部*/
+.back-top{
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #eee;
+    display:none;
+    width:50px;
+    height:50px;
+    background:rgba(47,47,49,.4);
+    text-align:center;
+    line-height:50px;
+    z-index:111;
+}

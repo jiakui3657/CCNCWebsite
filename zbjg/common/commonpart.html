@@ -1,0 +1,52 @@
+[#macro commonpart]
+    <!--页面顶部图标引入-->
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <!--阿里图标引入-->
+
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!--公用css样式引入-->
+    <link href="${siteurl}views/zbjg/css/Global.css" rel='stylesheet' type='text/css' />
+    <link href="${siteurl}views/zbjg/css/public.css" rel='stylesheet' type='text/css' />
+    <!--解决IE6~8的响应式布局问题，解决低版本的H5标签问题，解决IE6~8支持CSS3伪类和属性选择器-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://cdn.bootcss.com/respond.js/1.4.0/respond.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <![endif]-->
+[/#macro]
+<!-- 分页 -->
+[#macro pager page ]
+    [#if page.totalPages > 1]
+    [#if page.pageNumber > 2]
+        <a href="${siteurl}news.htm?pageNumber=${page.pageNumber-1}" class="up up-down">上一页</a>
+        <input type="button" value="上一页" onclick="$.pageSkip(${page.pageNumber-1})">
+    [#else]
+        <a href="${siteurl}news.htm?pageNumber=1" class="up up-down">上一页</a>
+    [/#if]
+    <ul>
+        [#if page.totalPages > 6]
+            <li><a href="javascript:void(0)">1</a></li>
+            <li><i>...</i></li>
+        [/#if]
+        [#list page.firstNo..page.endNo as  segmentPageNumber]
+        [#if segmentPageNumber != page.pageNumber]
+            <li><a href="${siteurl}news.htm?pageNumber=${segmentPageNumber}">${segmentPageNumber}</a></li>
+        [#else]
+            <li><a href="${siteurl}news.htm?pageNumber=${segmentPageNumber}" class="curr">${segmentPageNumber}</a></li>
+        [/#if]
+        [/#list]
+        [#if page.totalPages > 6]
+            <li><i>...</i></li>
+            <li><a href="javascript:void(0)">14</a></li>
+        [/#if]
+    </ul>
+    [#if page.pageNumber lt page.totalPages]
+        <a href="${siteurl}news.htm?pageNumber=${page.pageNumber+1}" class="down up-down">下一页</a>
+    [#else]
+        <a href="${siteurl}news.htm?pageNumber=${page.totalPages}" class="down up-down">下一页</a>
+    [/#if]
+[/#if]
+    <span>共 ${page.totalPages} 页</span>
+
+[/#macro]

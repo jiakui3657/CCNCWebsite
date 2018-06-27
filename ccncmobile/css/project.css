@@ -1,0 +1,114 @@
+#swiper-container2  .swiper-wrapper {
+    height: auto;
+}
+body {
+    color: #666;
+    position: relative;
+}
+a {
+    color: #666;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color: #666;
+}
+.header_bg img {
+    width:100%;
+    margin-top: 60px;
+}
+.project_tab {
+    box-shadow: 0 3px 5px rgba(102,102,102,.3);
+}
+.project_tab .swiper-wrapper div {
+    width:33.3%;
+    float: left;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height:1rem;
+    color:#999;
+}
+.project_tab .swiper-wrapper div.curr {
+    color: #375ed2;
+    border-bottom:2px solid #375ed2;
+    font-weight: 600;
+}
+/*项目案例列表*/
+.project_det {
+    width: 100%;
+    overflow: hidden;
+    min-height: 5rem;
+    padding: 0 0.2rem;
+}
+.project_det ul {
+    width: 100%;
+    overflow: hidden;
+}
+.project_det ul li {
+    width: 100%;
+    overflow: hidden;
+    margin-top:0.5rem;
+}
+.project_det ul li a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+.project_det ul li a b {
+    display: block;
+    width: 100%;
+}
+.project_det ul li a b img {
+    display: block;
+    width: 100%;
+}
+.project_det ul li a i {
+    display: block;
+    width: 100%;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 0.3rem;
+    background: #f5f6f9;
+    border: 1px solid #d9d8d8;
+    border-top: none;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 0.2rem;
+    text-overflow: ellipsis;
+}
+/*项目案例列表*/
+/*加载更多*/
+.down_refresh {
+    width: 100%;
+    text-align: center;
+    font-size: 0.24rem;
+    margin-bottom: 0.5rem;
+    height: 1rem;
+    display: none;
+}
+.down_refresh img {
+    height: 0.3rem;
+    display: none;
+    margin-right: 0.15rem;
+    transform: rotateZ(0deg);
+}
+.down_refresh img.curr {
+    display: inline-block;
+    transform: rotateZ(1080deg);
+    transition: all 3000ms;
+}
+.down_refresh i{
+    display: inline-block;
+    line-height: 1rem;
+    color:#999;
+}
+/*加载更多*/
+.tabActive {
+    position:fixed;
+    top:60px;
+    z-index:1001;
+    background-color:#fff;
+    width:100%;
+}
+.jk {
+    height:1rem;
+}

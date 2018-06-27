@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="${siteurl}plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="${siteurl}dist/js/json2.js"></script>
+
+</head>
+<body>
+<div id="bt" type="button" style="background-color: #00acd6">xx</div>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $("#bt").click(function () {
+            console.log("hi");
+            var x={};
+            x.star=1492826825000;
+            x.end=1492956425000;
+
+            var data={};
+
+            data.data=JSON.stringify(x);
+            $.post("http://123.206.23.130/icontact_web/rest/Reporting/addjson.htm",data,function (databack) {
+                console.log(databack);
+            });
+        });
+    });
+
+
+    function da() {
+        //JSON.stringify(ko.toJS(self.workers), null, 2)
+        $.ajax({
+            type:"POST",
+            url:"http://123.206.23.130/icontact_web/rest/Reporting/addjson.htm",
+            dataType:"json",
+            contentType:"application/json",
+            data:data,
+            success:function(data){
+                if (data.code==0){
+                    window.location = "${siteurl}admin/payrolliew_list.htm"
+                }else{
+                    alert("系统错误");
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

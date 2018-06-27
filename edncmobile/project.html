@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;项目展示</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/Global.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/plugins/dropload/dropload.css">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/projects.css">
+    <script>
+        var siteurl = "${siteurl}";
+    </script>
+</head>
+<body>
+${fontStyle.fontIconUrl!''}
+<div class="coo">
+    <!--顶部-->
+    [#include "/theme/edncmobile/common/header.html"]
+    <!--导航二-->
+    <div class="text">当前：<span>首页</span> > 项目展示</div>
+    <div class="content">
+        <div class="tab">
+            <div class="swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide active"><a><i class="iconfont">&#xe65b;</i><p>全部</p></a></div>
+                    <!--中北项目案例-->
+                    [#if catalogProjectVoList??]
+                    [#list catalogProjectVoList as catalogProjectVo]
+                    <div class="swiper-slide">
+                        <a>
+                            <i class="iconfont">&${catalogProjectVo.fontIcon!''}</i>
+                            <p>${catalogProjectVo.catalogName!''}</p>
+                        </a>
+                    </div>
+                    [/#list]
+                    [/#if]
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide curr ective" index=1>
+                                <ul>
+                                    [@projectall num = 1 size = 6]
+                                        [#list list as project]
+                                        <li>
+                                            <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                                                <img src="${siteurl}${project.iconUrl!''}" alt="">
+                                                <p>${(project.name)!''}</p>
+                                            </a>
+                                        </li>
+                                        [/#list]
+                                    [/@projectall]
+                                </ul>
+                        <div class="down_refresh" style="display: none;">
+                            <img src="${siteurl}views/edncmobile/img/Spinner.svg" alt="" class="">
+                            <i class="release" page="1">上拉加载更多</i>
+                        </div>
+                    </div>
+                    [@catalogprojectrecomends pSize=6]
+                    [#if list??]
+                    [#list list as catalogProjectVo]
+                    <div class="swiper-slide curr ective" index=1>
+                        <!--<h3><span>${(catalogProjectVo.catalogName)!''}行业的解决方案</span></h3>-->
+                        <!--<p>${(catalogProjectVo.tagName)!''}</p>-->
+                        <!--<h3><span>经典案例</span></h3>-->
+                        <input type="hidden" value="${(catalogProjectVo.catId)!''}" />
+                        <ul>
+                            [#list catalogProjectVo.projectList as project]
+                            <li>
+                                <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                                    <img src="${siteurl}${project.iconUrl!''}" alt="">
+                                    <p>${(project.name)!''}</p>
+                                </a>
+                            </li>
+                            [/#list]
+                        </ul>
+                        <div class="down_refresh" style="display: none;">
+                            <img src="${siteurl}views/edncmobile/img/Spinner.svg" alt="" class="">
+                            <i class="release" page="1">上拉加载更多</i>
+                        </div>
+                    </div>
+                    [/#list]
+                    [/#if]
+                    [/@catalogprojectrecomends]
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    [#include "/theme/edncmobile/common/footer.html"]
+</div>
+
+<!--遮罩-->
+[#include "/theme/edncmobile/common/mask.html"]
+<script src="${siteurl}views/edncmobile/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/edncmobile/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.js"></script>
+<script src="${siteurl}views/edncmobile/plugins/dropload/dropload.min.js"></script>
+<script src="${siteurl}views/edncmobile/js/http.js"></script>
+<script src="${siteurl}views/edncmobile/js/public.js"></script>
+<script src="${siteurl}views/edncmobile/js/project.js"></script>
+</body>
+</html>

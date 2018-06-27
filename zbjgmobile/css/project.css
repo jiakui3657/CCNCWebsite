@@ -1,0 +1,101 @@
+/*项目分类及其推荐项目*/
+.project {
+    width: 100%;
+}
+.project-content {
+    width: 100%;
+    position: relative;
+}
+.category-name {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    line-height: 1rem;
+    border-bottom: 1px solid #dcdcdc;
+    padding:0 0.2rem;
+    margin-top: 0.8rem;
+}
+.project div:first-child .category-name {
+    margin-top: 0.5rem;
+}
+.category-name em {
+    float: left;
+}
+.category-name em b {
+    padding-left: 0.2rem;
+    font-size: 0.35rem;
+    color: #333;
+    font-weight: bold;
+    border-left: 4px solid #1791ee;
+}
+.category-name em i {
+    font-size: 0.28rem;
+    padding-left: 0.2rem;
+    color: #999;
+}
+/*列表轮播图*/
+.category-list {
+    padding: 0.5rem 0 0.8rem 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+.category-list  ul li {
+    padding: 0 0.2rem;
+    position: relative;
+    height: 3.5rem;
+    overflow: hidden;
+}
+.category-list  ul li a {
+    overflow: hidden;
+    display: block;
+}
+.category-list  ul li a img {
+    width: 100%;
+}
+.qualf-layout {
+    background-color: rgba(37,109,217,.8);
+    position: absolute;
+    bottom: 0;
+    left: 0.2rem;
+    color: #fff;
+    right: 0.2rem;
+    z-index: 99;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    padding: 0 0.5rem;
+}
+/*!*左右箭头*!
+.category-list .swiper-button-white {
+    color: #fff;
+    background: none;
+    font-size: 0.6rem;
+    width: 1rem;
+    text-align: center;
+    height: 1rem;
+    margin-top: -1rem;
+    opacity: 0.4;
+}*/
+/*查看更多*/
+.more {
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    width: 100%;
+    margin-top: -0.3rem;
+}
+.see-more {
+    display: inline-block;
+    line-height: 0.6rem;
+    padding: 0 0.2rem;
+    color: #2397ef;
+    border: 1px solid #2397ef;
+    background: #fff;
+    font-size: 0.26rem;
+
+}
+.see-more i {
+    float: right;
+    padding-left: 0.1rem;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+}

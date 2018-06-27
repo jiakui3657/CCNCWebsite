@@ -1,0 +1,135 @@
+/*banner图*/
+.banner {
+     width: 100%;
+     position: relative;
+     color: #fff;
+     margin-top: 1rem;
+ }
+ .banner img {
+     width: 100%;
+ }
+.banner h3 {
+    font-size: 0.6rem;
+    position: absolute;
+    left: 0.6rem;
+    top:0.6rem;
+}
+.banner p {
+    position: absolute;
+    left: 0.6rem;
+    top:1.5rem;
+    font-size: 0.3rem;
+}
+.banner a {
+    position: absolute;
+    left: 0.6rem;
+    top:2.2rem;
+    width: 1.55rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.18rem;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    border-radius: 0.05rem;
+    text-decoration: none;
+}
+.text {
+    height: 1rem;
+    line-height: 1rem;
+    width: 100%;
+    background-color: #fff;
+    padding-left: 0.35rem;
+    color: #666666;
+    font-size: 0.18rem;
+    border-bottom: 1px solid #ccc;
+}
+.text a {
+    display:block;
+    overflow:hidden;
+    word-break:keep-all;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    color: #666;
+    font-size: 0.28rem;
+}
+.swiper{
+    width: 100%;
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+h4 {
+    margin-top: 0.4rem;
+    text-align: center;
+    font-size: 0.32rem;
+    color: #333;
+    position: relative;
+}
+h4 i {
+    width: 0.32rem;
+    position: absolute;
+    left: 50%;
+    top: 0.4rem;
+    transform: rotate(0deg);
+    margin-left: -0.16rem;
+}
+/*轮播图*/
+.swiper .swiper-wrapper ul {
+    overflow: hidden;
+    margin-top: 0.6rem;
+    padding: 0 0.35rem;
+    display:flex;
+}
+.swiper .swiper-wrapper ul li {
+    float: left;
+    width: 3.28rem;
+    margin: 0 0.06rem;
+    background-color: #fff;
+}
+.swiper .swiper-wrapper ul li img {
+    width: 100%;
+}
+.swiper .swiper-wrapper ul li p {
+    height: 0.7rem;
+    line-height: 0.7rem ;
+    padding: 0 0.13rem;
+    display: block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.swiper .swiper-container {
+    width: 100%;
+    height: 100%;
+    min-height: 4.8rem;
+}
+.swiper .swiper-pagination {
+    position: absolute;
+    bottom: 0.1rem;
+}
+/*公司介绍*/
+.company {
+    padding: 0.52rem 0;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+}
+.company p {
+    margin-top: 0.7rem;
+    padding: 0 0.35rem;
+    line-height: 0.52rem;
+}
+.company a {
+    display: inline-block;
+    width: 2.2rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+    border: 1px solid #0771c2;
+    color: #0771c2;
+    position: relative;
+    left:50%;
+    margin-left: -1.1rem;
+    margin-top: 0.6rem;
+}

@@ -1,0 +1,173 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/index.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<!--首页banner图-->
+<section class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            [#if homePictureList??]
+            [#list homePictureList as homePicture]
+            <div class="swiper-slide [#if homePicture_index == 0]active[/#if]">
+                <a href="[#if (homePicture.openLink) == 1]#[#else]${homePicture.linkUrl}[/#if]">
+                    <img class="header-menu-background" src="${siteurl}${homePicture.pbigPicture!''}" alt="...">
+                </a>
+            </div>
+            [/#list]
+            [/#if]
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!--首页banner图-->
+<!--经典案列-->
+<section class="classic-case">
+    <h3 class="head-title">经<i>|</i>典<i>|</i>案<i>|</i>列</h3>
+    <div class="swiper-container1">
+        <ol class="swiper-wrapper">
+            [@catalogprojectsall]
+            [#if list??]
+            [#list list as catalogproject]
+            <li class="swiper-slide">
+                <a href="${siteurl}projectcataloglist.htm?catid=${catalogproject.id}">
+                    <img src="${siteurl}${catalogproject.iconUrl}" alt="">
+                </a>
+                <em>${(catalogproject.name)!''}</em>
+                <b>${(catalogproject.nameTag)!''}</b>
+            </li>
+            [/#list]
+            [/#if]
+            [/@catalogprojectsall]
+        </ol>
+    </div>
+</section>
+<!--了解更多关于公司-->
+<section class="about-company">
+    <h3 class="head-title">公<i>|</i>司<i>|</i>简<i>|</i>介</h3>
+    <div class="about-content">
+        <img class="background" src="${siteurl}views/zbjgmobile/images/about_bg_phone.jpg"/>
+        <div class="about-decription">
+            <p>中北建工有限公司为中北集团旗下全资子公司，成立于2001年，是集市政、公路、隧道、水利水电、通信
+                、机电安装、电力、房建、冶金矿山等领域于一体的大型综合性施工企业。</p>
+            <a href="${siteurl}history.htm" class="more">了解更多<i class="iconfont icon-gengduo"></i></a>
+        </div>
+    </div>
+</section>
+<!--新闻活动-->
+<section class="news-activities">
+    <h3 class="head-title">
+        新<i>|</i>闻<i>|</i>活<i>|</i>动
+    </h3>
+    <ul>
+        [@newslast size = 10]
+        [#if list??]
+        [#list list as item]
+        [#if item_index = 0]
+        <li class="details">
+            <a href="${siteurl}newsdetails.htm?id=${item.id}">
+                <img src="${siteurl}${item.iconUrl!''}" alt="">
+            </a>
+            <div class="title-day">
+                        <span>
+                            <em>
+                                [#if item.publishDate??]
+                                    ${item.publishDate?string('dd')}
+                                [/#if]
+                            </em>
+                            <b>
+                                [#if item.publishDate??]
+                                    ${item.publishDate?string('yyyy / MM')}
+                                [/#if]
+                            </b>
+                        </span>
+                <a href="${siteurl}newsdetails.htm?id=${item.id}" class="overflow-wrap">${(item.title)!''}</a>
+            </div>
+        </li>
+        [#else]
+        <li>
+            <i class="iconfont icon-shuangyou"></i>
+            <a class="brief overflow-wrap" href="${siteurl}newsdetails.htm?id=${item.id}">${(item.title)!''}</a>
+        </li>
+        [/#if]
+        [/#list]
+        [/#if]
+        [/@newslast]
+    </ul>
+</section>
+<!--资质能力-->
+<section class="qualification">
+    <h3 class="head-title">资<i>|</i>质<i>|</i>能<i>|</i>力</h3>
+    <div class="swiper-container2">
+        <ul class="swiper-wrapper">
+            [#if catalogQualificationsRecomends??]
+            [#list catalogQualificationsRecomends as catalogQualificationRecommend]
+            <li class="swiper-slide">
+                <a href="${siteurl}aptitude.htm">
+                    <img src="${siteurl}${(catalogQualificationRecommend.iconUrl)!''}" alt="" />
+                </a>
+                <div class="qualf-layout">
+                    <a href="${siteurl}aptitude.htm">${(catalogQualificationRecommend.name)!''}</a>
+                </div>
+            </li>
+            [/#list]
+            [/#if]
+            <li class="swiper-slide">
+                <a href="${siteurl}aptitude.htm">
+                    <img src="${siteurl}views/zbjg/images/qualf_bg.jpg" alt="" />
+                </a>
+                <div class="qualf-layout">
+                    <a href="${siteurl}aptitude.htm">资质证书</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script src="${siteurl}views/zbjgmobile/js/index.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        paginationClickable :true,
+        pagination : '.swiper-pagination',
+        autoplay: 3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        autoplayDisableOnInteraction : false
+    });
+
+    var mySwiper1 = new Swiper('.swiper-container1',{
+        autoplay: 3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        initialSlide: 0,
+        autoplayDisableOnInteraction : false
+    });
+    var mySwiper2 = new Swiper('.swiper-container2',{
+        autoplay: 3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        autoplayDisableOnInteraction : false
+    });
+</script>
+</body>
+</html>

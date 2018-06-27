@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;公司资质</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/ednc/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/Global.css"/>
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/aptitude.css">
+</head>
+<body>
+    <!--顶部-->
+    [#include "/theme/ednc/common/header.html"]
+    <!--banner图-->
+    <div class="banner">
+        <img src="${siteurl}views/ednc/img/aptitude.jpg" alt="">
+    </div>
+    <div class="content">
+        <div class="container">
+            <p class="list"><span>公司资质</span><i>当前：首页 > 公司资质</i></p>
+            <div class="aptitude">
+                <div class="tab">
+                    <ul>
+                        <li class="current">资质证书</li>
+                        <li>资质列表</li>
+                    </ul>
+                    <span></span>
+                </div>
+
+                <div class="cen" id="main">
+                    <div class="box">
+                        [@qualificationcerts]
+                        [#if list??]
+                        [#list list as qualicationcert]
+                        <div class="item">
+                                <img src="${siteurl}${(qualicationcert.iconUrl)!''}"/>
+                        </div>
+                        [/#list]
+                        [/#if]
+                        [/@qualificationcerts]
+                    </div>
+                </div>
+                <div class="cen">
+                    <ul>
+                        <li><span>类别</span><span>等级</span><span>资质分项</span></li>
+                        [@qualications]
+                        [#if list??]
+                        [#list list as qualication]
+                        <li><p><span>${(qualication.name)!''}</span><span>${(qualication.catalogQualificationsLevel.name)!''}</span><span>${(qualication.catalogQualifications.name)!''}</span></p></li>
+                        [/#list]
+                        [/#if]
+                        [/@qualications]
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--遮罩 * 资质证实-->
+    <div class="mask">
+        <img src="" alt="">
+    </div>
+    <!--底部-->
+    [#include "/theme/ednc/common/footer.html"]
+<script src="${siteurl}views/ednc/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/ednc/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ednc/js/public.js"></script>
+<script src="${siteurl}views/ednc/js/aptitude.js"></script>
+    <script>
+    function waterFall() {
+       var widthNum=parseInt($(".box").width()/$(".box .item").outerWidth(true)),
+       allHeight=[];
+       console.log(widthNum+"瀑布流");
+        for (var i=0;i<widthNum;i++){
+            allHeight.push(0)
+        }
+        console.log(111111);
+        console.log(allHeight.length);
+        var height=0;
+        $(".box .item").each(function () {
+            var $cur=$(this),
+                    indx=0,
+             minAllHeight=allHeight[0];
+             console.log($cur);//li
+             console.log(minAllHeight);//0
+            for (var j=0;j<allHeight.length;j++){
+                if (allHeight[j]<minAllHeight){
+                    minAllHeight=allHeight[j];
+                    indx=j;
+                }
+            }
+
+           console.log(2222);
+           console.log(height);
+          $cur.css({
+                "left":indx*$cur.outerWidth(true),
+                "top":minAllHeight
+            });
+
+            allHeight[indx]=minAllHeight+$cur.outerHeight(true);
+            height=allHeight[indx];
+        })
+            console.log(height);
+          $(".box").height(height);
+        }
+        setInterval(function(){
+            waterFall();
+        },1)
+$(window).on("resize",function () {
+    waterFall()
+})
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>${(model.name)!''} - 项目案例 - 中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/ccnc_projectdetails.css">
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 导航栏目 -->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 4 /]
+<div class="container-fluid">
+    <div class="container">
+        <div class="share">
+            <a href="${siteurl}project.htm" class="back">返回列表</a>
+            <div class="bshare-custom">
+                <i>分享到 : </i>
+                <div class="bsPromo bsPromo2"></div>
+                <a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a>
+                <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+                <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+                <a title="分享到QQ空间" class="bshare-qzone"></a>
+            </div>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+        <div class="cont">
+            <h3>${model.name!''}</h3>
+            <div class="lb">
+                <div class="max">
+                    <div id="container">
+                        <div id="list">
+                            [#list model.projectFiles as projectFile]
+                                <img src="${siteurl}${projectFile.url!''}" />
+                            [/#list]
+                        </div>
+                    </div>
+                    <!--小图轮播容器-->
+                    <div id="smallContainer">
+                        <ul id="smallList">
+                            [#list model.projectFiles as projectFile]
+                                <li index="${(projectFile_index) + 1}" class="[#if projectFile_index == 0]on[/#if]"><span><img src="${siteurl}${projectFile.url!''}" /></span></li>
+                            [/#list]
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <p>项目名称 :<span>${(model.name)!''}</span></p>
+            <p>项目类型 :<span>${(model.catalogProject.name)!''}</span></p>
+            <p class="active">项目概况 :<span>${model.content!''}</span></p>
+            <p>
+                <span><img src="${siteurl}views/ccnc/images/pre_page.png" alt=""></span>
+                [#if preProject??]
+                    <a href="${siteurl}projectdetails.htm?id=${preProject.id}">上一个项目：${preProject.name!''}</a><i>${(preProject.catalogProject.name)!''}</i>
+                [#else]
+                        <a href="javascript:void(0)" class="curr">上一个项目：没有了</a>
+                [/#if]
+            </p>
+            <p class="curr">
+                <span><img src="${siteurl}views/ccnc/images/next_page.png" alt=""></span>
+                [#if nextProject??]
+                    <a href="${siteurl}projectdetails.htm?id=${nextProject.id}">下一个项目：${nextProject.name!''}</a><i>${(nextProject.catalogProject.name)!''}</i>
+                [#else]
+                     <a href="javascript:void(0)" class="curr">下一个项目：没有了</a>
+                [/#if]
+            </p>
+        </div>
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/lib/underscore/underscore-min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_projectdetails.js"></script>
+</body>
+</html>

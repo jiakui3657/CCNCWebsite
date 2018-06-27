@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/news.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/news_header.jpg" alt="">
+<!--新闻列表-->
+<section class="news">
+    <div class="news-content">
+        <ul class="news-list">
+            [#if list??]
+            [#list list as item]
+                <li>
+                    <a href="${siteurl}newsdetails.htm?id=${item.id}">
+                        <h4 class="overflow-wrap">${item.title}</h4>
+                        <span class="img-time">
+                            <img src="${siteurl}${item.iconUrl!''}" alt="" />
+                            <em class="date">
+                                <i class="day">
+                                    [#if item.publishDate??]
+                                        ${item.publishDate?string('dd')}
+                                    [/#if]
+                                </i>
+                                <i class="years">
+                                    [#if item.publishDate??]
+                                        ${item.publishDate?string('yyyy / MM')}
+                                    [/#if]
+                                </i>
+                            </em>
+                        </span>
+                        <p>
+                            [#if item.intro?? && item.intro?length gt 50]
+                                ${item.intro[0..51]}...
+                            [#else]
+                                ${item.intro!''}
+                            [/#if]
+                        </p>
+                    </a>
+                </li>
+            [/#list]
+            [/#if]
+        </ul>
+    </div>
+</section>
+<section class="down_refresh">
+    <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+    <i class="release" page="1">上拉加载更多</i>
+</section>
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script>
+    $(function(){
+        /*加载更多*/
+        $(".news-list").on('touchstart',function(e){
+            e=e.originalEvent.touches[0];//获取对应触摸对象
+            var sx=0,sy=0;
+            sx=e.pageX;
+            sy=e.pageY;
+            var projectIndex = $(this).index();
+            $(this).on("touchmove",function(e){
+                e=e.originalEvent.changedTouches[0];
+                var sx1 = e.pageX;
+                if((sy-e.pageY)>50&&$(".release").text() == "上拉加载更多"){
+                    var newPage = parseInt($(".release").attr("page"));
+                    newPage +=1;
+                    $(".release").attr("page",newPage);
+
+                    $(".down_refresh").children("img").css("display","inline-block")
+                    $(".release").text("松开立即刷新");
+                }
+                $(".down_refresh").css("display","block");
+            })
+            $(this).on('touchend',function(e){
+                e=e.originalEvent.changedTouches[0];//获取对应触摸对象
+                var sx1 = e.pageX;
+                if((sy-e.pageY)>50) {//如果滑动距离大于50px就认为是要触发左滑动事件了
+                    if ($(".release").text() == "松开立即刷新") {
+                        var incomingPage = parseInt($(".release").attr("page"));
+                        $(".down_refresh").children("img").addClass("curr");
+                        $(".release").text("正在加载中");
+                        retrieveData(incomingPage, 6, 3);
+                        setTimeout(function () {
+                            $(".down_refresh").css("display", "none");
+                        }, 5000)
+                    } else {
+                        $(".down_refresh").css("display", "none");
+                    }
+                }else {
+                    $(".down_refresh").css("display", "none");
+                }
+                $(this).unbind('touchend');
+            });
+        })
+        /*加载更多*/
+    });
+    function retrieveData(page,size,catalogId){
+        $.ajax({
+            type:"post",
+            url:"loadMoreNews",
+            async:true,
+            data :{ "page": page,"size":size, "catalogId":catalogId},
+            success : function(data){
+                //console.log(data)
+                if($(".news-content ul li").length == data.total){
+                    $(".down_refresh").children("i").text("暂无更多新闻");
+                }else if($(".news-content ul li").length < data.total&& page !=1 ){
+                    var html = "",newsIntro = "",yearMonth = "",days = "";
+                    for (var i=0;i<data.list.length;i++){
+                        yearMonth = data.list[i].publishDate.substr(0,7);
+                        days = data.list[i].publishDate.substr(data.list[i].publishDate.length-2);
+                        newsIntro = data.list[i].intro.slice(0,51)+"...";
+                        html+=' <li><a href="${siteurl}newsdetails.htm?id='+data.list[i].id+'">' +
+                            '<h4 class="overflow-wrap">'+data.list[i].title+'</h4><span class="img-time">' +
+                            '<img src="${siteurl}'+data.list[i].iconUrl+'" alt="" /><em class="date">' +
+                            '<i class="day">'+days+'</i><i class="years">'+yearMonth+'</i></em></span><p>'+newsIntro+'</p></a></li>'
+                    }
+                    setTimeout(function(){
+                        $(".news-content ul").append(html);
+                        //console.log($(".content ul li").length);
+                        $(".down_refresh").css("display","none");
+                        if( $(".news-content ul li").length == data.total){
+                            $(".release").text("暂无更多新闻");
+                        }else {
+                            $(".release").text("上拉加载更多");
+                        }
+                        $(".down_refresh img").removeClass("curr");
+                        $(".down_refresh img").css("display","none");
+                    },2000);
+                }
+            },
+            error : function(){
+                console.log("请求错误!!!")
+            }
+        });
+    }
+</script>
+</body>
+</html>

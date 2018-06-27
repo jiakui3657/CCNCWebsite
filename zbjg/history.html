@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="3gdmnVcR2K" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="中北建工建筑工程设计">
+	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--公司介绍样式引入-->
+	<link href="${siteurl}views/zbjg/css/history.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 2 /]
+
+<img src="${siteurl}views/zbjg/images/history.jpg"class="sign-photo"/>
+<!--公司介绍-->
+<div class="intro">
+	<div class="intro-content">
+		<h3 class="head-title">
+			公<i>|</i>司<i>|</i>介<i>|</i>绍
+		</h3>
+		<div class="blue-intro">
+				<span>中北建工有限公司为中北集团旗下全资子公司，成立于2001年，是集市政、公路、隧道、水利
+					水电、通信、机电安装、电力、房建、冶金矿山等领域于一体的大型综合性施工企业。公司拥有市
+					政、公路、水利水电、房建、机电安装、电力、冶炼、通信等多项工程总承包资质，拥有桥梁、公路
+					路基、公路路面、消防设施、钢结构等工程专业承包资质以及电力承装承修类五级资质。
+				</span>
+			<img class="blue-bg" src="${siteurl}views/zbjg/images/intro_bg.jpg"/>
+		</div>
+		<div class="white-intro">
+			<p class="title">公司规模</p>
+			<p>公司现有员工近400人，已在陕西、吉林、湖南、江西、辽宁等地设立六家分公司。具有专业职称的各类技术人员188
+				名，其中包括高中级工程技术人员136名。主要工程机械设备有112台（套），各种测试设备42台（件）。</p>
+			<p>自成立以来，中北建工恪守“质量第一、客户至上”的服务宗旨，遵循优质、高效、团结、奉献的工作态度，承接了市政
+				、公路、隧道、通信、水利水电、机电安装、电力、房建、冶金矿山等多个重大工程项目。已在施工总承包、土地治理
+				、电力工程等方面建立了差异化的竞争优势，为社会创造了一大批优质精品工程，取得了多项荣誉称号，积累了丰富的
+				施工经验，掌握了各种新型施工技术。</p>
+			<p>公司将秉承中北集团“创造、分享、价值观、增值效应、合伙人”的价值体系，以“产品、规模、市场三个升级”发展战略为
+				统领，构建“组织-项目-产品-现场”的管理架构，不断提升全寿命周期建筑管理能力。紧紧围绕绿色建设、建筑产业现代
+				化、建筑业+互联网的大势进行创新驱动，立足行业和社会发展，不断追求卓越并努力满足客户需求，致力于打造国内专
+				业、领先的大型综合性施工企业，实现集团“成为基础设施领域的创新者和领导者”的企业愿景。积极推动城市建设，为国
+				家的经济和社会发展做出更大贡献！</p>
+		</div>
+	</div>
+</div>
+<!--分支架构-->
+<div class="branch">
+	<div class="branch-content">
+		<h3 class="head-title">
+			分<i>|</i>支<i>|</i>架<i>|</i>构
+		</h3>
+		<ul class="branch-list">
+			[@companyinfos]
+			[#if list??]
+			[#list list as company]
+			<li>
+				<span>${(company.catalogProvince.name)!'西安市'}</span>
+				<p class="title overflow-wrap">${(company.name)!''}</p>
+				<p ><i class="iconfont icon-dizhi"></i><em>${(company.address)!''}</em></p>
+				<p class="overflow-wrap"><i class="iconfont icon-dianhua01"></i>${(company.phone)!''}</p>
+				<p class="overflow-wrap"><i class="iconfont icon-youxiang"></i>${(company.email)!''}</p>
+			</li>
+			[/#list]
+			[/#if]
+			[/@companyinfos]
+		</ul>
+	</div>
+</div>
+<!--企业文化-->
+<div class="culture">
+	<div class="culture-content">
+		<h3 class="head-title">
+			企<i>|</i>业<i>|</i>文<i>|</i>化
+		</h3>
+		<p class="decription">中北建工始终秉持“源于社会 回报社会”的企业责任和理念，积极参与公益事业，将企业责任延伸到教育、扶贫、环境
+			保护、公共卫生等多个领域，赢得了社会各界的肯定。</p>
+		<ul class="culture-list">
+			<li>
+				<i class="iconfont icon-kefu"></i>
+				<p>客户服务</p>
+				<p class="curr">探索服务新升级，满足客户多方面的个性化需求</p>
+			</li>
+			<li>
+				<i class="iconfont icon-jiazhi"></i>
+				<p>价值创造</p>
+				<p class="curr">提升价值创造能力，积极推动城市建设</p>
+			</li>
+			<li>
+				<i class="iconfont icon-huanbao"></i>
+				<p>绿色发展</p>
+				<p class="curr">我们始终坚持：绿色生产、绿色施工、绿色建筑</p>
+			</li>
+			<li>
+				<i class="iconfont icon-yuangongchengchang"></i>
+				<p>员工成长</p>
+				<p class="curr">健全的人才培养计划，轻松快乐的工作氛围</p>
+			</li>
+			<li>
+				<i class="iconfont icon-shehuihexie"></i>
+				<p>社会和谐</p>
+				<p class="curr">积极投身公益事业，助力社会稳定和谐</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<!--企业愿景-->
+<div class="vision">
+	<h3 class="head-title">
+		企<i>|</i>业<i>|</i>愿<i>|</i>景
+	</h3>
+	<img src="${siteurl}views/zbjg/images/vision.jpg" alt="" />
+</div>
+<!--社会活动-->
+<div class="society">
+	<div class="society-content">
+		<h3 class="head-title">
+			社<i>|</i>会<i>|</i>活<i>|</i>动
+		</h3>
+		<div id="case-rotation">
+			<ul class="society-list">
+				[@commonweals]
+				[#if list??]
+				[#list list as news]
+				<li>
+					<a href="${siteurl}newsdetails.htm?id=${news.id}">
+						<img src="${siteurl}${news.iconUrl}"/>
+					</a>
+					<b></b>
+					<i class="overflow-wrap">${(news.title)!''}</i>
+				</li>
+				[/#list]
+				[/#if]
+				[/@commonweals]
+			</ul>
+		</div>
+	</div>
+</div>
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script src="${siteurl}views/zbjg/js/history.js"></script>
+</body>
+</html>

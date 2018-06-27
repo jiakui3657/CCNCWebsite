@@ -1,0 +1,53 @@
+/*关于我们 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container p span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container p i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+    padding:85px 56px 77px 62px;
+    overflow:hidden;
+}
+.content .container .aptitude h4 {
+    height:30px;
+    line-height:30px;
+    padding-left:16px;
+    border-left:7px solid #0771c2;
+    font-size:28px;
+    color:#333333;
+    font-weight: 400;
+}
+.content .container .aptitude .cen {
+    margin-top:35px;
+    overflow:hidden;
+}
+.content .container .aptitude .cen p {
+    line-height:36px;
+    font-size:14px;
+    color:#333333;
+    margin-bottom:50px;
+    margin-top:7px;
+}
+.content .container .aptitude .cen h2 {
+    color:#cbcbcb;
+    margin-top:100px;
+}
+

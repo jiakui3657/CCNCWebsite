@@ -1,0 +1,259 @@
+﻿/*资质 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container p span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container p i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+    padding:50px 50px 0 50px;
+}
+.content .container .aptitude .tab {
+    position: relative;
+    width: 100%;
+    height: 83px;
+    border-bottom: 1px solid #ececec;
+}
+.content .container .aptitude .tab span {
+    position: absolute;
+    bottom:0px;
+    width:40px;
+    border-bottom: 3px solid #0771c2;
+}
+.content .container .aptitude .tab ul {
+    overflow: hidden;
+    padding: 0 10px;
+    position: absolute;
+    width: 100%;
+}
+.content .container .aptitude .tab ul li {
+    float:left;
+    width:100px;
+    height:80px;
+    text-align:center;
+    line-height:80px;
+    color:#999;
+    font-size:18px;
+    cursor: pointer;
+    margin-right:15px;
+}
+.content .container .aptitude .cen {
+    display:none;
+    padding:54px 0 172px 0;
+    overflow:hidden;
+}
+.content .container .aptitude .cen:nth-child(2) {
+    display:block;
+}
+.content .container .aptitude .cen ul {
+    padding-bottom:100px;
+}
+.content .container .aptitude .cen ul li {
+    margin-bottom:22px;
+    overflow:hidden;
+    cursor:pointer;
+    position: relative;
+    min-height: 200px;
+}
+.content .container .aptitude .cen ul li .box {
+    width:300px;
+    height:200px;
+    float:left;
+}
+.content .container .aptitude .cen ul li .box img {
+    width:100%;
+    transform: scale(1);
+    transition: all 0.3s;
+    -ms-transform: scale(1);
+}
+.content .container .aptitude .cen ul li img:hover {
+    transform: scale(1.2);
+}
+.content .container .aptitude .cen ul li .Introduction {
+    padding-left: 345px;
+}
+.content .container .aptitude .cen ul li .Introduction .title {
+    position: relative;
+    width:100%;
+    height:100%;
+}
+.content .container .aptitude .cen ul li .Introduction h4 {
+    font-size:22px;
+    line-height:32px;
+    margin:25px 0 35px 0;
+    width:900px;
+}
+.content .container .aptitude .cen ul li .Introduction h4 a {
+    display:block;
+    white-space: normal;
+    color:#333;
+}
+.content .container .aptitude .cen ul li .Introduction h4 a:hover {
+    color:#003f98;
+}
+.content .container .aptitude .cen ul li .Introduction span {
+    position: absolute;
+    right:0px;
+    top:0px;
+    width:130px;
+    height:31px;
+    display:inline-block;
+    text-align:center;
+    line-height:31px;
+    background-color:#f5f5f5;
+    color:#999;
+}
+.content .container .aptitude .cen ul li .Introduction p {
+    color:#666666;
+    line-height:28px;
+    font-size:14px;
+}
+.content .container .aptitude .cen ul li .Introduction p a {
+    display:block;
+     white-space: normal;
+     color:#999;
+}
+.content .container .aptitude .cen ul li .Introduction p a:hover {
+     color:#666;
+}
+.content .container .aptitude .cen .page {
+    position:relative;
+}
+.content .container .aptitude .cen .page span {
+    width:60px;
+    height:60px;
+    text-align:center;
+    line-height:60px;
+    display:inline-block;
+    font-size:30px;
+    cursor: pointer;
+}
+.content .container .aptitude .cen .page span:nth-child(1) {
+    position:absolute;
+    left:50%;
+    margin-left:-66px;
+    background-color:#fdfdfd;
+    color:#ddd;
+}
+.content .container .aptitude .cen .page span:nth-child(2) {
+     position:absolute;
+     left:50%;
+     margin-left:0px;
+     background-color:#eee;
+     color:#666;
+}
+.content .container .aptitude .cen .page span.Active {
+    background-color:#eee;
+    color:#666;
+}
+.content .container .aptitude .cen .page span.clickActive {
+    background-color:#fdfdfd;
+    color:#ddd;
+}
+.content .container .aptitude .cen .page span.hoverActive {
+    background-color:#0771c2;
+    color:#fff;
+}
+@media (min-width: 768px) {
+    .content .container .aptitude .cen ul li .box {
+        width:40%;
+        margin-right:20px;
+        float:left;
+        overflow:hidden;
+        display:inline-block;
+    }
+    .content .container .aptitude .cen ul li .Introduction {
+        padding-left: 0px;
+    }
+    .content .container .aptitude .cen ul li .Introduction h4 {
+        font-size:16px;
+        width:520px;
+        margin: 0px 0 5px 0;
+        line-height: 26px;
+    }
+    .content .container .aptitude .cen ul li .Introduction p {
+        line-height: 24px;
+    }
+}
+@media (min-width: 992px) {
+    .content .container .aptitude .cen ul li .Introduction h4 {
+        font-size:18px;
+        width:395px;
+        margin: 5px 0 10px 0;
+        line-height: 32px;
+    }
+    .content .container .aptitude .cen ul li .box {
+        width:300px;
+        margin-right:40px;
+        float:left;
+        overflow:hidden;
+        display:inline-block;
+        position: absolute;
+    }
+    .content .container .aptitude .cen ul li .Introduction {
+        padding-left: 345px;
+    }
+    .content .container .aptitude .cen ul li .Introduction p {
+        line-height: 28px;
+    }
+}
+@media (min-width: 1200px) {
+    .content .container .aptitude .cen ul li .Introduction h4 {
+        font-size:22px;
+        width:610px;
+        margin: 10px 0 35px 0;
+        line-height: 32px;
+    }
+    .content .container .aptitude .cen ul li .box {
+        width:300px;
+        margin-right:40px;
+        float:left;
+        overflow:hidden;
+        display:inline-block;
+        position: absolute;
+    }
+    .content .container .aptitude .cen ul li .Introduction {
+        padding-left: 345px;
+    }
+    .content .container .aptitude .cen ul li .Introduction p {
+        line-height: 28px;
+    }
+}
+@media (max-width: 768px) {
+    .content .container .aptitude .cen ul li .box {
+        width:40%;
+        margin-right:20px;
+        float:left;
+        overflow:hidden;
+        display:inline-block;
+    }
+    .content .container .aptitude .cen ul li .Introduction {
+        padding-left: 0px;
+    }
+    .content .container .aptitude .cen ul li .Introduction h4 {
+        font-size:16px;
+        width:520px;
+        margin: 0px 0 5px 0;
+        line-height: 26px;
+    }
+    .content .container .aptitude .cen ul li .Introduction p {
+        line-height: 24px;
+    }
+}

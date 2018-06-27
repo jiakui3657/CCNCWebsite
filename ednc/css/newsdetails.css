@@ -1,0 +1,137 @@
+/*资质 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container .list span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container .list i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+    padding:50px 50px 0 50px;
+}
+.content .container .aptitude .tab {
+    height:67px;
+    line-height:67px;
+    border-bottom:1px solid #ececec;
+}
+.content .container .aptitude .tab a {
+    font-size:16px;
+    color:#999;
+    text-decoration: none;
+}
+.content .container .aptitude .tab a:hover {
+    font-size:16px;
+    color:#337ab7;
+}
+.content .container .aptitude .cen {
+    padding:55px 70px 70px 70px;
+}
+.content .container .aptitude .cen h3 {
+    color:#333;
+    font-size:30px;
+    max-width:750px;
+    margin:0 auto;
+    text-align:center;
+    line-height:35px;
+}
+.content .container .aptitude .cen .time {
+    text-align:center;
+    font-size:14px;
+    color:#999999;
+    margin:40px 0 65px 0;
+}
+.content .container .aptitude .cen img {
+    width:100%;
+}
+video {
+    width:100%;
+}
+.content .container .aptitude .cen p {
+    font-size:16px;
+    color:#333;
+    line-height:36px;
+}
+.content .container .aptitude .cen .img {
+    width:100%;
+    margin:0 auto;
+    background-color:#f7f7f7;
+}
+.content .container .aptitude .cen .img img {
+    margin-top:35px;
+    width:100%;
+}
+.content .container .aptitude .cen .title {
+    text-align:center;
+    font-size:14px;
+    color:#666666;
+    margin:20px 0 40px 0;
+}
+.content .container .aptitude .cen .title2 {
+    font-size:16px;
+    line-height:36px;
+    color:#333333;
+    font-weight: 600;
+    margin-top:40px;
+}
+.content .container .aptitude .cen .page {
+    margin-top:70px;
+    border-top:1px solid #e0e0e0;
+    padding-top:8px;
+}
+.content .container .aptitude .cen .page .on {
+    margin-top:17px;
+}
+.content .container .aptitude .cen .page .under {
+    margin-top:17px;
+}
+.content .container .aptitude .cen .page .on a {
+    display:block;
+    text-decoration: none;
+    line-height:28px;
+}
+.content .container .aptitude .cen .page .under a {
+    display:block;
+    text-decoration: none;
+    line-height:28px;
+}
+.content .container .aptitude .cen .page span {
+    display:inline-block;
+    width:28px;
+    height:28px;
+    text-align:center;
+    line-height:28px;
+    background-color:#e3e3e3;
+    float:left;
+    margin-right:20px;
+}
+.content .container .aptitude .cen .page i {
+     color:#666;
+     font-size:16px;
+     margin:0 20px 0 0;
+     float:left;
+ }
+.content .container .aptitude .cen .page b {
+    color:#666;
+    font-size:16px;
+    display:block;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

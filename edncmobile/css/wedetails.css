@@ -1,0 +1,58 @@
+/*内容*/
+.text {
+    height: 1.11rem;
+    line-height: 1.11rem;
+    font-size: 0.28rem;
+    color: #999;
+    margin-left: 0.49rem;
+    position: relative;
+    margin-top: 1rem;
+}
+.text a {
+    width: 1.6rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.28rem;
+    color: #1573bf;
+    border: 1px solid #1573bf;
+    text-align: center;
+    position: absolute;
+    right:0.35rem;
+    top:0.31rem;
+}
+.content {
+    background-color:#fff;
+    overflow: hidden;
+    padding: 0.6rem 0.35rem 0.5rem 0.35rem;
+}
+.content h3 {
+    font-size: 0.36rem;
+    color: #333;
+    font-weight: 600;
+    height: 0.68rem;
+    border-bottom: 1px solid #ccc;
+}
+.content ul {
+    overflow: hidden;
+    padding-top: 0.53rem;
+}
+.content ul li{
+    float: left;
+    width: 50%;
+    line-height: 0.48rem;
+    font-size: 0.28rem;
+    color: #666;
+    font-weight: 400;
+}
+.content h4 {
+    color: #1573bf;
+    font-size: 0.28rem;
+    border-left: 7px solid #1573bf;
+    margin: 0.68rem 0 0.2rem 0;
+    padding-left: 0.32rem;
+}
+.content p {
+    font-size: 0.28rem;
+    color: #666;
+    line-height: 0.48rem;
+}

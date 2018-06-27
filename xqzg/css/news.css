@@ -1,0 +1,105 @@
+/*新闻活动*/
+.news-activities {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 80px;
+	border-bottom: 1px solid #dcdcdc;
+}
+.news-content {
+	width: 1200px;
+	overflow: hidden;
+}
+.news-content ul {
+	width: 100%;
+	overflow: hidden;
+}
+.news-content ul li {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+.news-content ul li:last-child {
+	border: none;
+} 
+.news-content ul li span.date {
+	width: 10%;
+	float: left;
+}
+.date i {
+	color: #999;
+	font-weight: bold;
+}
+.date i.day {
+	font-size: 40px;
+	display: inline-block;
+	padding: 0 10px;
+	border-bottom: 1px solid #dcdcdc;    
+}
+.date i.years {
+	font-size: 14px;
+	display: block;
+	line-height: 28px;
+}
+.news-content ul li span.news-bg {
+	width: 30%;
+	float: left;
+	padding-right: 60px;
+}
+.news-content ul li span.news-bg a {
+	overflow: hidden;
+	display: block;
+}
+.news-content ul li span.news-bg a img {
+	width: 100%;
+	transition: all 300ms;
+}
+.news-content ul li span.news-bg a img:hover {	
+	transform: scale(1.2);
+}
+.news-content ul li span.news-description {
+	width: 60%;
+	float: left;
+	line-height: 28px;
+}
+.news-description h4 {
+	font-size: 20px;
+	font-weight: bold;
+	padding-right: 100px;
+}
+.news-description p {
+	width: 100%;
+	padding: 25px 0;
+	min-height: 112px;
+	border-bottom: 1px solid #dcdcdc;
+}
+.news-description a {
+	overflow: hidden;
+	display: inline-block;
+	white-space: inherit;
+}
+.news-description h4 a {
+	color: #333;
+}
+.news-description p a {
+	color: #666;
+}
+.news-description a.currnews-more {
+	float: right;
+	margin-top: 10px;
+	color: #999;
+}
+.news-description a:hover {
+	color: #256dd9;
+}
+@media only screen and (max-width: 1200px) {
+	.news-content {
+		width: 900px;
+	}
+	.news-content ul li span.news-bg {
+		padding-right: 40px;
+	}
+	.news-description p {
+		padding: 10px 0;
+	}
+}

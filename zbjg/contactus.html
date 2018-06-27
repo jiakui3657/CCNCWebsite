@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="3gdmnVcR2K" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="中北建工建筑工程设计">
+	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--资质能力样式引入-->
+	<link href="${siteurl}views/zbjg/css/contactus.css" rel='stylesheet' type='text/css' />
+	<script src="${siteurl}plugins/jQuery/jquery-1.11.0.js"></script>
+	<script src="${siteurl}plugins/layer/layer.js"></script>
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 6 /]
+
+<img src="${siteurl}views/zbjg/images/contactus.jpg" class="sign-photo"/>
+<!--公司地址-->
+<div class="address">
+	<div class="address-content">
+		<h3 class="head-title">
+			公<i>|</i>司<i>|</i>地<i>|</i>址
+		</h3>
+		<div class="location">
+			<img class="address-bg" src="${siteurl}views/zbjg/images/address_bg.jpg" alt="" />
+			<div class="location-details">
+				<p class="title overflow-wrap"><em>中北建工总公司</em></p>
+				<p class="overflow-wrap"><i class="iconfont icon-dizhi"></i>沈阳市皇姑区北陵大街56号 </p>
+				<p class="overflow-wrap"><i class="iconfont icon-dianhua01"></i>024-86697515</p>
+				<p class="overflow-wrap"><i class="iconfont icon-youxiang"></i>ZBJG_888888@163.com</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--填写需求-->
+<div class="demand">
+	<div class="demand-content">
+		<h3 class="head-title">
+			填<i>|</i>写<i>|</i>需<i>|</i>求
+		</h3>
+		<form action="" onsubmit="return submitForm()">
+			<ul class="demand-list">
+				<li>
+					<span>
+						<label for="name">您的姓名：</label>
+						<input type="text" id="name" name="name" placeholder="" required/>
+						<b class="promit">请输入姓名</b>
+					</span>
+				</li>
+				<li>
+					<span>
+						<label for="contactInfor">联系方式：</label>
+						<input type="text" id="contactInfor" name="phone" placeholder="" required/>
+						 <b class="promit">请输入联系方式</b>
+					</span>
+				</li>
+				<li>
+					<span>
+						<label for="mailbox">电子邮箱：</label>
+						<input type="text" id="mailbox" name="email" placeholder="" required/>
+						<b class="promit">请输入邮箱</b>
+					</span>
+				</li>
+			</ul>
+			<div class="demand-body">
+				<label for="demand-body">需求:</label>
+				<textarea id="demand-body" name="content" rows="5" cols="20" placeholder="" required></textarea>
+				<b class="promit">请输入文字...</b>
+			</div>
+			<div class="verificationCode">
+				<span>
+					<label for="verificationCode">验证码：</label>
+					<input type="text" id="verificationCode"  maxlength="5" placeholder="" />
+					<b class="promit">请输入验证码</b>
+				</span>
+				<input type="button" id="checkCode" class="code" onclick="createCode()"/>
+				<a href="javascript:void(0)" onclick="createCode()">看不清？</a>
+				<em id="promit">请输入验证码 !</em>
+			</div>
+			<button type="submit" id="submit" class="btn btn-primary">提交</button>
+		</form>
+	</div>
+</div>
+
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script type="text/javascript">
+    $(function() {
+        //input失去获得焦点
+        $('input').on('focus',function(){
+            $(this).siblings('b').css('display','none')
+        });
+        $('input').on('blur',function(){
+            if($(this).val()==''){
+                $(this).siblings('b').css('display','block')
+                return false;
+            }
+            $(this).siblings('b').css('display','none')
+        });
+        $('.demand-body textarea').on('focus',function(){
+            $(this).siblings('b').css('display','none')
+        });
+        $('.demand-body textarea').on('blur',function(){
+            if($(this).val()==''){
+                $(this).siblings('b').css('display','block')
+                return false;
+            }
+            $(this).siblings('b').css('display','none')
+        });
+        // 如果不支持placeholder，用jQuery来完成
+        if(!isSupportPlaceholder()) {
+            // 遍历所有input对象, 除了密码框
+            $('input').not("input[type='password']").each(
+                function() {
+                    var self = $(this);
+                    var val = self.attr("placeholder");
+                    input(self, val);
+                }
+            );
+
+            /**
+             *  对password框的特殊处理
+             * 1.创建一个text框
+             * 2.获取焦点和失去焦点的时候切换
+             */
+            $('input[type="password"]').each(
+                function() {
+                    var pwdField    = $(this);
+                    var pwdVal      = pwdField.attr('placeholder');
+                    var pwdId       = pwdField.attr('id');
+                    // 重命名该input的id为原id后跟1
+                    pwdField.after('<input id="' + pwdId +'1" type="text" value='+pwdVal+' autocomplete="off" />');
+                    var pwdPlaceholder = $('#' + pwdId + '1');
+                    pwdPlaceholder.show();
+                    pwdField.hide();
+
+                    pwdPlaceholder.focus(function(){
+                        pwdPlaceholder.hide();
+                        pwdField.show();
+                        pwdField.focus();
+                    });
+
+                    pwdField.blur(function(){
+                        if(pwdField.val() == '') {
+                            pwdPlaceholder.show();
+                            pwdField.hide();
+                        }
+                    });
+                }
+            );
+        }
+    });
+    // 判断浏览器是否支持placeholder属性
+    function isSupportPlaceholder() {
+        var input = document.createElement('input');
+        return 'placeholder' in input;
+    }
+    // jQuery替换placeholder的处理
+    function input(obj, val) {
+        var $input = obj;
+        var val = val;
+        $input.attr({value:val});
+        $input.focus(function() {
+            if ($input.val() == val) {
+                $(this).attr({value:""});
+            }
+        }).blur(function() {
+            if ($input.val() == "") {
+                $(this).attr({value:val});
+            }
+        });
+    }
+    //产生验证码
+    function createCode() {
+        code = "";
+        var codeLength = 5; //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数
+        for(var i = 0; i < codeLength; i++) { //循环操作
+            var charIndex = Math.floor(Math.random() * 36); //取得随机数的索引
+            code += random[charIndex]; //根据索引取得随机数加到code上
+        }
+        //console.log("code");//验证码已生成
+        checkCode.value = code; //把code值赋给验证码
+    }
+    createCode();
+    //提交需求
+    function submitForm() {
+        var name = $("#name").val();
+        var phone = $("#contactInfor").val();
+        var email = $("#mailbox").val();
+        var content = $("#demand-body").val();
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        var inputCode = document.getElementById("verificationCode").value.toUpperCase(); //取得输入的验证码并转化为大写
+        if(name == "" || content == ""){
+            return false;
+        };
+        if(!myreg.test(phone)) {
+            $("#promit").html("请输入有效的联系方式！").css("display", "block")
+            setTimeout(function () {
+                $("#promit").css("display", "none")
+            }, 1000)
+            return false;
+        }
+        if(inputCode.length <= 0) { //若输入的验证码长度为0
+            $("#promit").html("请输入验证码 ！").css("display","block")
+            setTimeout(function(){
+                $("#promit").css("display","none")
+            },1000)
+            return false;
+        }else if(inputCode != code) { //若输入的验证码与产生的验证码不一致时
+            $("#promit").html("验证码输入错误 ！").css("display","block")
+            createCode(); //刷新验证码
+            $("#verificationCode").val("");
+            setTimeout(function(){
+                $("#promit").css("display","none")
+            },1000)
+            return false;
+        }
+        var params = {"name":name,"phone":phone,"content":content,"email":email};
+        $.post("${siteurl}addDemand.htm",params,function (data) {
+            if(data == "1"){
+                layer.confirm('您已成功提交，请等候工作人员联系', {
+                    btn: ['确定'] //按钮
+                }, function(){
+                    location.reload();
+                });
+            }else{
+                layer.confirm('提交失败', {
+                    btn: ['确定'] //按钮
+                }, function(){
+                    location.reload();
+                });
+            }
+        });
+        return false;
+    }
+</script>
+
+</body>
+</html>

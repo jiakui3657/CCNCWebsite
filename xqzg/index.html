@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="西桥重工有限公司是由西安工业投资集团与中北交通集团共同组建的特大型企业，主要从事钢结构及产品、钢桥梁及零部件产品的生产、安装、销售、改造维护、施工安装。">
+    <meta name="keywords" content="西桥重工、西桥、重工、中北交通、中北设计、钢结构、钢桥梁、零部件、施工安装、轨道交通">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>西桥重工有限公司</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${cdn}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${cdn}views/xqzg/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.css">
+    <link rel="stylesheet" href="${cdn}views/xqzg/css/Global.css"/>
+    <!--[if lt IE 9]>
+    <script src="${cdn}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${cdn}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${cdn}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="${cdn}views/xqzg/css/public.css"/>
+    <link rel="stylesheet" href="${cdn}views/xqzg/css/index.css">
+</head>
+<body>
+<!--顶部-->
+[#include "/theme/xqzg/common/header.html"]
+<!--内容区域start-->
+<div class="container-fluid">
+    <div class="container">
+        <!--banner图-->
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    [#if homePictureList??]
+                    [#list homePictureList as homePicture]
+                    <div class="swiper-slide">
+                        <img src="[@image  src=homePicture.pbigPicture /]" alt="">
+                    </div>
+                    [/#list]
+                    [/#if]
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--版心-->
+        <div class="boardHeart">
+            <!--解决方案-->
+            <div class="product">
+                <ul>
+                    <li>
+                        <div class="title">
+                            <span class="iconfont">&#xe677;</span>
+                            <i>钢构工程</i>
+                        </div>
+                        <div class="content">
+                            <span>1</span>
+                            <i>西桥重工致力于建筑、场馆等大跨度空间结构、高耸塔桅结构、桥梁等钢结构工程的设计、制造、安装服务。</i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span class="iconfont">&#xe615;</span>
+                            <i>节能环保</i>
+                        </div>
+                        <div class="content">
+                            <span>2</span>
+                            <i>凭借丰富的行业经验、优质的工程建设服务等优势，西桥重工在建筑节能、环境修复等方面成绩斐然。</i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <span class="iconfont">&#xe60e;</span>
+                            <i>服务业</i>
+                        </div>
+                        <div class="content">
+                            <span>3</span>
+                            <i>致力于发展与主业相关的服务业，规划设计、科研开发、建材物流等，通过内外联合持续提升专业服务水平。</i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--公司介绍-->
+            <div class="company">
+                <h3>公司介绍</h3>
+                <div class="content">
+                    <ul>
+                        <li>
+                            <img src="${cdn}views/xqzg/img/company1.jpg" alt="">
+                            <div class="introduce">
+                                <div class="title">西桥重工有限公司</div>
+                                <div class="text">西桥重工有限公司（简称西桥重工）成立于2017年12月26日，是由西安工业投资集团有限公司与中北交通建设集团有限公司共同组建的特大型企业，主要从事钢结构及产品、钢桥梁及零部件产品的生产、安装、销售、改造维护、施工安装，注册资金7000万元。
+                                </div>
+                                <div class="text">西桥重工致力于管理上的变革创新，推进卓越工程，完善管理体系，提高经营质量，不断打造钢结构强势品牌。</div>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="${cdn}views/xqzg/img/company2.jpg" alt="">
+                            <div class="introduce">
+                                <div class="title">面向未来，放眼未来</div>
+                                <div class="text">西桥重工努力打造成为最值得信赖的、最具竞争力的钢结构及相关配套产品供应商，在中国制造转型升级，走向世界的形势下，西桥重工争做《中国制造2025》示范企业，打造国之重器，为工程施工行业、轨道交通行业贡献力量，成为全球领先的钢结构、钢桥梁整体解决方案提供商。
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--新闻活动-->
+            <div class="news">
+                <h3>新闻活动</h3>
+                <div class="content">
+                    <ul>
+                        [@catalognews size = 5]
+                        [#if list??]
+                        [#list list as tempitem]
+                        [#list tempitem.newsList as item]
+                        <li>
+                            <div class="max">
+                                <img src="[@image  src=item.iconUrl /]" alt="">
+                            </div>
+                            <div class="text">
+                                <span>${item.title!''}</span>
+                                <i>${item.intro!''}</i>
+                            </div>
+                        </li>
+                        [/#list]
+                        [/#list]
+                        [/#if]
+                        [/@catalognews]
+                        <li>
+                            <a href="${cdn}news.htm">查看更多
+                                <i class="iconfont icon-iconset0416"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--项目案例-->
+            <div class="project">
+                <h3>项目案例</h3>
+                <a href="${cdn}project.htm">查看更多
+                    <i class="iconfont icon-iconset0416"></i>
+                </a>
+            </div>
+        </div>
+        <div class="projectCase">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    [@projectrecomends size=4]
+                    [#if list??]
+                    [#list list as catalogProjectVo]
+                    <div class="swiper-slide">
+                        <ul>
+                            [#list catalogProjectVo.projectList as project]
+                            <li>
+                                <img src="[@image src=project.homeUrl /]" alt="">
+                                <a href="#"><i class="iconfont icon-youjiantou1"></i></a>
+                                <div class="mask">
+                                    <div class="title">${(project.name)!''}</div>
+                                    <p>${(project.content)!''}</p>
+                                </div>
+                            </li>
+                            [/#list]
+                        </ul>
+                    </div>
+                    [/#list]
+                    [/#if]
+                    [/@projectrecomends]
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--公司地址-->
+        <div class="address">
+            <div class="address-content">
+                <h3 class="head-title">
+                    联系我们
+                </h3>
+                <div class="location">
+                    <div class="map">
+                        <div id="map1" style="height:420px"></div>
+                    </div>
+                    <div class="location-details">
+                        <p class="title overflow-wrap"><em>西桥重工有限公司</em></p>
+                        <p class="overflow-wrap"><i class="iconfont">&#xe619;</i>西安市航空基地蓝天路5号科创大厦408</p>
+                        <p class="overflow-wrap"><i class="iconfont">&#xe605;</i>029-88850298</p>
+                        <!--<p class="overflow-wrap"><i class="iconfont icon-youjian_hover"></i>ZBJG_888888@163.com</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+[#include "/theme/xqzg/common/footer.html"]
+<script src="${cdn}views/xqzg/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${cdn}views/xqzg/bootstrap/js/bootstrap.min.js"></script>
+<script src="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.js"></script>
+<script src="${cdn}views/xqzg/js/public.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=h4yvkZ8S9d3dQILceqL7CpoGv10oWoC3"></script>
+<script src="${cdn}views/xqzg/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>项目案例 - 中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/ccnc_project.css">
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 导航栏目 -->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 4 /]
+<div class="container-fluid">
+    <div class="container">
+        <div class="tab">
+            <ul class="tab_ul">
+                <li class="tab_li active">经典案例</li>
+                <li class="tab_li index">经典案例</li>
+                <li class="tab_li index bottom">项目一览</li>
+                <li class="tab_li curr">
+                    <img class="img" src="${siteurl}views/ccnc/images/font.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div  class="cont cont1">
+            <ul id="cont_ul">
+                [#if catalogProjectVoList??]
+                    [#list catalogProjectVoList as catalogProjectVo]
+                        <li class="cont_li [#if catalogProjectVo_index == 0]cont_active[/#if]">${catalogProjectVo.catalogName!''}</li>
+                        [#if catalogProjectVo_index == 6]
+                            <li class="cont_li">更多项目</li>
+                            [#break]
+                        [/#if]
+                    [/#list]
+                [/#if]
+            </ul>
+            [#if catalogProjectVoList??]
+            [#list catalogProjectVoList as catalogProjectVo]
+            <div class="cont1_case [#if catalogProjectVo_index == 0]cont1_case_active[/#if]">
+                <ul>
+                    [#list catalogProjectVo.projectList as project]
+                    <li>
+                        <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                            <b><img src="${siteurl}${project.iconUrl!''}" alt=""></b>
+                            <i>${project.name!''}</i>
+                        </a>
+                    </li>
+                    [/#list]
+                </ul>
+            </div>
+            [#if catalogProjectVo_index == 6]
+                <div class="cont1_case">
+                    <ul>
+                        [#list projectMoreList as project]
+                        <li>
+                            <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                                <b><img src="${siteurl}${project.iconUrl!''}" alt=""></b>
+                                <i>${project.name!''}</i>
+                            </a>
+                        </li>
+                        [/#list]
+                    </ul>
+                </div>
+            [/#if]
+            [/#list]
+            [/#if]
+        </div>
+        <div class="cont cont2" style="display: none">
+            <ul id="cont_ul">
+                [#if catalogProjectVoList??]
+                [#list catalogProjectVoList as catalogProjectVo]
+                    <li class="cont_li2 [#if catalogProjectVo_index == 0]cont2_active[/#if]">${catalogProjectVo.catalogName!''}</li>
+                    [#if catalogProjectVo_index == 6]
+                        <li class="cont_li2">更多项目</li>
+                    [#break]
+                    [/#if]
+                [/#list]
+                [/#if]
+            </ul>
+
+            [#if catalogProjectVoList??]
+            [#list catalogProjectVoList as catalogProjectVo]
+            <div class="cont2_case [#if catalogProjectVo_index == 0]cont2_case_active[/#if]">
+                <ul>
+                    <span class="project_left">
+                        [#list catalogProjectVo.projectOtherList as projectOther]
+                            [#if projectOther_index % 2 == 0 && projectOther_index < 10]
+                            <li>${projectOther.name!''}</li>
+                            [/#if]
+                        [/#list]
+                    </span>
+                    <span class="project_right">
+                        [#list catalogProjectVo.projectOtherList as projectOther]
+                            [#if projectOther_index % 2 == 1 && projectOther_index < 10]
+                            <li>${projectOther.name!''}</li>
+                            [/#if]
+                        [/#list]
+                    </span>
+                </ul>
+            </div>
+                [#if catalogProjectVo_index == 6]
+                    <div class="cont2_case">
+                        <ul>
+                            <span class="project_left">
+                                [#list projectOtherMoreList as projectOther]
+                                    [#if projectOther_index % 2 == 0 && projectOther_index < 10]
+                                    <li>${projectOther.name!''}</li>
+                                    [/#if]
+                                [/#list]
+                            </span>
+                                    <span class="project_right">
+                                [#list projectOtherMoreList as projectOther]
+                                    [#if projectOther_index % 2 == 1 && projectOther_index < 10]
+                                    <li>${projectOther.name!''}</li>
+                                    [/#if]
+                                [/#list]
+                            </span>
+                        </ul>
+                    </div>
+                    [#break]
+                [/#if]
+            [/#list]
+            [/#if]
+            <div class="address">
+                <p>想了解更多项目详情，请联系公司查询</p>
+                <ul>
+                    <li>
+                        <p>公司邮箱：</p>
+                        <p>market@ccnc.cc</p>
+                    </li>
+                    <li>
+                        <p>公司电话：</p>
+                        <p>029—88745337</p>
+                    </li>
+                    <li>
+                        <p>公司地址：</p>
+                        <p>西安市太白南路金石柏朗大厦8层</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/lib/underscore/underscore-min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_project.js"></script>
+</body>
+</html>

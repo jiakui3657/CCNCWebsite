@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;发改委：不得限制民间资本参与PPP项目</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/Global.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/newsdetails.css">
+</head>
+<body>
+<div class="coo">
+    <!--顶部-->
+    [#include "/theme/edncmobile/common/header.html"]
+    <!--导航二-->
+    <div class="text">当前：<span>首页</span> > 新闻详情<a href="${siteurl}news.htm">返回列表</a></div>
+    <div class="content">
+        <h2>${(model.title)!''}</h2>
+        <span style="margin:0.5rem 0 0.85rem 0;text-align: center;">发布日期：
+            [#if model.publishDate??]
+                ${model.publishDate?string('yyyy-MM-dd')}
+            [/#if]
+        </span>
+        ${model.content!''}
+        <div class="time">
+            <p>
+                [#if preNews??]
+                    [#if preNews.publishDate??]
+                        ${preNews.publishDate?string('yyyy-MM-dd')}
+                    [/#if]
+                    <a href="${siteurl}newsdetails.htm?id=${preNews.id}">${preNews.title!''}</a>
+                [#else]
+                <a href="javascript:void(0)" class="curr">
+                    上一页：没有了
+                </a>
+                [/#if]
+            </p>
+            <p>
+                [#if nextNews??]
+                [#if nextNews.publishDate??]
+                    ${nextNews.publishDate?string('yyyy-MM-dd')}
+                [/#if]
+                <a href="${siteurl}newsdetails.htm?id=${nextNews.id}">${nextNews.title!''}</a>
+                [#else]
+                <a href="javascript:void(0)" class="curr">
+                    下一页：没有了
+                </a>
+                [/#if]
+            </p>
+        </div>
+    </div>
+    <!--底部-->
+    [#include "/theme/edncmobile/common/footer.html"]
+</div>
+
+<!--遮罩-->
+[#include "/theme/edncmobile/common/mask.html"]
+<script src="${siteurl}views/edncmobile/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/edncmobile/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/edncmobile/js/http.js"></script>
+<script src="${siteurl}views/edncmobile/js/public.js"></script>
+</body>
+</html>

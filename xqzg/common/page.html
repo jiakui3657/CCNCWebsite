@@ -1,0 +1,35 @@
+<!-- 分页 -->
+[#macro pager page ]
+[#if page.totalPages > 1]
+[#if page.pageNumber > 2]
+<a href="${cdn}news.htm?pageNumber=${page.pageNumber-1}" class="up up-down">上一页</a>
+<input type="button" value="上一页" onclick="$.pageSkip(${page.pageNumber-1})">
+[#else]
+<a href="${cdn}news.htm?pageNumber=1" class="up up-down">上一页</a>
+[/#if]
+<ul>
+    [#if page.totalPages > 6]
+    <li><a href="javascript:void(0)">1</a></li>
+    <li><i>...</i></li>
+    [/#if]
+    [#list page.firstNo..page.endNo as  segmentPageNumber]
+    [#if segmentPageNumber != page.pageNumber]
+    <li><a href="${cdn}news.htm?pageNumber=${segmentPageNumber}">${segmentPageNumber}</a></li>
+    [#else]
+    <li><a href="${cdn}news.htm?pageNumber=${segmentPageNumber}" class="curr">${segmentPageNumber}</a></li>
+    [/#if]
+    [/#list]
+    [#if page.totalPages > 6]
+    <li><i>...</i></li>
+    <li><a href="javascript:void(0)">14</a></li>
+    [/#if]
+</ul>
+[#if page.pageNumber lt page.totalPages]
+<a href="${cdn}news.htm?pageNumber=${page.pageNumber+1}" class="down up-down">下一页</a>
+[#else]
+<a href="${cdn}news.htm?pageNumber=${page.totalPages}" class="down up-down">下一页</a>
+[/#if]
+[/#if]
+<span>共 ${page.totalPages} 页</span>
+
+[/#macro]

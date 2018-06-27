@@ -1,0 +1,229 @@
+/*轮播图*/
+.banner {
+	width: 1190px;
+	height: 600px;
+	overflow: hidden;
+	position: fixed;
+	z-index: 999;
+	left: 50%;
+	top: 50%;
+	margin-left: -595px;
+	margin-top: -300px;
+	display: none;
+}
+.banner .carousel-indicators li {
+	width: 40px;
+	height: 4px;
+	background: none;
+	margin: 0 5px;
+	border: 1px solid #fff;
+}
+.carousel-control {
+	width: 50px;
+}
+.carousel-inner {
+	height: 600px;
+}
+.carousel-control.left {
+    background: none;
+}
+.carousel-control.right {
+    background: none;
+}
+.banner .carousel-indicators li.active {
+	background: #fff;
+}
+.banner img {
+	width: 100%;
+}
+.banner .carousel-control em {
+    background: #000;
+    opacity:0;
+    filter:Alpha(opacity=0);
+    color: #fff;
+    position: absolute;
+    top:50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    font-size: 30px;
+    line-height: 50px;
+    transition: all 300ms; 
+}
+.banner .carousel-control.left em {
+    left:0;
+}
+.banner .carousel-control.right em {
+    right:0;
+}
+.banner:hover .carousel-control em {
+    opacity:.6;
+    filter:Alpha(opacity=60);
+}
+.carousel-caption {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: left;
+	padding: 20px 30px;
+	line-height: 28px;
+	opacity:.7;
+    filter:Alpha(opacity=70);
+     background-color:rgba(0,51,204,0.6);  
+}
+.carousel-caption h4 {
+	line-height: 44px;
+}
+.carousel-indicators {
+	bottom: 135px;
+}
+.sign-photo {
+	margin-bottom: 50px;
+}
+/*遮罩层*/
+.layout {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	background: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	display: none;
+}
+/*案列列表*/
+.case {
+	width: 100%;
+	overflow: hidden;
+}
+.case-list {
+	width: 1200px;
+	overflow: hidden;
+}
+.case-list span {
+	display: inline-block;
+	width: 1190px;
+	overflow: hidden;
+	line-height: 50px;
+	border-bottom: 1px solid #dcdcdc;
+	margin-left: 5px;
+}
+.case-list span em {
+	float: left;	
+}
+.case-list span em b {
+	padding-left: 10px;
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	border-left: 4px solid #1791ee;
+}
+.case-list span em i {
+	font-size: 14px;
+	padding-left: 10px;
+	color: #999;
+}
+.case-list span a {
+	float: right;
+}
+.case-list  ul {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 30px;
+}
+.case-list  ul li {
+	width: 25%;
+	padding: 0 5px;
+	float: left;
+	margin-bottom: 50px;
+	position: relative;
+	cursor: pointer;
+}
+.case-list  ul li em {
+	display: block;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	height: 190px;
+}
+.case-list  ul li em img {
+	width: 100%;
+	transition: all 300ms;
+}
+/*案列遮罩*/
+.case-layout {
+	position: absolute;
+	left: 5px;
+	top: 0;
+	right: 5px;
+	height: 100%;
+	background: #256DD9;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 9;
+	transition: all 300ms;
+}
+.case-title {
+	position: absolute;
+	left: 5px;
+	top: 0;
+	right: 5px;
+	overflow: hidden;
+	z-index: 19;
+	height: 100%;
+	text-align: center;	
+	transition: all 300ms;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.case-title a {
+	color: #fff;
+	font-size: 16px;
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	top: 50%;
+	transform: translate3d(0,-50%,0);
+    -webkit-transform: translate3d(0,-50%,0);
+}
+.case-list  ul li:hover em img {
+	transform: scale(1.2);
+}
+.case-list  ul li:hover .case-layout {
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+.case-list  ul li:hover .case-title {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+@media only screen and (max-width: 1200px) {
+	.case-list {
+		width: 900px;
+	}
+	.case-list ul {
+		margin-top: 20px;
+	}
+	.case-list ul li {
+		margin-bottom: 30px;
+	}
+	.case-list ul li em {
+		height: 142px;
+	}
+	.case-title a {
+		font-size: 14px;
+	}
+	.banner {
+		width: 890px;
+		height: 500px;
+		margin-left: -445px;
+		margin-top: -250px;
+	}
+	.carousel-inner {
+		height: 500px;
+	}
+}

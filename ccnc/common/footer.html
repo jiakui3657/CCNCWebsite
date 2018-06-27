@@ -1,0 +1,327 @@
+<div class="footer">
+    <div class="center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <h4>微信公众平台</h4>
+                    <div>
+                        <img src="${siteurl}views/ccnc/images/twoCode.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xs-5 fill_information">
+                    <form action="" onsubmit="return submitForm()">
+                        <ul class="list-unstyled">
+                            <li>
+                                <input type="text" required id="nameId" placeholder="姓名">
+                            </li>
+                            <li>
+                                <input type="text" required id="phoneId" placeholder="手机号">
+                            </li>
+                            <li>
+                                <input type="text" required id="contentId" placeholder="请填写需求">
+                            </li>
+                            <li class="curr">
+                                <input type="text" id="verificationCode"  maxlength="5" placeholder="请输入验证码" />
+                                <input type="button" id="checkCode" class="code" onclick="createCode()"/>
+                                <a href="javascript:void(0)" onclick="createCode()">看不清？</a><br>
+                            </li>
+                            <li>
+                                <button type="submit" class="btn btn-primary">提交需求</button>
+                                <p id="promit">请输入验证码 !</p>
+                            </li>
+                        </ul>
+
+                    </form>
+                </div>
+                <div class="col-xs-3 about_zb">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5>
+                                        <span class="curr">关于中北</span>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction">公司简介</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=3">中北合伙人</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}aptitude.htm">资质能力</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=4">社会责任</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--<div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5>
+                                        <span class="curr">合伙人体系</span>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=3">合伙人介绍</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=3">中北合伙人</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=3-1">合伙人招募</a>
+                                </li>
+                            </ul>
+
+                        </div>-->
+                        <div class="col-xs-6">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5>
+                                        <span class="curr">联系我们</span>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <span>029-88745337</span>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=1">总部</a>
+                                </li>
+                                <li>
+                                    <a href="${siteurl}history.htm?dicts=companyIntroduction&index=1">分公司</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="record">
+                        <p>&copy; 1992-2017 &nbsp;&nbsp;&nbsp; 中北工程设计咨询有限公司 &nbsp;&nbsp;&nbsp; 陕ICP备13006601号-1 &nbsp;【技术支持】 <a href="http://tongnainfo.com/">陕西同纳信息技术有限公司</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back-top iconfont icon-huidaodingbu" title="回到顶部">
+
+</div>
+
+<script src="${siteurl}plugins/jQuery/jquery-1.11.0.js"></script>
+<script src="${siteurl}plugins/layer/layer.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        // 如果不支持placeholder，用jQuery来完成
+        if(!isSupportPlaceholder()) {
+            // 遍历所有input对象, 除了密码框
+            $('input').not("input[type='password']").each(
+                function() {
+                    var self = $(this);
+                    var val = self.attr("placeholder");
+                    input(self, val);
+                }
+            );
+
+            /**
+             *  对password框的特殊处理
+             * 1.创建一个text框
+             * 2.获取焦点和失去焦点的时候切换
+             */
+            $('input[type="password"]').each(
+                function() {
+                    var pwdField    = $(this);
+                    var pwdVal      = pwdField.attr('placeholder');
+                    var pwdId       = pwdField.attr('id');
+                    // 重命名该input的id为原id后跟1
+                    pwdField.after('<input id="' + pwdId +'1" type="text" value='+pwdVal+' autocomplete="off" />');
+                    var pwdPlaceholder = $('#' + pwdId + '1');
+                    pwdPlaceholder.show();
+                    pwdField.hide();
+
+                    pwdPlaceholder.focus(function(){
+                        pwdPlaceholder.hide();
+                        pwdField.show();
+                        pwdField.focus();
+                    });
+
+                    pwdField.blur(function(){
+                        if(pwdField.val() == '') {
+                            pwdPlaceholder.show();
+                            pwdField.hide();
+                        }
+                    });
+                }
+            );
+        }
+    });
+    /*中北旗下*/
+    <!--var its = true-->
+  <!--$(".list-unstyled li:last-child").hover(function(){-->
+                <!--$('.list-unstyled li:last-child').off('mouseenter').unbind('mouseleave');-->
+
+        <!--$("#north_company em").addClass("curr");-->
+        <!--$(".north_company").slideDown("fast");-->
+        <!--its = false;-->
+    <!--},function(){-->
+        <!--$("#north_company em").removeClass("curr");-->
+        <!--$(".north_company").slideUp("fast");-->
+        <!--its = true;-->
+  <!--});-->
+  $(".list-unstyled li:last-child").on("click",function (){
+        $("#north_company em").addClass("curr");
+        $(".north_company").slideDown("fast");
+  })
+  <!--$(".list-unstyled li:last-child").on("mouseenter ",function (){-->
+        <!--$("body").off("mouseenter", ".list-unstyled li:last-child");-->
+        <!---->
+  <!--})-->
+  $(".list-unstyled li:last-child").on("mouseleave",function (){
+        <!--$("body").off("mouseleave", ".list-unstyled li:last-child");-->
+        $("#north_company em").removeClass("curr");
+        $(".north_company").slideUp("fast");
+  })
+  /*回到顶部*/
+   $(".back-top").on("click",function(){
+      $(window).scrollTop(0);
+      $(".back-top").css("display","none")
+   });
+    $(window).scroll(function(){
+        if($(window).scrollTop() > 200){
+            $(".back-top").css("display","block");
+            return false;
+        }
+        $(".back-top").css("display","none");
+    });
+
+
+    // 判断浏览器是否支持placeholder属性
+    function isSupportPlaceholder() {
+        var input = document.createElement('input');
+        return 'placeholder' in input;
+    }
+    // jQuery替换placeholder的处理
+    function input(obj, val) {
+        var $input = obj;
+        var val = val;
+        $input.attr({value:val});
+        $input.focus(function() {
+            if ($input.val() == val) {
+                $(this).attr({value:""});
+            }
+        }).blur(function() {
+            if ($input.val() == "") {
+                $(this).attr({value:val});
+            }
+        });
+    }
+    var code; //在全局定义验证码
+    //产生验证码
+    function createCode() {
+        code = "";
+        var codeLength = 5; //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数
+        for(var i = 0; i < codeLength; i++) { //循环操作
+            var charIndex = Math.floor(Math.random() * 36); //取得随机数的索引
+            code += random[charIndex]; //根据索引取得随机数加到code上
+        }
+        //console.log("code");//验证码已生成
+        checkCode.value = code; //把code值赋给验证码
+    }
+    createCode();
+    $("input").focus(function(){
+        $(this).css("border-color","#4369da");
+    });
+    $("input").blur(function(){
+        $("input").css("border-color","#bfbfbf");
+    });
+    function submitForm() {
+        var name = $("#nameId").val();
+        var phone = $("#phoneId").val();
+        var content = $("#contentId").val();
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        //校验验证码
+        var inputCode = document.getElementById("verificationCode").value.toUpperCase(); //取得输入的验证码并转化为大写
+        if(name == "" || phone == "" || content == ""){
+            return false;
+        }
+        if(inputCode.length <= 0) { //若输入的验证码长度为0
+            $("#promit").html("请输入验证码 ！").css("display","block")
+            setTimeout(function(){
+                $("#promit").css("display","none")
+            },1000)
+            return false;
+        } else if(!myreg.test(phone)){
+            $("#promit").html("请输入有效的手机号码！").css("display","block")
+             setTimeout(function(){
+                $("#promit").css("display","none")
+            },1000)
+            return false;
+        }else if(inputCode != code) { //若输入的验证码与产生的验证码不一致时
+            $("#promit").html("验证码输入错误 ！").css("display","block")
+            createCode(); //刷新验证码
+            $("#verificationCode").val("");
+            setTimeout(function(){
+                $("#promit").css("display","none")
+            },1000)
+            return false;
+        }
+        var params = {"name":name,"phone":phone,"content":content};
+        $.post("${siteurl}addDemand.htm",params,function (data) {
+            if(data == "1"){
+                layer.confirm('您已成功提交，请等候工作人员联系', {
+                    btn: ['确定'] //按钮
+                }, function(){
+                    location.reload();
+                });
+            }else{
+                layer.confirm('提交失败', {
+                    btn: ['确定'] //按钮
+                }, function(){
+                    location.reload();
+                });
+            }
+        });
+        return false;
+    }
+    $("btn-primary").on("click",function(){
+        //jquery验证手机号码
+         function vailPhone(){
+            var phone = $("#phoneId").val();
+            var flag = false;
+            var message = "";
+            var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+            if(phone == ''){
+                alert("手机号码不能为空！");
+            }else if(phone.length !=11){
+        message = alert("请输入有效的手机号码！");
+      }else if(!myreg.test(phone)){
+        message = alert("请输入有效的手机号码！");
+      }else if(checkPhoneIsExist()){
+        message = alert("该手机号码已经被绑定！");
+      }else{
+          flag = true;
+      }
+      if(!flag){
+     //提示错误效果
+        //jQuery("#phoneDiv").removeClass().addClass("ui-form-item has-error");
+        //jQuery("#phoneP").html("");
+        //jQuery("#phoneP").html("<i class=\"icon-error ui-margin-right10\"> <\/i>"+message);
+        //jQuery("#phone").focus();
+      }else{
+           //提示正确效果
+        //jQuery("#phoneDiv").removeClass().addClass("ui-form-item has-success");
+        //jQuery("#phoneP").html("");
+        //jQuery("#phoneP").html("<i class=\"icon-success ui-margin-right10\"> <\/i>该手机号码可用");
+      }
+      return flag;
+    }
+        vailPhone()
+    })
+</script>

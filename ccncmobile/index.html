@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北设计、中北工程、设计、工程、中北集团设计院、中北设计院、中北、建筑工程设计、市政设计、工程咨询、工程勘察、城乡规划、项目管理、ppp/">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>中北集团设计院、中北工程设计咨询有限公司</title>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}views/ccnc/css/Global.css" rel="stylesheet">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/index.css">
+    <script src="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.js"></script>
+    <!--微信-->
+</head>
+<body id="weixinshare">
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 0 /]
+<!--首页banner图-->
+<section class="banner">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            [#if homePictureList??]
+            [#list homePictureList as homePicture]
+            <div class="swiper-slide [#if homePicture_index == 0]active[/#if]">
+                <a href="[#if (homePicture.openLink) == 1]#[#else]${homePicture.linkUrl}[/#if]">
+                    <img src="${siteurl}${homePicture.pbigPicture!''}" alt="...">
+                </a>
+            </div>
+            [/#list]
+            [/#if]
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+<!--首页banner图-->
+<!--资质能力-->
+<section class="qualifying_ability">
+    <h4>资质荣誉<span></span></h4>
+    <ul>
+        [#list catalogQualificationsRecomends as catalogQualificationRecommend]
+        <li>
+            <a href="${siteurl}aptitude.htm?defId=${(catalogQualificationRecommend.catId)!''}">
+                <i>${catalogQualificationRecommend.name!''}</i>
+                <i class="iconfont">&${catalogQualificationRecommend.fontIcon!''}</i>
+            </a>
+        </li>
+        [/#list]
+    </ul>
+</section>
+<!--资质能力-->
+<!--新闻动态-->
+<section class="news">
+    <h4>新闻活动<span></span></h4>
+    <div class="swiper-container1">
+        <ol class="swiper-wrapper">
+            [@honornews]
+            [#if list??]
+            [#list list as newHonnor]
+                [#if newHonnor.interview?? && newHonnor.interview == true]
+                    <!-- 人物专访 -->
+                    <li class="swiper-slide">
+                        <a href="${siteurl}interview.htm?id=${newHonnor.id}">
+                            <img src="${siteurl}${(newHonnor.interviewUrl)!''}">
+                        </a>
+                    </li>
+                [#else]
+                    <li class="swiper-slide">
+                        <a href="${siteurl}newsdetails.htm?id=${newHonnor.id}">
+                            <img src="${siteurl}${(newHonnor.interviewUrl)!''}">
+                        </a>
+                    </li>
+                [/#if]
+            [/#list]
+            [/#if]
+            [/@honornews]
+        </ol>
+    </div>
+    <ul>
+        [@newslast size = 4]
+        [#if list??]
+        [#list list as news]
+        <li>
+            <i class="iconfont icon-shuangyou"></i>
+            [#if news.interview?? && news.interview == true]
+                <a href="${siteurl}interview.htm?id=${news.id}">${news.title!''}</a>
+            [#else]
+                <a href="${siteurl}newsdetails.htm?id=${news.id}">${news.title!''}</a>
+            [/#if]
+        </li>
+        [/#list]
+        [/#if]
+        [/@newslast]
+    </ul>
+    <a class="more" href="${siteurl}news.htm">了解更多</a>
+</section>
+<!--新闻动态-->
+<!--经典案例-->
+<section class="classic_case">
+    <h4>经典案例<span></span></h4>
+    <p>上百个项目现场的管理经验<br />累计项目10000+，项目累计资金100亿+</p>
+    <div>
+        [#list projectRecommends as projectRecommond]
+        [#if projectRecommond_index < 6]
+        <a href="${siteurl}projectdetails.htm?id=${projectRecommond.id}" class="caseItem">
+            <em>
+                <i><img class="itemimg" src="${siteurl}/mob/img/280/190/dengbili/${(projectRecommond.iconUrl)!''}.htm" alt=""></i>
+                <span>${(projectRecommond.name)!''}</span>
+            </em>
+        </a>
+        [/#if]
+        [/#list]
+    </div>
+    <a class="more" href="${siteurl}project.htm">了解更多</a>
+</section>
+<!--经典案例-->
+<!--解决方案-->
+<section class="solution">
+    <h4>产品服务<span></span></h4>
+    <div>
+        [#list catalogSolutionRecomends as catalogSolutionRecommend]
+        <a href="${siteurl}product.htm?defId=${catalogSolutionRecommend.id}" class="productItem serverColor_${(catalogSolutionRecommend_index % 2)+1}">
+            <i class="iconfont">&${catalogSolutionRecommend.fontIcon!''}</i>
+            <i>${catalogSolutionRecommend.name!''}</i>
+        </a>
+        [/#list]
+    </div>
+</section>
+<!--解决方案-->
+<!--首页二级菜单-->
+<section class="index_menu">
+    <ul>
+        <li class="curr">
+            <a>
+                <img src="${siteurl}views/ccnc/images/honer.png" alt="" class="defaultIcon">
+                <img src="${siteurl}views/ccnc/images/honer_active.png" alt="" class="activeIcon">
+                <span>资质荣誉</span>
+            </a>
+        </li>
+        <li >
+            <a  >
+                <img src="${siteurl}views/ccnc/images/news.png" alt="" class="defaultIcon">
+                <img src="${siteurl}views/ccnc/images/news_active.png" alt="" class="activeIcon">
+                <span> 新闻活动</span>
+            </a>
+        </li>
+        <li >
+            <a>
+                <img src="${siteurl}views/ccnc/images/case.png" alt="" class="defaultIcon">
+                <img src="${siteurl}views/ccnc/images/case_active.png" alt="" class="activeIcon">
+                <span> 经典案例</span>
+            </a>
+        </li>
+        <li >
+            <a >
+                <img src="${siteurl}views/ccnc/images/project.png" alt="" class="defaultIcon">
+                <img src="${siteurl}views/ccnc/images/project_active.png" alt="" class="activeIcon">
+                <span> 产品服务</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!--首页二级菜单-->
+[#include "/theme/ccncmobile/common/footer.html"]
+<script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+<script src="${siteurl}views/ccncmobile/js/index.js"></script>
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        paginationClickable :true,
+        pagination : '.swiper-pagination',
+        autoplay: 3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        autoplayDisableOnInteraction : false
+    });
+    var mySwiper1 = new Swiper('.swiper-container1',{
+        autoplay: 3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        autoplayDisableOnInteraction : false
+    });
+    var url = encodeURIComponent(location.href.split('#')[0]);
+    var incomingTitle = '中北集团设计院-中北首页';
+    var incomingDesc = '成为基础设施建设领域的创新者和领导者';
+    getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

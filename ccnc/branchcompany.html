@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>中北集团设计院、中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+
+    <![endif]-->
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/china.js"></script>
+    <style>
+    .cont2 {
+}
+.cont2_center {
+    width:100%;
+}
+
+.cont2 .cont2_center h2 {
+    margin-top:0px;
+    margin-bottom: 0px;
+    font-size:16px;
+    font-family:"微软雅黑";
+    color:#999;
+    text-align:center;
+    position: relative;
+    padding-bottom: 14px;
+}
+.cont2 .cont2_center .ites {
+     margin-top:60px;
+}
+.cont2 .cont2_center .ites h3 {
+     font-size:20px;
+     color:#666;
+     font-family:"微软雅黑";
+     margin: 30px 0 15px 0;
+     line-height:35px;
+}
+.cont2 .cont2_center .ites ul {
+    padding-left:0px;
+    margin-bottom:0px;
+    list-style:none;
+    overflow:hidden;
+    width:100%;
+    border:1px solid #d2d2d2;
+    margin-bottom: 50px;
+}
+.cont2 .cont2_center .ites ul li {
+    float:left;
+    position:relative;
+    padding:37px  0px 37px 156px;
+    width:33%;
+}
+.cont2 .cont2_center .ites ul li:nth-child(1) {
+    width:66%;
+}
+.cont2 .cont2_center .ites ul li span {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 38px;
+    color: #666;
+    padding-left: 8px;
+    position: absolute;
+    top: 37px;
+    left: 97px;
+    border-radius: 50%;
+    border: 2px solid #cbd2da;
+    display: inline-block;
+    margin-top: 10px;
+}
+.cont2 .cont2_center .ites ul li  p:nth-child(2) {
+    color:#999;
+    font-size:18px;
+}
+.cont2 .cont2_center .ites ul li  p:nth-child(3) {
+    color:#666;
+    font-size:16px;
+    margin-bottom:0px;
+}
+.cont2 .cont2_center .ites ul .ites_li:nth-child(1) {
+    width:33%;
+}
+.cont2 .cont2_center .ites ul .ites_li {
+     width:33%;
+ }
+    </style>
+</head>
+<body>
+<!--主内容-banner区-->
+[#include "/theme/ccnc/common/channel.html"]
+<div class="container-fluid">
+    <div class="container">
+        <div class="cont cont2">
+            <div class="cont2_center">
+                <div id="main" style="width: 900px;height:550px;margin:0 auto;"></div>
+                <div class="ites" id="companyInfoDiv">
+                    [#if defCompanyList??]
+                    [#list defCompanyList as company]
+                    [#if company_index == 0]
+                    <h3>${company.name!''}</h3>
+                    <ul class="ites_ul">
+                        <li class="ites_li">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <p>公司地址</p>
+                            <p>${company.address!''}</p>
+                        </li>
+                        <li class="ites_li">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <p>公司邮箱</p>
+                            <p>${company.email!''}</p>
+                        </li>
+                        <li class="ites_li">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <p>联系电话</p>
+                            <p>${company.phone!''}</p>
+                        </li>
+                    </ul>
+                    [#else]
+                    <h3>${company.name!''}</h3>
+                    <ul>
+                        <li>
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <p>公司地址</p>
+                            <p>${company.address!''}</p>
+                        </li>
+                        <li>
+                            <span class="glyphicon glyphicon-earphone"></span>
+                            <p>联系电话</p>
+                            <p>${company.phone!''}</p>
+                        </li>
+                    </ul>
+                    [/#if]
+                    [/#list]
+                    [/#if]
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script>
+    window.onload=function(){
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var data = ${provinces};
+        var companyMax = ${companyMax};
+        option = {
+            tooltip: {
+                trigger: 'item'
+            },
+            dataRange: {
+                min: 0,
+                max: companyMax,
+                x: 'left',
+                y: 'bottom',
+                borderColor: '#ccc', // 值域边框颜色
+                borderWidth: 1, // 值域边框线宽，单位px，默认为0（无边框）
+                padding:20,    // 值域内边距，单位px，默认各方向内边距为5，
+                itemGap: 20,  //各个item之间的间隔，单位px，默认为10
+                itemWidth: 50,             // 值域图形宽度，线性渐变水平布局宽度为该值 * 10
+                itemHeight: 24,            // 值域图形高度，线性渐变垂直布局高度为该值 * 10
+                splitList: [
+                    {start: 0, end: 0,label: '暂无分公司', color: '#d3d3d4'},
+                    {start: 1, end: 2, label: '一家以上分公司', color: '#b0c1ca'},
+                    {start: 3, end: 5, label: '三家以上分公司', color: '#7b99b0'},
+                    {start: 6, end: 8,label: '六家以上分公司', color: '#456b7f'}
+                ],
+                textStyle: {
+                    color: '#333',          // 值域文字颜色
+                    fontSize:16             // 值域字体大小
+                }
+            },
+            geo: {
+                map: 'china',
+                roam: false,
+                label: {
+                    normal: {
+                        show: false,
+                        textStyle: {
+                            color: 'rgba(0,0,0,0.4)'
+                        },
+                        borderColor:'#333'
+                    },
+                    emphasis:{
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal:{
+                        borderColor: 'rgba(0, 0, 0, 0.2)'
+                    },
+                    emphasis:{
+                        areaColor: "#0047e6",
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            series : [
+                {
+                    type: 'scatter',
+                    coordinateSystem: 'geo',
+                    data: [],
+                    symbolSize: 20,
+                    map: 'china',
+                    selectedMode : 'multiple',
+                    symbol: 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z',
+                    symbolRotate: 35,
+                    label: {
+                        normal: {
+                            formatter: '{b}',
+                            position: 'right',
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#F06C00'
+                        }
+                    },
+                    data:[
+                        {id:5,name:'福建', selected:true}//福建为选中状态
+                    ]
+                },
+                {
+                    name: '公司个数',
+                    type: 'map',
+                    geoIndex: 0,
+                    // tooltip: {show: false},
+                    data:data
+                }
+            ]
+        };
+        myChart.on('click', function (params) {
+            //console.log('click ',params);
+            //params.componentType = 'series';
+            //<!--params.selected = true;-->
+            //loadChart(params);
+            //params.color = 'red';
+            //params.marker='<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:red;"></span>';
+            //加载数据
+            params.color = '#d50000'
+            params.select = true;
+            for(var i = 0;i < data.length;i++){
+                data[0].select = true;
+            }
+            //console.log("data",data);
+            loadChart(params);
+        });
+        myChart.on('mouseover', function (params) {
+            //console.log('mouseover ',params);
+        });
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    }
+
+    //根据省份ID查询公司信息
+    function loadChart(parms) {
+        $("#companyInfoDiv").empty();
+        var provinceId = parms.data.id;
+        var pars = {"provinceId":provinceId};
+        $.post("${siteurl}getCompanyByProvinceId.htm",pars,function (data) {
+            console.log("data",data);
+            for(var i = 0;i < data.length;i++) {
+                var name = data[i].name;
+                var address = data[i].address;
+                var phone = data[i].phone;
+                var email = data[i].email;
+                if (name.indexOf("总公司") != -1) {
+                    $("#companyInfoDiv").append("<h3>" + name + "</h3><ul class='ites_ul'><li class='ites_li'><span class='glyphicon glyphicon-map-marker'></span><p>公司地址</p><p>" + address + "</p></li> <li class='ites_li'> <span class='glyphicon glyphicon-envelope'></span> <p>公司邮箱</p> <p>" + email + "</p> </li><li class='ites_li'> <span class='glyphicon glyphicon-earphone'></span><p>联系电话</p><p>" + phone + "</p> </li> </ul>");
+                }else{
+                    $("#companyInfoDiv").append("<h3>" + name + "</h3><ul><li><span class='glyphicon glyphicon-map-marker'></span><p>公司地址</p><p>" + address + "</p></li><li><span class='glyphicon glyphicon-earphone'></span><p>联系电话</p><p>" + phone + "</p></li></ul>");
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

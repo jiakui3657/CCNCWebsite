@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/newsdetails.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/news_header.jpg" alt="">
+<!--新闻内容-->
+<section class="news">
+    <div class="back-list">
+        <a href="${siteurl}news.htm" class="back"><i class="iconfont icon-shuangyou"></i>返回列表</a>
+    </div>
+    <div class="news_content">
+        <h3>${(model.title)!''}</h3>
+        <div class="time">
+            <i>发布时间 :</i>
+            <i>
+                [#if model.publishDate??]
+                ${model.publishDate?string('yyyy-MM-dd')}
+                [/#if]
+            </i>
+        </div>
+        <!--新闻具体内容-->
+        <div class="formal-content">
+            ${(model.content)!''}
+        </div>
+    </div>
+    <!--上下新闻切换-->
+    <div class="switch-news">
+        [#if preNews??]
+        <a class="previous" href="${siteurl}newsdetails.htm?id=${preNews.id}">
+            <i class="iconfont icon-zuoyou1"></i>
+            <em class="overflow-wrap">${preNews.title!''}</em>
+        </a>
+        [#else]
+        <a class="previous" href="javascript:void(0)">
+            <i class="iconfont icon-zuoyou1"></i>
+            <em class="overflow-wrap">暂无更多新闻</em>
+        </a>
+        [/#if]
+        [#if nextNews??]
+        <a class="next" href="${siteurl}newsdetails.htm?id=${nextNews.id}">
+            <i class="iconfont icon-zuoyou"></i>
+            <em class="overflow-wrap">${(nextNews.title)!''}</em>
+        </a>
+        [#else]
+        <a class="next" href="javascript:void(0)">
+            <i class="iconfont icon-zuoyou"></i>
+            <em class="overflow-wrap">暂无更多新闻</em>
+        </a>
+        [/#if]
+    </div>
+</section>
+
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+</body>
+<script>
+    $(function(){
+        $(".formal-content p").css("font-size","0.28rem")
+        $(".formal-content p span").css("font-size","0.28rem")
+    })
+</script>
+</html>

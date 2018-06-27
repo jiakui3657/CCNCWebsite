@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="西桥重工有限公司是由西安工业投资集团与中北交通集团共同组建的特大型企业，主要从事钢结构及产品、钢桥梁及零部件产品的生产、安装、销售、改造维护、施工安装。">
+	<title>西桥重工有限公司</title>
+	<!--资质能力样式引入-->
+	<link rel="icon" type="image/png" sizes="192x192" href="${cdn}views/ccnc/images/favicon.ico">
+	<link rel="stylesheet" href="${cdn}views/xqzg/bootstrap/css/bootstrap.min.css"/>
+	<!--图标引入-->
+	<link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+	<link rel="stylesheet" href="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.css">
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/Global.css"/>
+	<!--[if lt IE 9]>
+	<script src="${cdn}views/ccnc/lib/respond/respond.js"></script>
+	<script src="${cdn}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+	<script type="text/javascript" src="${cdn}views/ccnc/js/selectivizr.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/public.css"/>
+	<!--资质能力样式引入-->
+	<link href="${cdn}views/xqzg/css/newsdetails.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+<header>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			<img class="logo" src="${cdn}views/xqzg/img/logo.jpg" alt="">
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<ul class="navigation">
+				<li class="col-md-2 col-lg-2"><a href="javascript:0;"></a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=1">官网首页</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=2">公司介绍</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}project.htm">项目案例</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2 active"><a href="${cdn}news.htm" class="active">新闻活动</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=5">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+	<img src="${cdn}views/zbjg/images/news.jpg"class="sign-photo"/>
+	<!--新闻内容-->
+	<div class="news">
+		<div class="news_header">
+			<div class="share">
+                <a href="${cdn}news.htm" class="back"><i class="iconfont icon-zuoyou1"></i>返回列表</a>
+                <div class="bshare-custom"><div class="bsPromo bsPromo2"></div>
+                    <i>分享到 : </i>
+                    <div class="bsPromo bsPromo2"></div>
+                    <a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a>
+                    <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+                    <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+                    <a title="分享到QQ空间" class="bshare-qzone"></a>
+                </div>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+            </div>
+		</div>
+		<div class="news_content">
+			<h3 class="overflow-wrap">${(model.title)!''}</h3>
+			<div class="time">
+				<i>发布时间 :</i>
+				<i>
+					[#if model.publishDate??]
+						${model.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</i>
+			</div>
+			<!--新闻具体内容-->
+			<div class="formal-content">
+				${(model.content)!''}
+			</div>
+		</div>
+		<!--上下新闻切换-->
+		<div class="switch-news">
+			[#if preNews??]
+			<a class="previous" href="${cdn}newsdetails.htm?id=${preNews.id}">
+				<i class="iconfont icon-zuoyou1"></i>
+				<em class="overflow-wrap">${preNews.title!''}</em>
+				<b>
+					[#if preNews.publishDate??]
+						${preNews.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</b>
+			</a>
+			[#else]
+			<a class="previous" href="javascript:void(0)">
+				<i class="iconfont icon-zuoyou1"></i>
+				<em class="overflow-wrap">暂无更多新闻</em>
+				<b>
+				</b>
+			</a>
+			[/#if]
+			[#if nextNews??]
+			<a class="next" href="${cdn}newsdetails.htm?id=${nextNews.id}">
+				<i class="iconfont icon-zuoyou"></i>
+				<b>
+					[#if nextNews.publishDate??]
+						${nextNews.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</b>
+				<em class="overflow-wrap">${(nextNews.title)!''}</em>
+			</a>
+			[#else]
+			<a class="next" href="javascript:void(0)">
+				<i class="iconfont icon-zuoyou"></i>
+				<b>
+				</b>
+				<em class="overflow-wrap">暂无更多新闻</em>
+			</a>
+			[/#if]
+		</div>
+	</div>
+	<!--遮罩层-->
+	<div class="layout"></div>
+
+<!--页面底部-->
+[#include "/theme/xqzg/common/footer.html"]
+<script src="${cdn}views/xqzg/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${cdn}views/xqzg/bootstrap/js/bootstrap.min.js"></script>
+<script src="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.js"></script>
+<script src="${cdn}views/xqzg/js/public.js"></script>
+</body>
+</html>

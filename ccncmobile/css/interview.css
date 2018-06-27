@@ -1,0 +1,19 @@
+a:focus,a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+header a {
+    display:inline-block;
+    height:60px;
+    font-size:0.3rem;
+    color:#fff;
+    line-height:60px;
+    font-weight: 600;
+}
+section img {
+    max-width:100%;
+    margin-top:60px;
+}
+section {
+    font-size:0.25rem;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="3gdmnVcR2K" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="中北建工建筑工程设计">
+	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--资质能力样式引入-->
+	<link href="${siteurl}views/zbjg/css/project.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 4 /]
+
+<img src="${siteurl}views/zbjg/images/project.jpg"class="sign-photo"/>
+<!--轮播图-->
+<div class="banner avtive">
+	<div id="Services" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#Services" data-slide-to="0" class="active"></li>
+			<li data-target="#Services" data-slide-to="1" class=""></li>
+			<li data-target="#Services" data-slide-to="2" class=""></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="${siteurl}views/zbjg/images/case_banner_03.jpg" alt="...">
+			</div>
+			<div class="item">
+				<img src="${siteurl}views/zbjg/images/case_banner_03.jpg" alt="...">
+			</div>
+			<div class="item">
+				<img src="${siteurl}views/zbjg/images/case_banner_03.jpg" alt="...">
+			</div>
+		</div>
+		<a class="left carousel-control" href="#Services" role="button" data-slide="prev">
+			<em class="iconfont icon-zuoyou1"></em>
+		</a>
+		<a class="right carousel-control" href="#Services" role="button" data-slide="next">
+			<em class="iconfont icon-zuoyou"></em>
+		</a>
+		<div class="carousel-caption">
+			<h4 class="overflow-wrap">2017年建昌县农村公路危桥改造及2016年水毁恢复工程</h4>
+			<p>施工内容为桥梁过水面及防护，设计图纸所含全部内容，桩号分别为：K0+000;000-K0+100;000，在K0+040.46
+				5处设置钢筋混凝土现浇板，K0+030.0-K0+195.0,并在K0+094.0处设置3*8.0m钢筋混凝土坯现浇板桥；K0+00
+				0.00-K0+195.00;在桩号K0+134.00处设置3*8.0m钢筋混凝土现浇板桥；K0+050-K0+150,其中K0+068.0处设
+				置6*.06m钢筋混凝土圆管涵</p>
+		</div>
+	</div>
+</div>
+<!--经典案列列表-->
+<div class="case">
+	<!--道路工程-->
+	<div class="case-list">
+			<span>
+				<em class="details"><b>${(catalog.name)!''}</b><i>${(catalog.nameTag)!''}</i></em>
+				<a href="${siteurl}project.htm" class="details">返回列表 >></a>
+			</span>
+		<ul>
+			[#if catalogprojects??]
+			[#list catalogprojects as project]
+			<li>
+				<em><img src="${siteurl}${project.iconUrl!''}" alt="" /></em>
+				<div class="case-layout"></div>
+				<div class="case-title" onclick="findprojectdetail(${project.id})">
+					<a>${(project.name)!''}</a>
+				</div>
+			</li>
+			[/#list]
+			[/#if]
+		</ul>
+	</div>
+</div>
+<!--遮罩层-->
+<div class="layout"></div>
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script type="text/javascript" src="${siteurl}views/zbjg/js/project.js"></script>
+<script type="text/javascript">
+    var siteurl = "${siteurl}";
+    //console.log("sieturl:" + siteurl);
+    //点击查看项目详情
+    function findprojectdetail(pid) {
+        $.ajax({
+            type: "post",
+            url: "findprojectdetail",
+            async: true,
+            data: {"pid": pid},
+            success: function (data) {
+                console.log(data);
+                if (data.files.length == 0) {
+                    return false;
+                }
+                var indicatorsHtml = '', inneHtml = '', captionHtml = '';
+                for (var i = 0; i < data.files.length; i++) {
+                    if (i == 0) {
+                        indicatorsHtml += '<li data-target="#Services" data-slide-to="' + i + '" class="active"></li>';
+                        inneHtml += '<div class="item active"><img src="' + siteurl + data.files[i] + '" alt="..."></div>'
+                    } else {
+                        indicatorsHtml += '<li data-target="#Services" data-slide-to="' + i + '" class=""></li>';
+                        inneHtml += '<div class="item"><img src="' + siteurl + data.files[i] + '" alt="..."></div>'
+                    }
+                }
+                if(data.files.length == 1) {
+                    indicatorsHtml = "";
+                    $("#Services .carousel-control").addClass("hidden");
+                }else {
+                    $("#Services .carousel-control").removeClass("hidden");
+				}
+                $(".carousel-indicators").html(indicatorsHtml);
+                $(".carousel-inner").html(inneHtml);
+                captionHtml += '<h4 class="overflow-wrap">' + data.name + '</h4><p>' + data.content + '</p>';
+                $(".carousel-caption").html(captionHtml);
+                $('.banner').css('display', 'block');
+                $('.layout').css('display', 'block');
+            },
+            error: function () {
+                console.log("请求错误!!!")
+            }
+        });
+
+    }
+    /*点击遮罩层*/
+    $('.layout').on('click',function(){
+        $(this).css('display','none');
+        $('.banner').css('display','none');
+    })
+
+</script>
+</body>
+</html>

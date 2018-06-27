@@ -1,0 +1,382 @@
+.banner {
+
+}
+.container-fluid .container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0px;
+    margin-bottom:30px;
+}
+/*.container-fluid .container .tab {
+    position: absolute;
+    top: -60px;
+    left: 0px;
+    z-index: 1001;
+}
+.container-fluid .container .tab .tab_ul {
+    padding: 0px;
+    margin: 0px;
+}
+.container-fluid .container .tab .tab_ul a {
+    text-decoration: none;
+}
+.container-fluid .container .tab .tab_ul a .tab_li {
+    list-style: none;
+    font-size: 18px;
+    color: #fff;
+    height: 60px;
+    width: 255px;
+    line-height: 60px;
+    text-align: center;
+    background: #6d82bd;
+    opacity:.8;
+    filter:Alpha(opacity=80);
+    cursor: pointer;
+}
+.container-fluid .container .tab .tab_ul a .one {
+    display: none;
+}
+.container-fluid .container .tab .tab_ul a:nth-child(2) .one {
+    border-bottom:1px solid #fff;
+}
+.container-fluid .container .tab .tab_ul a .one:hover {
+    background-color: #8ca3e3;
+}
+.container-fluid .container .tab .tab_ul a .curr {
+    background-color: #0033cc;
+    opacity: .8;
+    filter:Alpha(opacity=80);
+}
+.container-fluid .container .tab .tab_ul a .last {
+    background-color: #0033cc;
+    opacity: .8;
+    filter:Alpha(opacity=80);
+}
+@media(max-width: 1000px) {
+    .container-fluid .container .tab {
+        position: absolute;
+        top: -60px;
+        left: -3px;
+        z-index: 1001;
+    }
+}
+.container-fluid .container .tab a:hover {
+    background-color: #8ca3e3;
+    color: #fff;
+}*/
+.container-fluid .container .cont {
+    padding: 100px 155px 60px 155px;
+    position:relative;
+}
+.container-fluid .container .cont ul {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+.container-fluid .container .cont ul li {
+    list-style: none;
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    width: 435px;
+    height: 70px;
+    background-color: #e9ecf3;
+    line-height: 70px;
+}
+.container-fluid .container .cont ul li a {
+    width: 435px;
+    height: 85px;
+    display: inline-block;
+    text-decoration:none;
+}
+.container-fluid .container .cont ul li:nth-child(2n) {
+    margin-right: 0;
+}
+.container-fluid .container .cont ul li a span:nth-child(1) {
+    width: 135px;
+    height: 30px;
+    border-right: 2px solid #ccc;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+.container-fluid .container .cont ul li a i {
+    float:right;
+    margin-right:47px;
+    color:#999;
+    font-size:14px;
+}
+.container-fluid .container .cont ul li:hover {
+    background-color: #1b55ff;
+    color:#fff;
+}
+.container-fluid .container .cont ul li a:hover span {
+    color: #fff;
+}
+.container-fluid .container .cont ul li a:hover span:nth-child(2) {
+    color: #fff;
+}
+.container-fluid .container .cont ul li a i {
+    font-style: normal;
+}
+.container-fluid .container .cont ul li a:hover i {
+    color: #fff;
+}
+.container-fluid .container .cont ul li a span:nth-child(2) {
+    margin-left: 50px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    text-decoration: none;
+}
+.container-fluid .container .cont .xl {
+    position:absolute;
+    top: 25px;
+}
+.container-fluid .container .cont .xl span {
+    width:95px;
+    height:46px;
+    text-align:center;
+    line-height:46px;
+    background-color:#426be4;
+    color:#fff;
+    font-size:14px;
+    display: inline-block;
+    cursor:pointer;
+    float: left;
+}
+.container-fluid .container .cont .xl select {
+    width:206px;
+    height:46px;
+    line-height:46px;
+    color:#666;
+    font-size:14px;
+    outline: none;
+    padding-left:85px;
+    border:1px solid #dbdbdb;
+	appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    cursor: pointer;
+}
+.container-fluid .container .cont .xl option {
+    width: 100%;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+    padding:0;
+    float:left;
+}
+.container-fluid .container .cont .xl i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    z-index: 999;
+    color: #d2d2d2;
+    line-height: 46px;
+    width: 46px;
+    text-align: center;
+    pointer-events: none;
+}
+.container-fluid .container .cont .cont_bottom {
+    margin-top: 32px;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -164px;
+    margin-bottom: 65px;
+}
+.container-fluid .container .cont .cont_bottom ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    float: left;
+}
+.container-fluid .container .cont .cont_bottom input {
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+    font-size: 14px;
+    color: #666;
+    margin-right: 20px;
+    float: left;
+}
+.container-fluid .container .cont .cont_bottom ul li {
+    list-style: none;
+    float: left;
+    padding: 0;
+    margin-bottom: 0;
+    width:20px;
+    height:20px;
+    line-height:20px;
+    border-radius:50%;
+    margin-right: 20px;
+}
+.container-fluid .container .cont .cont_bottom ul li a {
+    width: 20px;
+    height: 20px;
+    list-style: none;
+    line-height: 20px;
+    text-align: center;
+    color:#666;
+    background-color: #fff;
+    cursor:pointer;
+}
+.container-fluid .container .cont .cont_bottom ul li span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    padding: 0;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: #2649d0;
+    display:inline-block;
+}
+.container-fluid .container .cont .cont_bottom ul li:hover {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: #fff;
+    color:#000;
+    margin-right: 20px;
+}
+@media (max-width: 1250px) {
+    .container-fluid .container {
+        width: 1050px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0px;
+    }
+    .container-fluid .container .cont .cont_bottom input {
+        margin-right: 10px;
+    }
+}
+@media(max-width: 1100px){
+    .container-fluid .container {
+        width: 900px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0px;
+    }
+}
+@media(max-width: 1000px){
+    .container-fluid {
+        padding-left:0px;
+    }
+    .container-fluid .container {
+        width: 730px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0px;
+    }
+}
+@media (max-width: 1250px) {
+    .container-fluid .container .cont {
+        padding: 100px 70px 100px 70px;
+    }
+    .container-fluid .container .cont .xl {
+        position:absolute;
+        top: 25px;
+    }
+    .container-fluid .container .cont ul li {
+        height: 60px;
+        line-height: 60px;
+    }
+}
+@media(max-width: 1100px){
+    .container-fluid .container .cont {
+        padding: 100px 0 100px 10px;
+    }
+    .container-fluid .container .cont .xl {
+        position:absolute;
+        top: 25px;
+    }
+}
+@media(max-width: 1000px){
+    .container-fluid .container .cont {
+        padding: 100px 0 100px 60px;
+    }
+    .container-fluid .container .cont ul li {
+        list-style: none;
+        float: left;
+        margin-bottom: 15px;
+        margin-right: 15px;
+        width: 600px;
+        height: 85px;
+        background-color: #e9ecf3;
+        line-height: 85px;
+    }
+    .container-fluid .container .cont ul li:nth-child(2n) {
+        list-style: none;
+        float: left;
+        margin-bottom: 15px;
+        margin-right: 0px;
+        width: 600px;
+        height: 85px;
+        background-color: #e9ecf3;
+    }
+    .container-fluid .container .cont ul li:hover {
+        list-style: none;
+        float: left;
+        margin-bottom: 15px;
+        margin-right: 15px;
+        width: 600px;
+        height: 85px;
+        background-color: #0033cc;
+        line-height: 85px;
+    }
+    .container-fluid .container .cont ul li:nth-child(2n):hover {
+        list-style: none;
+        float: left;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        width: 600px;
+        height: 85px;
+        background-color: #337ab7;
+    }
+    .container-fluid .container .cont ul li a i {
+        margin-right:-90px;
+    }
+    .container-fluid .container .cont .cont_bottom ul li {
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        list-style: none;
+        line-height: 19px;
+        text-align: center;
+        float: left;
+        padding: 0px;
+        margin-bottom: 0px;
+        background-color: #fff;
+        cursor:pointer;
+        color:#000;
+    }
+    .container-fluid .container .cont .cont_bottom ul li:hover {
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        list-style: none;
+        line-height: 19px;
+        text-align: center;
+        float: left;
+        padding: 0px;
+        margin-bottom: 0px;
+        background-color: #fff;
+        color:#000;
+    }
+}

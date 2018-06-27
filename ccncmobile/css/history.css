@@ -1,0 +1,406 @@
+/*背景图，选项卡*/
+body {
+    color: #666;
+    position: relative;
+}
+a {
+    color: #666;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color: #666;
+}
+.header_bg img {
+    width:100%;
+    margin-top: 60px;
+}
+.history_tab {
+    box-shadow:0 3px 5px rgba(102,102,102,.3);
+}
+.history_tab .swiper-wrapper div {
+    width:33.3%;
+    float: left;
+    text-align: center;
+    font-size: 0.3rem;
+    line-height:1rem;
+    color: #999;
+}
+.history_tab .swiper-wrapper div.curr {
+    color: #375ed2;
+    border-bottom:2px solid #375ed2;
+        font-weight: 600;
+}
+/*背景图，选项卡*/
+/*公司简介*/
+.company_profile {
+    width:100%;
+    overflow: hidden;
+}
+.profile_text {
+    width:100%;
+    overflow: hidden;
+}
+.profile_text img {
+    width: 100%;
+}
+.profile_text p {
+    padding: 0 20px;
+    font-size: 0.25rem;
+    line-height: 0.5rem;
+    margin-top: 0.5rem;
+}
+.development_path {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.development_path dfn {
+    display: block;
+    width: 0.4rem;
+    position: absolute;
+    left:50%;
+    margin-left: -0.2rem;
+    bottom: 0.2rem;
+    height: 2rem;
+    z-index:9999;
+    background: url("../images/span_bottom.jpg") no-repeat left top/100% auto;
+}
+.development_path ul {
+    width: 100%;
+    padding:0 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+.development_path ul b {
+    display: block;
+    width: 0.3rem;
+    position: absolute;
+    left:50%;
+    margin-left: -0.15rem;
+    top:1rem;
+    bottom: 0.2rem;
+    z-index:999;
+    background: url("../images/four_ring.jpg") repeat left top/100% auto;
+}
+.development_path ul li {
+    float: left;
+    width: 100%;
+    margin-top:0.65rem;
+}
+.development_path ul li:nth-child(2) {
+    margin-top:0.35rem;
+}
+.development_path ul li img {
+    float: left;
+    height: 1.8rem;
+}
+.development_path ul li span {
+    width: 42%;
+    border:2px solid #dcdcdc;
+    float: left;
+    height: 1.8rem;
+    padding:0.1rem 0.2rem;
+    text-align: center;
+}
+.development_path ul li:nth-of-type(even) span {
+    border-right: none;
+}
+.development_path ul li:nth-of-type(odd) span {
+    float: right;
+    border-left: none;
+}
+.development_path ul li:nth-of-type(odd) img {
+    float: right;
+}
+.development_path ul li span i {
+    display: block;
+    color: #0033cc;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+}
+.development_path ul li span em {
+    font-size: 0.24rem;
+}
+.idea {
+    display: flex;
+    padding: 0 15px;
+    margin-top:0.8rem;
+}
+.idea span {
+    display: block;
+    flex: 1;
+    padding:0 5px;
+}
+.idea span b {
+    display: block;
+    background: #f1f2f5;
+    font-weight: normal;
+    position: relative;
+    padding:0.4rem 0.2rem 0.2rem;
+    height: 3rem;
+    line-height: 0.5rem;
+    font-size: 0.25rem;
+}
+.idea span b em {
+    display: inline-block;
+    height: 0.6rem;
+    width: 0.6rem;
+    text-align: center;
+    line-height: 0.6rem;
+    font-size: 0.35rem;
+    color: #fff;
+    background: #335cd6;
+    border-radius: 0.3rem;
+    position: absolute;
+    left:50%;
+    margin-left: -0.3rem;
+    top:-0.3rem;
+}
+.idea span.curr b {
+    height: auto;
+    padding:0.4rem 0.2rem 0.4rem;
+    text-align: center;
+}
+.company_cult img {
+    width: 100%;
+    margin:0.5rem 0 0.1rem 0;
+}
+/*公司简介*/
+/*中北合伙人*/
+section div h4 {
+    font-size:0.36rem;
+    font-weight:600;
+    color: #333;
+    width:100%;
+    text-align: center;
+    line-height: 42px;
+    position: relative;
+    margin:40px 0 10px 0;
+}
+section div h4 span {
+    width:40px;
+    height:2px;
+    display: inline-block;
+    background: #496dd6;
+    position:absolute;
+    left:50%;
+    bottom:0;
+    margin-left:-20px;
+}
+.partner_profile {
+    width:100%;
+    padding: 0 20px;
+}
+.partner_profile p {
+    color: #666;
+    line-height:0.5rem;
+    font-size:0.25rem;
+    margin-top: 0.5rem;
+}
+.partner_system {
+    margin-top:10px;
+    padding: 0 20px;
+}
+.partner_system span.curr {
+    display: block;
+    overflow: hidden;
+    background: linear-gradient(to right, #182bb9 , #345dd6);
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    margin-top:20px;
+}
+.partner_system span  em {
+    float: left;
+    font-size:0.3rem;
+    font-weight:600;
+    width:100%;
+    text-align: center;
+    line-height: 0.5rem;
+}
+.partner_system span  b {
+    line-height:0.5rem;
+    float: left;
+    width:100%;
+    font-weight:normal;
+    font-size:0.25rem;
+}
+.join_partner {
+    margin-top:20px;
+}
+.join_partner div {
+    overflow: hidden;
+    width:100%;
+}
+.join_partner div img {
+    width:100%;
+    height:auto;
+}
+.slogan {
+    padding:0 20px;
+    width:100%;
+    margin-bottom:10px;
+    margin-top:0.4rem;
+}
+.slogan div {
+    color: #666;
+    margin-bottom:0.7rem;
+    overflow: hidden;
+}
+.slogan div h5 {
+    font-weight: bold;
+    line-height: 0.5rem;
+    margin: 5px 0;
+    font-size:0.3rem;
+}
+.slogan div p {
+    line-height: 0.4rem;
+    font-size:0.25rem;
+}
+.contacts {
+    width: 280px;
+    margin: 0 auto;
+    padding: 0;
+}
+.contacts div h5 {
+    text-align: center;
+    margin:0;
+}
+.contacts div p {
+    text-align: center;
+}
+.contacts div p span {
+    display: inline-block;
+    color: #999;
+    margin-right:10px;
+    line-height:0.4rem;
+}
+.contacts div p span.curr {
+    margin: 0 0 0 10px;
+    color: #666;
+}
+.download {
+    width: 280px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+}
+.download a {
+    width: 280px;
+    height: 48px;
+    background: #4369da;
+    display: block;
+    color: #fff;
+    font-size: 0.3rem;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+}
+/*中北合伙人*/
+/*社会责任*/
+.social_res {
+}
+.social_res ul {
+    width: 100%;
+    margin: 0.4rem 0 0 0;
+    overflow: hidden;
+    padding: 0 10px;
+    float: left;
+}
+.social_res ul li {
+    margin: 0.4rem 0 0.3rem 0;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    padding: 30px 20px;
+    border: 1px solid #bfbfbf;
+}
+.social_res ul li span {
+    width: 100%;
+    float:left;
+}
+.social_res ul li span i {
+    float: left;
+    line-height: 0.5rem;
+    font-size: 0.35rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    padding-bottom: 0.08rem;
+}
+.social_res ul li span img {
+    height:0.3rem;
+    vertical-align: middle;
+    margin-top: 0.1rem;
+}
+.social_res ul li span img.curr {
+    height:0.5rem;
+    margin-top: 0;
+}
+.social_res ul li p {
+    width: 100%;
+    margin-top:0.3rem;
+    float: left;
+    font-size:0.3rem;
+    line-height: 0.5rem;
+}
+.activity {
+    width:100%;
+    padding: 0 10px;
+    overflow: hidden;
+    margin-top:1rem;
+}
+.activity span {
+    float: left;
+    width:25%;
+    background: #2f59d6;
+    color: #fff;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size:0.3rem;
+}
+.social_respon_news ol {
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+}
+.social_respon_news {
+    float: left;
+    width:75%;
+    height:0.8rem;
+    padding: 0 20px;
+    overflow: hidden;
+    background: #e8edf9;
+}
+.social_respon_news ol li {
+    height:0.8rem;
+    width:100%;
+    float: left;
+}
+.social_respon_news li a {
+    text-decoration: none;
+    color: #333;
+    line-height:0.8rem;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size:0.3rem;
+}
+/*社会责任*/
+#swiper-container2  .swiper-wrapper {
+    height: auto;
+}
+.tabActive {
+    position:fixed;
+    top:60px;
+    z-index:1001;
+    background-color:#fff;
+    width:100%;
+}
+.jk {
+    height: 1rem;
+}
+.slogan .contact {
+    margin-bottom:0rem;
+}

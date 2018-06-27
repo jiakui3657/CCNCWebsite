@@ -1,0 +1,325 @@
+/*
+ * 公用部分css样式
+ * auther : qiuwenju
+ * */
+
+/*其他页面标志图*/
+.sign-photo {
+	width: 100%;
+}
+a:hover,a:focus {
+	text-decoration: none;
+	color: #014099;
+}
+/*标题*/
+.head-title {
+	width: 100%;
+	line-height: 150px;
+	text-align: center;
+	color: #333;
+	font-weight: bold;
+}
+.head-title i {
+	color: #c5c5c5;
+	padding: 0 4px;
+}
+/*公用头部css样式*/
+.header {
+	width: 100%;
+	overflow: hidden;
+}
+.header-content {
+	width: 1200px;
+	height: 80px;
+	overflow: hidden;
+	line-height: 80px;
+}
+.header-content a {
+	display: inline-block;
+	overflow: hidden;
+}
+.header-content a img {
+	height: 24px;
+	margin-top: 28px;
+}
+.header-menu  {
+	overflow: hidden;
+	float: right;
+	height: 100%;
+}
+.header-menu a {
+	float: left;
+	padding: 0 20px;
+	height: 100%;
+}
+.header-menu a.curr {
+	color: #014099;
+}
+.header-menu a.curr li i {
+	width: 100%;
+}
+.header-menu a li {		
+	line-height: 40px;
+	margin-top: 20px;
+	position: relative;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.header-menu a li i {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 0;
+	height: 1px;
+	background: #014099;
+	transition: width 300ms; 
+}
+.header-menu a li:hover i {
+	width: 100%;
+}
+/*公用底部css样式*/
+.footer {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 60px;
+	height: 432px;
+	padding: 35px 0;
+	background: url("../images/footer_bg.jpg") repeat left top/100% auto;
+}
+.footer-content {
+	width: 1200px;
+	overflow: hidden;
+	height: 100%;
+}
+.footer-left {
+	float: left;
+	height: 100%;
+	width: 25%;
+	border-right: 1px solid #dcdcdc ;
+}
+.footer-left img {
+	margin-top: 140px;
+}
+.footer-left i {
+	display: block;
+	line-height: 50px;
+	color: #014099;
+	font-size: 20px;
+	font-weight: bold;
+}
+.footer-center {
+	float: left;
+	height: 100%;
+	width: 55%;
+	padding: 0 50px;
+}
+.footer-center ul {
+	width: 100%;
+	border-bottom: 1px solid #dcdcdc;
+	line-height: 82px;
+	overflow: hidden;
+}
+.footer-center ul li {
+	float: left;
+	overflow: hidden;
+	margin-right: 55px;
+}
+.footer-center ul li:last-child {
+	margin: 0;
+}
+.footer-center ul li a {
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.footer-center ul li a:hover {
+	color: #333;
+}
+.QR-code {
+	overflow: hidden;
+}
+.QR-code img {
+	float: left;
+	width: 30%;
+}
+.QR-code span {
+	width: 70%;
+	float: left;
+	overflow: hidden;
+	padding-left: 30px;
+}
+.QR-code span b {
+	line-height: 28px;
+	color: #999;
+	float: left;
+}
+.QR-code span b a {
+	color: #999;
+	display: inline-block;
+}
+.QR-code span b a:hover {
+	color: #666;
+}
+.QR-code span b i {
+	padding: 0 3px;
+	color: #c5c5c5;
+}
+.footer-center p.curr {
+	color: #1f1f1f;
+	font-size: 16px;
+	line-height: 80px;
+}
+.footer-right {
+	float: left;
+	height: 100%;
+	width: 20%;
+}
+.footer-right span {
+	display: block;
+	overflow: hidden;
+}
+.footer-right span em {
+	float: left;
+	line-height: 82px;
+	border-bottom: 1px solid #1791ee;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.footer-right p {
+	line-height: 40px;
+	margin: 20px 0;
+	overflow: hidden;
+}
+.footer-right p img {
+	float: left;
+	margin-right: 20px;
+}
+.footer-right p i {
+	float: left;
+	font-size: 24px;
+}
+.footer-right ul {
+	width: 100%;
+	overflow: hidden;
+}
+.footer-right ul li {
+	line-height: 30px;
+	padding-bottom: 10px;
+}
+/*页码公用样式*/
+.news-page {
+	width: 100%;
+	overflow: hidden;
+}
+.inside-page {
+	width: 1200px;
+	overflow: hidden;
+	text-align: center;
+	margin-top:50px;
+}
+.page-number {
+	overflow: hidden;
+	line-height: 32px;
+	display: inline-block;
+}
+.page-number a {
+	float: left;
+	line-height: 32px;
+	padding: 0 10px;
+	border: 1px solid #efefef;
+	margin:0 5px;
+}
+.page-number a.curr {
+	background: #1791ee;
+	color: #fff;
+}
+.page-number a.curr:hover {
+	color: #fff;
+}
+.page-number a.up-down {
+	border: 1px solid #83c4f6;
+}
+.page-number a.up {
+	margin-right: 40px;
+}
+.page-number a.down {
+	margin-left: 40px;
+}
+.page-number a:hover {
+	color: #666;
+}
+.page-number ul {
+	overflow: hidden;
+	float: left;
+}
+.page-number ul li {
+	float: left;
+}
+.page-number ul li i {
+	float: left;
+	padding:0 5px;
+}
+.page-number span {
+	float: left;
+	padding-left:20px;
+}
+/*媒体查询*/
+@media only screen and (min-width: 1600px) {
+	.header-content {
+		height: 100px;
+		line-height: 100px;
+	}
+	.header-content a img {
+		margin-top: 42px;
+	}
+	.header-menu a li {	
+		margin-top: 30px;
+	}
+}
+@media only screen and (max-width: 1200px) {
+	.header-content {
+		width: 900px;
+	}
+
+	.header-content a img {
+		height: 20px;
+		margin-top: 30px;
+	}
+	.header-menu a {
+		padding: 0 15px;
+	}
+	.header-menu a li {
+		font-size: 14px;
+	}
+	.footer-content {
+		width: 900px;
+	}
+	.footer-center ul {
+		line-height: 55px;
+	}
+	.footer-center ul li a {
+		font-size: 14px;
+	}
+	.footer-center ul li {
+		margin-right: 23px;
+	}
+	.footer-right span em {
+		font-size: 14px;
+		line-height: 55px;
+	}
+	.footer-right p img {
+		width: 30px;
+	}
+	.footer-right p i {
+		line-height: 30px;
+		font-size: 18px;
+	}
+	.footer-right ul li {
+		line-height: 24px;
+		padding-bottom: 5px;
+	}
+	.QR-code span {
+		font-size: 12px;
+	}
+}

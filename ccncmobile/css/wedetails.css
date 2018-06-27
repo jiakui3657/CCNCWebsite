@@ -1,0 +1,43 @@
+.aptitude_bg {
+    width:100%;
+    margin-top: 60px;
+}
+.a {
+    display:inline-block;
+    width:100%;
+    height:1rem;
+    line-height:1rem;
+    padding-left:0.2rem;
+    font-size:0.3rem;
+    color:#666;
+    font-weight: 600;
+    box-shadow: 0 3px 5px rgba(102,102,102,.3);
+}
+.content {
+    padding:0 0.2rem;
+}
+.content h4 {
+    font-size:0.3rem;
+    color:#333;
+    line-height: 0.8rem;
+    margin-top:0.5rem;
+}
+.content ul {
+    margin:0;
+}
+.content ul li {
+    line-height: 0.5rem;
+    font-size:0.25rem;
+    color:#666;
+}
+.content p {
+    line-height: 0.5rem;
+    font-size:0.25rem;
+    color:#666;
+}
+.content_two p {
+    line-height:0.6rem;
+}
+.cont_three p {
+    line-height:0.6rem;
+}

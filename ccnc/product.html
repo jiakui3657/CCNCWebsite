@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>解决方案 - 中北工程设计咨询有限公司</title>
+    <!--图标引入-->
+    <!--图标引入-->
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/ccnc_product.css">
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 导航栏目 -->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 3 /]
+<div class="container-fluid">
+    <div class="container">
+        <ul class="tab_ul">
+            [#if category??]
+            [#list category as cat]
+                <li class="tab_li [#if cat.id == defId]tab_li_active condition[/#if]" >
+                    <i class="iconfont [#if cat.id == defId]active[/#if]">&${cat.fontIcon!''}</i>
+                    <span>${cat.name!''}</span>
+                </li>
+            [/#list]
+            [/#if]
+        </ul>
+        [#if solutions??]
+            [#list solutions as solution]
+                [#if solution??]
+                <div class="cont cont${solution_index + 1} [#if solution.catalogSolution?? && (solution.catalogSolution.id) == defId]cont_active[/#if]">
+                    ${solution.content !''}
+                </div>
+                [/#if]
+            [/#list]
+        [/#if]
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/lib/underscore/underscore-min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_product.js"></script>
+</body>
+</html>

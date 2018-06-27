@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+ 	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--资质能力样式引入-->
+	<link href="${siteurl}views/zbjg/css/newsdetails.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 5 /]
+
+	<img src="${siteurl}views/zbjg/images/news.jpg"class="sign-photo"/>
+	<!--新闻内容-->
+	<div class="news">
+		<div class="news_header">
+			<div class="share">
+                <a href="${siteurl}news.htm" class="back"><i class="iconfont icon-zuoyou1"></i>返回列表</a>
+                <div class="bshare-custom"><div class="bsPromo bsPromo2"></div>
+                    <i>分享到 : </i>
+                    <div class="bsPromo bsPromo2"></div>
+                    <a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a>
+                    <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+                    <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+                    <a title="分享到QQ空间" class="bshare-qzone"></a>
+                </div>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+            </div>
+		</div>
+		<div class="news_content">
+			<h3 class="overflow-wrap">${(model.title)!''}</h3>
+			<div class="time">
+				<i>发布时间 :</i>
+				<i>
+					[#if model.publishDate??]
+						${model.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</i>
+			</div>
+			<!--新闻具体内容-->
+			<div class="formal-content">
+				${(model.content)!''}
+			</div>
+		</div>
+		<!--上下新闻切换-->
+		<div class="switch-news">
+			[#if preNews??]
+			<a class="previous" href="${siteurl}newsdetails.htm?id=${preNews.id}">
+				<i class="iconfont icon-zuoyou1"></i>
+				<em class="overflow-wrap">${preNews.title!''}</em>
+				<b>
+					[#if preNews.publishDate??]
+						${preNews.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</b>
+			</a>
+			[#else]
+			<a class="previous" href="javascript:void(0)">
+				<i class="iconfont icon-zuoyou1"></i>
+				<em class="overflow-wrap">暂无更多新闻</em>
+				<b>
+				</b>
+			</a>
+			[/#if]
+			[#if nextNews??]
+			<a class="next" href="${siteurl}newsdetails.htm?id=${nextNews.id}">
+				<i class="iconfont icon-zuoyou"></i>
+				<b>
+					[#if nextNews.publishDate??]
+						${nextNews.publishDate?string('yyyy-MM-dd')}
+					[/#if]
+				</b>
+				<em class="overflow-wrap">${(nextNews.title)!''}</em>
+			</a>
+			[#else]
+			<a class="next" href="javascript:void(0)">
+				<i class="iconfont icon-zuoyou"></i>
+				<b>
+				</b>
+				<em class="overflow-wrap">暂无更多新闻</em>
+			</a>
+			[/#if]
+		</div>
+	</div>
+	<!--遮罩层-->
+	<div class="layout"></div>
+
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script src="${siteurl}views/zbjg/js/news.js"></script>
+
+</body>
+</html>

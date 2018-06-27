@@ -1,0 +1,88 @@
+/*新闻内容*/
+.news {
+    width: 100%;
+    overflow: hidden;
+}
+.back-list {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+    padding: 0 0.2rem;
+    line-height: 1rem;
+    color: #999;
+}
+.back {
+    font-size: 0.32rem;
+    color: #999;
+    line-height: 1rem;
+    height: 1rem;
+    margin: 0;
+    float: left;
+    text-decoration: none;
+}
+.back i {
+    float: left;
+    padding-left: 0.1rem;
+    font-size: 0.4rem;
+    transform: rotateZ(180deg);
+}
+.news_content {
+    overflow: hidden;
+    text-align: center;
+    padding: 0 0.2rem;
+}
+.news_content h3 {
+    line-height: 0.6rem;
+    font-size: 0.32rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 0.6rem;
+    padding: 0 0.4rem;
+}
+.news_content img {
+  width: 100%;
+}
+.time {
+    width: 100%;
+    overflow: hidden;
+}
+.time i {
+    display: inline-block;
+    color: #999;
+    line-height: 0.8rem;
+    padding-bottom: 0.4rem;
+}
+.formal-content {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+}
+/*切换新闻*/
+.switch-news {
+    overflow: hidden;
+    padding-top: 0.8rem;
+    border-top: 1px solid #dcdcdc;
+}
+.switch-news a {
+    display: block;
+    line-height: 0.4rem;
+    padding: 0.2rem 0;
+}
+.switch-news a.previous i {
+    transform: rotateZ(90deg);
+}
+.switch-news a.next i {
+    transform: rotateZ(90deg);
+}
+.switch-news a i {
+    border-radius: 3px;
+    border: 1px solid #2597ef;
+    float: left;
+    color: #2597ef;
+    padding: 0 2px;
+    margin:0 0.4rem;
+}
+.switch-news a em {
+    display: inline-block;
+    width: 75%;
+}

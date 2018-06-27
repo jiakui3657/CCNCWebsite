@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/projectcataloglist.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/project_header.jpg" alt="">
+<!--详细列表及每个项目详情-->
+<section class="project">
+    <div class="back-list">
+        <em class="details"><b>${(catalog.name)!''}</b></em>
+        <a href="${siteurl}project.htm" class="back"><i class="iconfont icon-shuangyou"></i>返回列表</a>
+    </div>
+    <ul class="project-list">
+        [#if catalogprojects??]
+        [#list catalogprojects as project]
+        <li onclick="findprojectdetail(${project.id},this)">
+            <div class="img-title">
+                <a href="javascript:void(0)"><img src="${siteurl}${project.iconUrl!''}" alt="" /></a>
+                <div class="project-title overflow-wrap">
+                    ${(project.name)!''}
+                </div>
+            </div>
+        </li>
+        [/#list]
+        [/#if]
+    </ul>
+
+</section>
+
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script>
+    var urll = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();   //转化为对象
+    if (urll.indexOf("?") != -1) {
+        var str = urll.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+        }
+    };
+
+    /*首次进入页面某一个默认有详情*/
+    findprojectdetail(theRequest.id,theRequest.index);
+
+    var siteurl = "${siteurl}";
+    //console.log("sieturl:" + siteurl);
+    //点击查看项目详情
+    function findprojectdetail(pid,_this) {
+        $.ajax({
+            type: "post",
+            url: "findprojectdetail",
+            async: true,
+            data: {"pid": pid},
+            success: function (data) {
+                //console.log(data);
+                /*先拼接某个详情html*/
+                var imgLiHtml = "";
+                for (var i = 0; i < data.files.length; i++) {
+                    imgLiHtml += '<li class="swiper-slide"><img src="'+siteurl+data.files[i] +'" alt="" /></li>'
+                }
+                var detailHtml =  '<div class="project-details"><div class="swiper-container">'+
+                '<ul class="swiper-wrapper">'+imgLiHtml+'</ul></div><div class="project-description"><span>'+
+                '<h3>'+data.name+'</h3><p>'+data.content+'</p></span></div></div>';
+                //console.log(detailHtml);
+                //console.log(typeof(_this));
+                $(".project-details").remove();
+                $(".img-title").css("display","block");
+                if(typeof(_this)=="string"){
+                    $(".project-list li").eq(_this).children("div.img-title").css("display","none");
+                    $(".project-list li").eq(_this).append(detailHtml);
+                }else{
+                   $(_this).children("div.img-title").css("display","none");
+                   $(_this).append(detailHtml);
+                }
+                /*初始化详情轮播*/
+                var mySwiper = new Swiper('.swiper-container',{
+                    autoplay: 2000,
+                    loop : true,
+                    loopAdditionalSlides : 1,
+                    autoplayDisableOnInteraction : false
+                });
+            },
+            error: function () {
+                console.log("请求错误!!!")
+            }
+        });
+
+    }
+
+
+</script>
+</body>
+</html>

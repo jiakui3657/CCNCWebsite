@@ -1,0 +1,110 @@
+/*详细列表及每个项目详情*/
+footer {
+    margin-top: 0.6rem;
+}
+/*分类名及返回列表*/
+
+.back-list {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #dcdcdc;
+    padding: 0 0.2rem;
+    line-height: 1rem;
+    color: #999;
+}
+.back-list em {
+    float: left;
+}
+.back-list em b {
+    padding-left: 0.2rem;
+    font-size: 0.35rem;
+    color: #333;
+    font-weight: bold;
+    border-left: 4px solid #1791ee;
+}
+.back-list em i {
+    font-size: 0.28rem;
+    padding-left: 0.2rem;
+    color: #999;
+}
+.back {
+    font-size: 0.32rem;
+    color: #999;
+    line-height: 1rem;
+    height: 1rem;
+    margin: 0;
+    float: right;
+    text-decoration: none;
+}
+.back i {
+    float: right;
+    font-size: 0.4rem;
+    padding-left: 0.1rem;
+}
+.project-list {
+    width: 100%;
+    overflow: hidden;
+}
+.project-list li {
+    padding: 0.3rem 0.2rem;
+    position: relative;
+}
+.img-title {
+    width: 100%;
+    overflow: hidden;
+}
+.img-title a {
+    overflow: hidden;
+    display: block;
+    height: 3.5rem;
+}
+.img-title img {
+    width: 100%;
+}
+.project-title {
+    background-color: rgba(37,109,217,.8);
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0.2rem;
+    color: #fff;
+    right: 0.2rem;
+    z-index: 99;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    padding: 0 0.5rem;
+}
+/*案列详情*/
+.project-details {
+    width: 100%;
+    overflow: hidden;
+}
+.project-details  ul li {
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 3rem;
+}
+.project-details  ul li img {
+    width: 100%;
+}
+.project-description {
+    width: 100%;
+    overflow: hidden;
+}
+.project-description span {
+    padding: 0.3rem 0.2rem;
+    overflow: hidden;
+    display: block;
+    color: #fff;
+    background: #1791ee;
+}
+.project-description span h3 {
+    font-size: 0.30rem;
+    font-weight: bold;
+    line-height: 0.6rem;
+}
+.project-description span p {
+    font-size: 0.30rem;
+    line-height: 0.5rem;
+}

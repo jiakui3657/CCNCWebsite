@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>加入我们 - 中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="${siteurl}views/ccnc//css/Global.css">-->
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/ccnc_we.css"
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    [#include "/theme/ccnc/common/commons.html"]
+</head>
+<body>
+<!-- 导航栏目 -->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 6 /]
+<div class="container-fluid">
+    <div class="container content">
+        <!--<div class="tab">
+            <ul class="tab_ul">
+                <a href="javascript:void(0)"><li class="tab_li curr"></li></a>
+                [#if catalogs??]
+                    [#list catalogs as item]
+                        <a href="${siteurl}we.htm?catalogId=${item.id}">
+                            <li class="tab_li one [#if so.catalogId == item.id]active[/#if]" >${item.name}</li>
+                        </a>
+                    [/#list]
+                [/#if]
+                <a href="javascript:void(0)">
+                    <li class="tab_li last">
+                        <img class="img" src="${siteurl}views/ccnc/images/font.png" alt="">
+                    </li>
+                </a>
+                <input type="hidden" value="${so.catalogId!''}" id="catalogId"/>
+            </ul>
+        </div>-->
+        <input type="hidden" value="${so.catalogId!''}" id="catalogId"/>
+        <div style="display: block" class="cont cont1">
+            <ul>
+                [#if list??]
+                    [#list list as item]
+                        <li class="">
+                            <a href="${siteurl}wedetails.htm?id=${item.id}">
+                                <span>${item.addDate?string('yyyy-MM-dd')}</span>
+                                <span>
+                                    [#if item.name?? && item.name?length gt 7]
+                                        ${item.name[0..6]}...
+                                    [#else]
+                                        ${item.name!''}
+                                    [/#if]
+                                </span>
+                                <i>${item.companyName!''}</i>
+                            </a>
+                        </li>
+                    [/#list]
+                [/#if]
+            </ul>
+            <div class="xl">
+                <span>选择区域</span>
+                <select id="select" onchange="selArea()">
+                    <option value="">全部</option>
+                    [#if areas??]
+                        [#list areas as item]
+                            <option value="${item.id!''}" [#if so.areaId?? && item.id == so.areaId]selected="selected"[/#if]>${item.name!''}</option>
+                        [/#list]
+                    [/#if]
+                </select>
+                <i class="iconfont icon-xiala"></i>
+            </div>
+            <div class="cont_bottom">
+                [@pager page=page   /]
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/lib/underscore/underscore-min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_we.js"></script>
+<script type="text/javascript">
+    //选择地区
+    function selArea() {
+        var catalogId = $("#catalogId").val();
+        var areaId = $("#select").val();
+        window.location.href="${siteurl}we.htm?catalogId="+catalogId+"&areaId="+areaId;
+    }
+    $.pageSkip = function(pageNumber) {
+        var catalogId = $("#catalogId").val();
+        var areaId = $("#select").val();
+        window.location.href="${siteurl}we.htm?catalogId="+catalogId+"&areaId="+areaId+"&pageNumber="+pageNumber;
+        return false;
+    };
+</script>
+</body>
+</html>

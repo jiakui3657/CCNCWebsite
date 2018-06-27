@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 100px">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>${(model.title)!''} - 新闻活动 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/Global.css">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/newsdetails.css">
+    <script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 5 /]
+<section>
+    <img class="aptitude_bg" src="${siteurl}views/ccncmobile/images/5.jpg" alt="">
+    <div class="share">
+        <a href="${siteurl}news.htm" class="back">返回列表</a>
+        <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+        <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+    </div>
+        <div class="content">
+            <div class="cont_center_frist">
+                <h4>${(model.title)!''}</h4>
+                <div class="share_it">
+                        <span>
+                            <i class="">发布时间 ：</i>
+                            <i class="curr">
+                                [#if model.publishDate??]
+                                    ${model.publishDate?string('yyyy-MM-dd')}
+                                [/#if]
+                            </i>
+                        </span>
+                </div>
+            </div>
+            <div class="cont_center_two">
+                ${model.content!''}
+            </div>
+            <div class="cont_center_five">
+                <p>
+                    [#if preNews??]
+                    <a href="${siteurl}newsdetails.htm?id=${preNews.id}">
+                        上一页：${preNews.title!''}
+                    </a>
+
+                    [#else]
+                    <a href="javascript:void(0)" class="curr">
+                        上一页：没有了
+                    </a>
+                    [/#if]
+                </p>
+                <p>
+                    [#if nextNews??]
+                    <a href="${siteurl}newsdetails.htm?id=${nextNews.id}">
+                        下一页：${nextNews.title!''}
+                    </a>
+
+                    [#else]
+                    <a href="javascript:void(0)" class="curr">
+                        下一页：没有了
+                    </a>
+                    [/#if]
+                </p>
+            </div>
+        </div>
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+$(function(){
+    $(".cont_center_two p").css({
+        "line-height":"0.5rem",
+        "color":"#333",
+        "margin-bottom":"0.3rem",
+        "font-size":"0.28rem"
+    });
+    $(".cont_center_two p strong span").css({
+        "font-weight": "600"
+    });
+    $(".cont_center_two p span").css({
+        "font-size":"0.28rem"
+    });
+    $(".cont_center_two ul").css({
+        "margin-bottom":"0.3rem"
+    })
+});
+var url = encodeURIComponent(location.href.split('#')[0]);
+var incomingTitle = '中北集团设计院-新闻活动';
+var incomingDesc = $(".cont_center_frist h4").text();
+//console.log(incomingDesc);
+getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

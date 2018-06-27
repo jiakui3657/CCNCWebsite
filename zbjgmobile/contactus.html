@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/contactus.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/contactus_header.jpg" alt="">
+<!--公司地址-->
+<section class="address">
+    <h3 class="head-title">
+        公<i>|</i>司<i>|</i>地<i>|</i>址
+    </h3>
+    <div class="location">
+        <img class="address-bg" src="${siteurl}views/zbjgmobile/images/address_bg.jpg" alt="" />
+        <div class="location-details">
+            <p class="title overflow-wrap"><em>中北建工总公司</em></p>
+            <p class="overflow-wrap"><i class="iconfont icon-dizhi"></i>沈阳市皇姑区北陵大街56号 </p>
+            <p class="overflow-wrap"><i class="iconfont icon-dianhua01"></i>024一86697515</p>
+            <p class="overflow-wrap"><i class="iconfont icon-youxiang"></i>ZBJG_888888@163.com</p>
+        </div>
+    </div>
+</section>
+<!--填写需求-->
+<section class="demand">
+    <h3 class="head-title">
+        填<i>|</i>写<i>|</i>需<i>|</i>求
+    </h3>
+    <form action="" onsubmit="return submitForm()">
+        <ul class="demand-list">
+            <li>
+                <span>
+                    <label for="name">您的姓名：</label>
+                    <input type="text" id="name" name="name" placeholder="" required/>
+                    <b class="promit">请输入姓名</b>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <label for="contactInfor">联系方式：</label>
+                    <input class="red-place" type="text" id="contactInfor" name="phone" placeholder="" required/>
+                    <b class="promit">请输入联系方式</b>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <label for="mailbox">电子邮箱：</label>
+                    <input type="text" id="mailbox" name="email" placeholder="" required/>
+                    <b class="promit">请输入邮箱</b>
+                </span>
+            </li>
+        </ul>
+        <div class="demand-body">
+            <label for="demand-body">需求:</label>
+            <textarea id="demand-body" name="content" rows="5" cols="20" placeholder="" required></textarea>
+            <b class="promit">请输入文字...</b>
+        </div>
+        <div class="verificationCode">
+            <span>
+                <label for="verificationCode">验证码：</label>
+                <input type="text" id="verificationCode"  maxlength="5" placeholder="" />
+                <b class="promit">请输入验证码</b>
+            </span>
+            <span class="five-code">
+                <input type="button" id="checkCode" class="code" onclick="createCode()"/>
+                <a href="javascript:void(0)" onclick="createCode()">看不清？</a>
+            </span>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">提交</button>
+    </form>
+</section>
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script type="text/javascript">
+    //input失去获得焦点
+    $('.demand-list li span input').on('focus',function(){
+        $(this).siblings('b').css('display','none')
+    });
+    $('.demand-list li span input').on('blur',function(){
+        if($(this).val()==''){
+            $(this).siblings('b').css('display','block')
+            return false;
+        }
+        $(this).siblings('b').css('display','none')
+    });
+    $('.verificationCode span input').on('focus',function(){
+        $(this).siblings('b').css('display','none')
+    });
+    $('.verificationCode span input').on('blur',function(){
+        if($(this).val()==''){
+            $(this).siblings('b').css('display','block')
+            return false;
+        }
+        $(this).siblings('b').css('display','none')
+    });
+    $('.demand-body textarea').on('focus',function(){
+        $(this).siblings('b').css('display','none')
+    });
+    $('.demand-body textarea').on('blur',function(){
+        if($(this).val()==''){
+            $(this).siblings('b').css('display','block')
+            return false;
+        }
+        $(this).siblings('b').css('display','none')
+    });
+    //产生验证码
+    function createCode() {
+        code = "";
+        var codeLength = 5; //验证码的长度
+        var checkCode = document.getElementById("checkCode");
+        var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //随机数
+        for(var i = 0; i < codeLength; i++) { //循环操作
+            var charIndex = Math.floor(Math.random() * 36); //取得随机数的索引
+            code += random[charIndex]; //根据索引取得随机数加到code上
+        }
+        //console.log("code");//验证码已生成
+        checkCode.value = code; //把code值赋给验证码
+    }
+    createCode();
+
+
+
+
+    //提交需求
+    function submitForm() {
+        var name = $("#name").val();
+        var phone = $("#contactInfor").val();
+        var email = $("#mailbox").val();
+        var content = $("#demand-body").val();
+        var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        var inputCode = document.getElementById("verificationCode").value.toUpperCase(); //取得输入的验证码并转化为大写
+        if(name == "" || content == ""){
+            $(".promit").css("color", "#f12c4d");
+            setTimeout(function () {
+                $(".promit").css("color", "#666");
+            }, 2000)
+            $("html,body").animate({scrollTop:$(".demand").offset().top},300);
+            return false;
+        };
+        if(!myreg.test(phone)) {
+            $("#contactInfor").siblings("b").css({
+                "color": "#f12c4d",
+                "display" : "block"
+            });
+            $("html,body").animate({scrollTop:$(".demand").offset().top},300);
+            setTimeout(function () {
+                $("#contactInfor").siblings("b").css({
+                    "color": "#666",
+                    "display" : "none"
+                })
+            }, 2000);
+            return false;
+        }
+        if(inputCode.length <= 0) { //若输入的验证码长度为0
+            $("#verificationCode").siblings("b").html("请输入验证码 ！").css("color", "#f12c4d");
+            setTimeout(function(){
+                $("#verificationCode").siblings("b").html("请输入验证码 ！").css("color", "#666");
+            },2000)
+            return false;
+        }else if(inputCode != code) { //若输入的验证码与产生的验证码不一致时
+            $("#verificationCode").siblings("b").html("验证码输入错误 ！").css({
+                "color": "#f12c4d",
+                "display" : "block"
+            });
+            createCode(); //刷新验证码
+            $("#verificationCode").val("");
+            setTimeout(function(){
+                $("#verificationCode").siblings("b").html("请输入验证码 ！").css({
+                    "color": "#666"
+                })
+            },2000);
+            return false;
+        }
+        var params = {"name":name,"phone":phone,"content":content,"email":email};
+        $.post("${siteurl}addDemand.htm",params,function (data) {
+            if(data == "1"){
+                alert("您已成功提交，请等候工作人员联系");
+                location.reload();
+            }else{
+                alert("提交失败");
+                location.reload();
+            }
+        });
+        return false;
+    }
+</script>
+</body>
+</html>

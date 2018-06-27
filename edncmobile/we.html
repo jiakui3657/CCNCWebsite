@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;招聘</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/Global.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/we.css">
+</head>
+<body>
+<div class="coo">
+    <!--顶部-->
+    [#include "/theme/edncmobile/common/header.html"]
+    <!--导航二-->
+    <div class="text">当前：<span>首页</span> > 招贤纳士</div>
+    <div class="content">
+        <ul>
+            <li><a href="${siteurl}wedetails.html"><span>职位名称</span><span>招聘人数</span><span>工作地点</span></a></li>
+            [#if list??]
+            [#list list as item]
+            <li><a href="${siteurl}wedetails.htm?id=${item.id}"><span>${item.name!''}</span><span>${(item.persionNum)!''}</span><span>${(item.workCity)!''}</span></a></li>
+            [/#list]
+            [/#if]
+        </ul>
+        <div class="down_refresh" style="display:none;">
+            <img src="${siteurl}views/edncmobile/img/Spinner.svg" alt="">
+            <i class="release" page="1">上拉加载更多</i>
+        </div>
+    </div>
+    <!--底部-->
+    [#include "/theme/edncmobile/common/footer.html"]
+</div>
+
+<!--遮罩-->
+[#include "/theme/edncmobile/common/mask.html"]
+<script src="${siteurl}views/edncmobile/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/edncmobile/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/edncmobile/js/http.js"></script>
+<script src="${siteurl}views/edncmobile/js/public.js"></script>
+<script src="${siteurl}views/edncmobile/js/we.js"></script>
+</body>
+</html>

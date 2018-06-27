@@ -1,0 +1,82 @@
+/*资质证书*/
+.certificate {
+    width: 100%;
+    overflow: hidden;
+}
+.certificate-img {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.certificate-list {
+    width: 50%;
+    overflow: hidden;
+    padding: 0 0.2rem;
+    float: left;
+}
+.certificate-list img {
+    width: 100%;
+}
+/*文字证书描述*/
+.classification {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.2rem;
+    margin-top: 0.5rem;
+}
+.classification-content {
+    width: 100%;
+    overflow: hidden;
+}
+.classifi-item {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.3rem;
+}
+.classifi-item p {
+    overflow: hidden;
+    color: #1791ee;
+    line-height: 0.5rem;
+}
+.classifi-item p i {
+    float: left;
+    font-size: 0.5rem;
+    padding-left: 0.2rem;
+    padding-right: 0.1rem;
+    border-right: 1px solid #dcdcdc;
+}
+.classifi-item p b {
+    float: left;
+    padding-left: 0.1rem;
+    font-size: 0.3rem;
+}
+.classifi-list {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.1rem;
+}
+.classifi-list li {
+    float: left;
+    width: 100%;
+    padding: 0.2rem;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.classifi-list li.curr {
+    border-bottom: 1px solid #fff;
+    bottom: 0;
+}
+.classifi-list li i {
+    float: left;
+    width: 75%;
+}
+.classifi-list li b {
+    float: right;
+    color: #1791EE;
+    width: 25%;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}

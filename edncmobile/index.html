@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有600余人规模的民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，中北交通建设，中北交通建设集团，中北集团，中北建设集团，中北交通建设集团有限公司">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/Global.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/edncmobile/css/index.css">
+</head>
+<body>
+<div class="coo">
+    <!--顶部-->
+    [#include "/theme/edncmobile/common/header.html"]
+    <!--banner图-->
+    <div class="banner">
+        [#if homePictureList??]
+        [#list homePictureList as homePicture]
+            <img src="${siteurl}${(homePicture.pbigPicture)!''}" alt="">
+            <h3>${(homePicture.title)!''}</h3>
+            <p>${(homePicture.intro)!''}</p>
+            <a href="${siteurl}${(homePicture.linkUrl)!''}">了解更多</a>
+        [/#list]
+        [/#if]
+    </div>
+    <div class="text">
+        [@newslast size = 1]
+        [#if list??]
+        [#list list as news]
+        <a href="${siteurl}newsdetails.htm?id=${news.id}">[#if news.publishDate??]${news.publishDate?string('yyyy-MM-dd')}[/#if] ${news.title!''}</a>
+        [/#list]
+        [/#if]
+        [/@newslast]
+    </div>
+    <h4>项目展示<i class="iconfont icon-icon1" ></i></h4>
+    <!--轮播图-->
+    <div class="swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                [#if projectRecommends??]
+                [#list projectRecommends as project]
+                [#if (project_index + 1) % 2 == 1]
+                <div class="swiper-slide">
+                    <ul>
+                [/#if]
+                        <li>
+                            <a href="${siteurl}projectdetails.htm?id=${project.id}">
+                                <img src="${siteurl}${(project.iconUrl)!''}" alt="">
+                                <p>${(project.name)!''}</p>
+                            </a>
+                        </li>
+                        [#if (project_index + 1) % 2 == 0 || projectRecommends?size == (project_index + 1)]
+                    </ul>
+                </div>
+                [/#if]
+                [/#list]
+                [/#if]
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!--公司介绍-->
+    <div class="company">
+        <h4>公司介绍<i class="iconfont icon-icon1" ></i></h4>
+        <p>中北交通建设集团有限公司成立于2005年，以交通建设和建筑业务为核心，始终坚持高质量交付，以安全可靠
+            为己任，是一家追求绿色环保、节能生态的创新型建筑企业。集路桥工程建设、系统集成设计与施工、软件开发、销售与技术服务为一体，注册资本10.2亿元人民币。</p>
+        <a href="${siteurl}history.htm">了解更多></a>
+    </div>
+    <!--底部-->
+    [#include "/theme/edncmobile/common/footer.html"]
+</div>
+<!--遮罩-->
+[#include "/theme/edncmobile/common/mask.html"]
+<script src="${siteurl}views/edncmobile/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/edncmobile/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/edncmobile/plugins/swiper/swiper-3.4.2.min.js"></script>
+<script src="${siteurl}views/edncmobile/js/http.js"></script>
+<script src="${siteurl}views/edncmobile/js/public.js"></script>
+<script src="${siteurl}views/edncmobile/js/index.js"></script>
+</body>
+</html>

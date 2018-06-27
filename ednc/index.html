@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有600余人规模的民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，中北交通建设，中北交通建设集团，中北集团，中北建设集团，中北交通建设集团有限公司">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/ednc/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ednc/plugins/swiper/swiper-2.7.6.css">
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/Global.css"/>
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/index.css">
+    <script>
+        var siteurl = "${siteurl}";
+    </script>
+</head>
+<body>
+<script src="${siteurl}views/ednc/plugins/swiper/swiper-2.7.6.js"></script>
+<!--顶部-->
+[#include "/theme/ednc/common/header.html"]
+<!--内容区域-->
+<!--banner图-->
+<div class="banner">
+    [#if homePictureList??]
+    [#list homePictureList as homePicture]
+    <img src="${siteurl}${(homePicture.pbigPicture)!''}" alt="">
+    <h3>${(homePicture.title)!''}</h3>
+    <p>${(homePicture.intro)!''}</p>
+    <a href="${siteurl}project.htm?index=4">了解更多</a>
+    [/#list]
+    [/#if]
+</div>
+<div class="text">
+    <!--轮播图-->
+    <div class="swiper1" style="overflow:hidden">
+        <div class="swiper-container1">
+            <div class="swiper-wrapper">
+                [@newslast size = 100]
+                [#if list??]
+                [#list list as news]
+                <div class="swiper-slide">
+                    <div class="container">
+                        <a href="${siteurl}project.htm?index=4">${(news.catalogNews.name)!''}</span></a>
+                        <a href="${siteurl}newsdetails.htm?id=${news.id}"><span>${news.publishDate?string('yyyy-MM-dd')}</span>${news.title!''}</a>
+                    </div>
+                </div>
+                [/#list]
+                [/#if]
+                [/@newslast]
+            </div>
+        </div>
+    </div>
+</div>
+<div class="classification">
+    <div class="container">
+        <h4>行业解决方案</h4>
+        <p>一级工程、交付施工解决方案、跨越四个关键市场<i class="iconfont icon-icon"></i></p>
+        <ul class="ul">
+            [#if catalogProjectsRecommends??]
+            [#list catalogProjectsRecommends as catalogProjectVo]
+            <li class="li">
+                <a href="${siteurl}project.htm?index=4&&page=${catalogProjectVo.id!''}" class="iconfont">&${catalogProjectVo.fontIcon!''}</a>
+                <span>${catalogProjectVo.name!''}</span>
+            </li>
+            [/#list]
+            [/#if]
+        </ul>
+        <h4>项目展示</h4>
+        <p>为工程项目全生命周期提供服务<i class="iconfont icon-icon"></i></p>
+        <!--轮播图-->
+        <div class="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    [#if projectRecommends??]
+                    [#list projectRecommends as project]
+                    [#if (project_index + 1) % 3 == 1]
+                    <div class="swiper-slide">
+                        <ul>
+                            [/#if]
+                            <li index="${project.id}" data-toggle="modal" data-target=".bs-example-modal-lg">
+                                    <img src="${siteurl}${(project.iconUrl)!''}" alt="">
+                                    <p>${(project.name)!''}</p>
+                            </li>
+                            [#if (project_index + 1) % 3 == 0 || projectRecommends?size == (project_index + 1)]
+                        </ul>
+                    </div>
+                    [/#if]
+                    [/#list]
+                    [/#if]
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--公司介绍-->
+        <div class="company">
+            <div class="company-text col-md-6 col-sm-6 col-xs-6">
+                <img src="${siteurl}views/ednc/img/company.png" alt="">
+                <p><a href="${siteurl}history.htm?index=6">中北交通建设集团有限公司成立于2005年，以交通建设和建筑业务为核心，始终坚持高质量交付，以安全可靠
+                    为己任，是一家追求绿色环保、节能生态的创新型建筑企业。集路桥工程建设、系统集成设计与施工、软件开发、销售与技术服务为一体，注册资本10.2亿元人民币。</a></p>
+                <p><a href="${siteurl}history.htm?index=6"></a></p>
+            </div>
+            <img class="col-md-6 col-sm-6 col-xs-6" src="${siteurl}views/ednc/img/company1.png" alt="">
+        </div>
+    </div>
+</div>
+<!--遮罩层-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="iconfont" aria-hidden="true">&#xe6e1;</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="iconfont" aria-hidden="true">&#xe6e0;</span>
+                </a>
+            </div>
+            <div class="text1">
+                <p>项目地点：<span>河南省光山县</span></p>
+                <p>项目介绍：<span>河南北路市政基础设施项目（弦山桥-龙山水库段），总投资2.57亿元，长约10公里，规划面积约10平方公里，建设内容为道路、桥涵、给排水、绿化、交通、照明、通信、燃气。通过本项目能催进沿线地块及旅游资源开发，方便当地群众出行、为光山县人民出行游玩增加新去处，提升光山县城的品牌形象。</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+[#include "/theme/ednc/common/footer.html"]
+<script src="${siteurl}views/ednc/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/ednc/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ednc/js/public.js"></script>
+<script src="${siteurl}views/ednc/js/index.js"></script>
+</body>
+</html>

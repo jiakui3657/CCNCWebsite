@@ -1,0 +1,34 @@
+[#macro channel index]
+<div class="banner">
+    <!--导航条-->
+    <div class="nav">
+        <div class="logo">
+            <a href="${siteurl}index.htm">
+                <img src="${siteurl}views/ccnc/images/lo.png" alt=""/>
+            </a>
+        </div>
+        <ul class="list-unstyled">
+            [@channelItem index /]
+        </ul>
+    </div>
+</div>
+[/#macro]
+
+<!-- 栏目选项 -->
+[#macro channelItem index]
+    <li class="[#if index == 1]navActive[/#if]"><a href="${siteurl}history.htm?dicts=companyIntroduction">关于中北</a><i></i></li>
+    <li class="[#if index == 2]navActive[/#if]"><a href="${siteurl}aptitude.htm">资质能力</a><i></i></li>
+    <li class="[#if index == 3]navActive[/#if]"><a href="${siteurl}product.htm">解决方案</a><i></i></li>
+    <li class="[#if index == 4]navActive[/#if]"><a href="${siteurl}project.htm">项目案例</a><i></i></li>
+    <li class="[#if index == 5]navActive[/#if]"><a href="${siteurl}news.htm">新闻活动</a><i></i></li>
+    <li class="[#if index == 6]navActive[/#if]"><a href="${siteurl}we.htm">加入我们</a><i></i></li>
+    <li class="[#if index == 6]navActive[/#if]">
+        <a href="javascript:void(0)" id="north_company">中北旗下<em class="iconfont icon-xiala"></em></a>
+        <div class="north_company">
+            <span class="span"><a href="http://www.ednc.cc/" target="_blank">中北交通建设集团有限公司</a></span>
+            <span class="span"><a href="http://www.cncelc.cn/" target="_blank">中北建工有限公司</a></span>
+            <span class="span"><a href="http://www.tongnainfo.com/" target="_blank">陕西同纳信息技术有限公司</a></span>
+        </div>
+    </li>
+
+[/#macro]

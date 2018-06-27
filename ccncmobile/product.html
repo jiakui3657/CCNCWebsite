@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>解决方案 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}views/ccnc/css/Global.css" rel="stylesheet">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/product.css">
+    <script src="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.js"></script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 3 /]
+<section class="header_bg">
+    <img src="${siteurl}views/ccncmobile/images/3.jpg" alt="">
+</section>
+<section class="history_tab swiper-container" id="swiper-container1">
+    <div class="swiper-wrapper">
+        [#if category??]
+        [#list category as cat]
+        <span class="swiper-slide [#if cat.id == defId]swiper-slide-active curr[/#if]">${cat.name!''}</span>
+        [/#list]
+        [/#if]
+    </div>
+</section>
+<section id="swiper-container2" class="swiper-container">
+
+    <section class="swiper-wrapper">
+        [#if solutions??]
+        [#list solutions as solution]
+        [#if solution??]
+        ${solution.pcontent !''}
+        [/#if]
+        [/#list]
+        [/#if]
+    </section>
+
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+<script src="${siteurl}views/ccncmobile/js/product.js"></script>
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+      function show(){
+              var scrollHeight=$(window).scrollTop();
+              var headerHeight=$('header').height();
+              var height=$('.history_tab').offset().top;
+              var aptitudeHeight=$(".header_bg").height();
+              var tt=$('.history_tab').height();
+              if(scrollHeight+headerHeight>=height) {
+                   $(".jk").remove();
+                   $('.history_tab').addClass("tabActive");
+                   $('.header_bg img').after('<div class="jk"></div>');
+              }
+              if(scrollHeight<=headerHeight+tt) {
+                   $(".jk").remove();
+                   $('.history_tab').removeClass("tabActive");
+              }
+              if(scrollHeight==0) {
+                   $(".jk").remove();
+                   $('.history_tab').removeClass("tabActive");
+              }
+        }
+    var timer=setInterval(show,1);
+      var url = encodeURIComponent(location.href.split('#')[0]);
+      var incomingTitle = '中北集团设计院-解决方案';
+      var incomingDesc = '中北特色产业布局，从不同领域持续满足客户最佳体验';
+      getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

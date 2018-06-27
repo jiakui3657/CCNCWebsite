@@ -1,0 +1,30 @@
+[#macro pager page ]
+<input type="hidden" id="searchProperty" name="searchProperty" value="${(page.searchProperty)!''}" />
+<input type="hidden" id="orderProperty" name="orderProperty" value="${(page.orderProperty)!}" />
+<input type="hidden" id="orderDirection" name="orderDirection" value="${(page.orderDirection)!}" />
+    [#if page.totalPages > 1]
+        <input type="button" value="首页" onclick="$.pageSkip(1)">
+        [#if page.pageNumber > 2]
+            <input type="button" value="上一页" onclick="$.pageSkip(${page.pageNumber-1})">
+        [#else]
+            <input type="button" value="上一页" onclick="$.pageSkip(1)">
+        [/#if]
+        <ul>
+        [#list page.firstNo..page.endNo as  segmentPageNumber]
+        [#if segmentPageNumber_index == 0 && segmentPageNumber > 2]
+        [/#if]
+        [#if segmentPageNumber != page.pageNumber]
+            <li><a href="javascript: $.pageSkip(${segmentPageNumber});">${segmentPageNumber}</a></li>
+        [#else]
+            <li><span class="currentPage">${segmentPageNumber}</span></li>
+        [/#if]
+        [/#list]
+        </ul>
+        [#if page.pageNumber lt page.totalPages]
+            <input type="button" value="下一页" onclick="$.pageSkip(${page.pageNumber+1})">
+        [#else]
+            <input type="button" value="下一页" onclick="$.pageSkip(${page.totalPages})">
+        [/#if]
+        <input type="button" value="最后一页" onclick="$.pageSkip(${page.totalPages})">
+    [/#if]
+[/#macro]

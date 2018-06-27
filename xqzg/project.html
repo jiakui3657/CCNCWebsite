@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="西桥重工有限公司是由西安工业投资集团与中北交通集团共同组建的特大型企业，主要从事钢结构及产品、钢桥梁及零部件产品的生产、安装、销售、改造维护、施工安装。">
+	<title>西桥重工有限公司</title>
+	<!--资质能力样式引入-->
+	<link rel="icon" type="image/png" sizes="192x192" href="${cdn}views/ccnc/images/favicon.ico">
+	<link rel="stylesheet" href="${cdn}views/xqzg/bootstrap/css/bootstrap.min.css"/>
+	<!--图标引入-->
+	<link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+	<link rel="stylesheet" href="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.css">
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/Global.css"/>
+	<!--[if lt IE 9]>
+	<script src="${cdn}views/ccnc/lib/respond/respond.js"></script>
+	<script src="${cdn}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+	<script type="text/javascript" src="${cdn}views/ccnc/js/selectivizr.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/public.css"/>
+	<link href="${cdn}views/xqzg/css/project.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--顶部-->
+<header>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			<img class="logo" src="${cdn}views/xqzg/img/logo.jpg" alt="">
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<ul class="navigation">
+				<li class="col-md-2 col-lg-2"><a href="javascript:0;"></a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=1">官网首页</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=2">公司介绍</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2 active"><a href="${cdn}project.htm">项目案例</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}news.htm">新闻活动</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=5">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<img src="${cdn}views/zbjg/images/project.jpg" class="sign-photo"/>
+<!--轮播图-->
+<div class="banner avtive">
+	<div id="Services" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+		</div>
+		<a class="left carousel-control" href="#Services" role="button" data-slide="prev">
+			<em class="iconfont icon-zuoyou1"></em>
+		</a>
+		<a class="right carousel-control" href="#Services" role="button" data-slide="next">
+			<em class="iconfont icon-zuoyou"></em>
+		</a>
+		<div class="carousel-caption">
+
+		</div>
+	</div>
+</div>
+<script>
+
+</script>
+	<!--经典案列列表-->
+	<div class="case">
+		[@catalogprojectrecomends]
+		[#if list??]
+		[#list list as catalogProjectVo]
+		<div class="case-list">
+				<span>
+					<em><b>${(catalogProjectVo.catalogName)!''}</b></em>
+				</span>
+			<p>
+				<i>${(catalogProjectVo.tagName)!''}</i>
+			</p>
+			<ul>
+				[#list catalogProjectVo.projectList as project]
+				[#if project_index < 4]
+				<li>
+					<em><img src="${cdn}${project.iconUrl!''}" alt="" /></em>
+					<div class="case-layout"></div>
+					<div class="case-title" onclick="findprojectdetail(${project.id})">
+						<a>${(project.name)!''}</a>
+					</div>
+				</li>
+				[/#if]
+				[/#list]
+			</ul>
+			<a href="" class="more">
+				[#list catalogProjectVo.projectList as project]
+				[#if project_index < 4]
+				[#else]
+					了解更多 >>
+				[/#if]
+				[/#list]
+			</a>
+
+		</div>
+		[/#list]
+		[/#if]
+		[/@catalogprojectrecomends]
+	</div>
+	<!--遮罩层-->
+	<div class="layout"></div>
+
+<!--底部-->
+[#include "/theme/xqzg/common/footer.html"]
+<script src="${cdn}views/xqzg/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${cdn}views/xqzg/bootstrap/js/bootstrap.min.js"></script>
+<script src="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.js"></script>
+<script src="${cdn}views/xqzg/js/public.js"></script>
+<script type="text/javascript" src="${cdn}views/xqzg/js/project.js"></script>
+<script type="text/javascript">
+    var siteurl = "${cdn}";
+    //console.log("sieturl:" + siteurl);
+	//点击查看项目详情
+	function findprojectdetail(pid) {
+        $.ajax({
+            type: "post",
+            url: "findprojectdetail",
+            async: true,
+            data: {"pid": pid},
+            success: function (data) {
+                console.log(data);
+                if (data.files.length == 0) {
+                    return false;
+                }
+                var indicatorsHtml = '', inneHtml = '', captionHtml = '';
+                for (var i = 0; i < data.files.length; i++) {
+                    if (i == 0) {
+                        indicatorsHtml += '<li data-target="#Services" data-slide-to="' + i + '" class="active"></li>';
+                        inneHtml += '<div class="item active"><img src="' + siteurl + data.files[i] + '" alt="..."></div>'
+                    } else {
+                        indicatorsHtml += '<li data-target="#Services" data-slide-to="' + i + '" class=""></li>';
+                        inneHtml += '<div class="item"><img src="' + siteurl + data.files[i] + '" alt="..."></div>'
+                    }
+                }
+                if(data.files.length == 1) {
+                    indicatorsHtml = "";
+                    $("#Services .carousel-control").addClass("hidden");
+                }else {
+                    $("#Services .carousel-control").removeClass("hidden");
+                }
+                $(".carousel-indicators").html(indicatorsHtml);
+                $(".carousel-inner").html(inneHtml);
+                captionHtml += '<h4 class="overflow-wrap">' + data.name + '</h4><p>' + data.content + '</p>';
+                $(".carousel-caption").html(captionHtml);
+                $('.banner').css('display', 'block');
+                $('.layout').css('display', 'block');
+
+            },
+            error: function () {
+                console.log("请求错误!!!")
+            }
+        });
+    }
+    /*点击遮罩层*/
+    $('.layout').on('click',function(){
+        $(this).css('display','none');
+        $('.banner').css('display','none');
+    })
+
+</script>
+</body>
+</html>

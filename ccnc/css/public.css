@@ -1,0 +1,556 @@
+body {
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+/*头部公共菜单*/
+.nav {
+    height: 65px;
+    width: 1200px;
+    background: #0033cc;
+    box-shadow: 2px 3px 20px rgba(100,100,100,.3);
+    margin: 10px auto;
+    position: relative;
+}
+.logo {
+    float: left;
+    width: 255px;
+    background-color: #fff;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    margin-right: 50px;
+}
+.logo a {
+    display: block;
+}
+.logo img {
+    width: 160px;
+}
+.nav li {
+    float: left;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    height: 65px;
+    line-height: 65px;
+    margin: 0 25px;
+    position: relative;
+}
+.nav ul li:hover i {
+    width:100%;
+}
+.nav ul li i {
+    height: 2px;
+    background: #fff;
+    width: 0;
+    margin: 0 auto;
+    transition: all 0.3s ease-out 0s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.north_company {
+    position: absolute;
+    right:-75px;
+    width: 206px;
+    top:64px;
+    display: none;
+}
+.north_company span {
+    float: left;
+    background: #000;
+    opacity: .5;
+    filter:Alpha(opacity=50);
+}
+.north_company .span a {
+    float: left;
+    line-height:40px;
+    width: 170px;
+    height: 40px;
+    margin: 0 18px;
+    font-size: 14px;
+    color: #fff;
+}
+.nav ul li a {
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    line-height: 65px;
+    text-decoration: none;
+    height:65px;
+}
+.nav ul li a em {
+    float: right;
+    margin-left:10px;
+    color: #fff;
+    line-height: 65px;
+    transition: all 300ms;
+}
+.nav ul li a em.curr {
+    transform: rotate(180deg);
+}
+.nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+ .navActive i {
+     width:100% !important;
+}
+ .banner {
+    background: url("../images/join_us.jpg") no-repeat center;
+    background-size:cover;
+    height: 260px;
+    display: inline-block;
+    width:100%;
+     min-width: 1024px;
+}
+.banner .font {
+    font-size: 24px;
+    color: #fff;
+    height:165px;
+    line-height:165px;
+    margin-left: 40%;
+    letter-spacing: 4px;
+}
+@media(max-width: 1250px) {
+    .banner .font {
+        margin-left: 45%;
+    }
+    .banner {
+        height: 200px;
+    }
+}
+@media(max-width: 1100px) {
+    .banner .font {
+        font-size: 20px;
+        margin-top: 75px;
+        margin-left: 37%;
+    }
+}
+@media(max-width: 1000px) {
+    .banner .font {
+        font-size: 17px;
+        margin-left: 45%;
+    }
+}
+/*头部公共菜单*/
+.banner .font {
+    font-weight:500;
+}
+/*公共顶部*/
+/*footer底部*/
+.footer .center .container .row .col-sm-5 {
+    *width: 35.66%;
+    _width: 34.66%;
+}
+.footer .center .container .row .col-sm-5 .col-sm-4 {
+    *width: 25.33%;
+    _width: 25.33%;
+    *float: left;
+    _float: left;
+}
+@media(max-width: 1250px){
+    .footer .center .container .row .col-sm-5 .col-sm-4 {
+        *width: 25.33%;
+        _width: 25.33%;
+        *float: left;
+        _float: left;
+    }
+}
+.footer h4 {
+    margin: 0 0 45px 0;
+    color: #000;
+    font-size: 18px;
+}
+.footer form input {
+    outline: none;
+    border: 1px solid #bfbfbf;
+    height: 38px;
+    line-height:38px\9;
+    margin-bottom: 14px;
+    color: #666;
+    padding: 0 20px;
+    width: 400px;
+    background: #f4f4f4;
+}
+#verificationCode {
+    width: 50%;
+    float: left;
+}
+#checkCode {
+    width: 30%;
+    float: left;
+    background: #fff;
+    border:none;
+    color: #032c8b;
+    padding:0 10px;
+    letter-spacing: 8px;
+    font-size: 20px;
+    font-style: italic;
+    margin-left: 10px;
+}
+.footer form .list-unstyled li.curr a {
+    color: #000ad9;
+    float: right;
+    width: 15%;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+@media (max-width: 1100px) {
+    .footer .center .container .row .col-sm-5 {
+        *width: 34.66%;
+        _width: 34.66%;
+    }
+}
+@media (max-width: 1000px) {
+    form .list-unstyled {
+        margin-left: 10px;
+    }
+}
+.footer {
+    width: 100%;
+    height: 410px;
+    background-color: #ebeef7;
+    padding: 0;
+    min-width: 1024px;
+}
+.footer .center {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 60px;
+    *padding-top: 50px;
+}
+@media(max-width: 1250px){
+    .record {
+        *padding:25px  0 0 0;
+    }
+    .footer .center {
+        width: 1024px;
+        height: 100%;
+        *height: 0px;
+        margin: 0 auto;
+        padding-top: 60px;
+        *padding-top: 50px;
+    }
+    .footer .center .container {
+        width: 1024px;
+    }
+    .footer form input {
+        outline: none;
+        border: 1px solid #bfbfbf;
+        height: 38px;
+        line-height: 38px;
+        margin-bottom: 14px;
+        color: #666;
+        padding: 0 20px;
+        width: 330px;
+        *width: 300px;
+        background: #e5eaf5;
+    }
+    .footer .center .container .row .col-sm-5 {
+        *width: 34.66%;
+        _width: 34.66%;
+
+    }
+}
+@media(max-width: 1100px){
+    .footer form input {
+        outline: none;
+        border: 1px solid #bfbfbf;
+        height: 38px;
+        line-height: 38px;
+        margin-bottom: 14px;
+        color: #666;
+        padding: 0 20px;
+        width: 330px;
+        *width: 220px;
+        background: #e5eaf5;
+    }
+    .footer .center .container .row .col-sm-5 {
+        *width: 34.66%;
+        _width: 34.66%;
+
+    }
+    .footer .col-sm-12 {
+        *padding: 0px;
+        *padding-right: 0px;
+
+    }
+}
+@media(max-width: 1000px){
+    .footer form input {
+        outline: none;
+        border: 1px solid #bfbfbf;
+        height: 38px;
+        line-height: 38px;
+        margin-bottom: 14px;
+        color: #666;
+        padding: 0 20px;
+        width: 270px;
+        background: #e5eaf5;
+    }
+}
+.footer .btn {
+    width: 115px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    border-radius: 0;
+    margin: 0 0 45px 0;
+    font-size: 14px;
+    color: #333;
+    background-color: #d4d4d5;
+    border: none;
+    float: left;
+}
+#promit {
+    line-height: 40px;
+    float: left;
+    width:200px;
+    text-align: center;
+    color: #f12c4d;
+    display: none;
+}
+.footer .btn:hover {
+    background-color:#2f59d6;
+    color:#fff;
+}
+.footer  a {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 14px;
+    display: block;
+}
+.footer  a:hover{
+    color: #000;
+}
+.footer span {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 14px;
+    display: block;
+}
+.footer h5 span.curr {
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 45px 0;
+    display: block;
+}
+.footer .one {
+    *float: left;
+    _float: left;
+}
+.footer .two {
+    *float: left;
+    _float: left;
+}
+.footer .three {
+    *float: left;
+    _float: left;
+    *padding-left: 60px;
+    _padding-left: 60px;
+}
+.footer .col-sm-12 {
+    *width: 100%;
+    _width: 100%;
+}
+
+.record {
+    padding:20px  0 0 0;
+    font-size: 14px;
+    color:#000;
+    border-top: 1px solid #c9c9c9;
+}
+.record p{
+    margin: 0px;
+    text-align: center;
+}
+
+@media(max-width: 1100px){
+    .footer {
+        /**height: 0px;*/
+        background: #e5eaf5;
+    }
+    .footer .two {
+        *float: left;
+        _float: left;
+        *width: 34.66%;
+    }
+    .footer .three {
+        *width: 34.66%;
+        *float: left;
+        _float: left;
+        *padding-left: 0;
+        _padding-left: 60px;
+    }
+    .footer .center {
+        padding-left: 0;
+    }
+    .footer .center .container .row .col-sm-5 .col-sm-4 {
+        width: 25.33%;
+        float: left;
+        padding-right: 0;
+        padding-left: 5px;
+    }
+    .footer h4 {
+        margin: 0 0 45px 0;
+        color: #000;
+        font-size: 16px;
+    }
+    .footer h5 a{
+        font-size: 14px;
+
+    }
+    .footer  a {
+        margin: 0 0 15px 0;
+        color: #666;
+        font-size: 12px;
+        display: block;
+    }
+    .record {
+        *padding:5px  0 0 0;
+    }
+}
+@media(max-width: 1000px){
+    .footer form input {
+        outline: none;
+        border: 1px solid #bfbfbf;
+        height: 38px;
+        line-height: 38px;
+        margin-bottom: 14px;
+        color: #666;
+        padding: 0 20px;
+        width: 270px;
+        *width: 160px;
+        background: #e5eaf5;
+    }
+    .footer h4 {
+        margin: 0 0 45px 0;
+        color: #000;
+        font-size: 16px;
+    }
+    .footer h5 a{
+        color: #666;
+        font-size: 16px;
+        *font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 45px 0;
+        display: block;
+    }
+    .footer  a {
+        margin: 0 0 15px 0;
+        color: #666;
+        font-size: 12px;
+        display: block;
+    }
+    .footer img {
+        width:130px;
+    }
+    .footer .one {
+        float: left;
+    }
+    .footer .two {
+        float: left;
+        width: 35.66%;
+    }
+    .footer .three {
+        float: left;
+        padding-left: 0;
+    }
+    .footer .col-sm-12 {
+        width: 100%;
+    }
+    .footer .center .container .row .col-sm-5 .col-sm-4 {
+        width: 29.33%;
+        float: left;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+}
+.about_zb {
+    float: right !important;
+}
+.about_zb h5 {
+    margin: 0;
+}
+.fill_information {
+    margin-left: 90px;
+}
+.record p a {
+    display: inline-block;
+    color: #000;
+}
+/*公共尾部*/
+@media(max-width: 1250px) {
+    .logo {
+        width: 200px;
+        height: 50px;
+        margin-right: 70px;
+        line-height: 50px;
+    }
+    .logo a img {
+        width: 130px;
+    }
+    .nav ul li a {
+        font-size: 14px;
+        line-height: 50px;
+    }
+    .nav {
+        width: 960px;
+        height: 50px;
+    }
+    .nav ul li {
+        margin: 0 15px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .nav ul li a em {
+        line-height: 50px;
+    }
+    .north_company {
+        top: 50px;
+    }
+    #checkCode {
+        font-size: 18px;
+    }
+    .north_company {
+        top: 50px;
+        right: -45px;
+        width: 186px;
+    }
+    .north_company .span a {
+        font-size: 12px;
+        width: 150px;
+    }
+}
+/*回到顶部*/
+.back-top {
+    position: fixed;
+    bottom: 100px;
+    right:10px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    background: #b5b5b5;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+.back-top:hover {
+    background: #69696b;
+}
+/*回到顶部*/

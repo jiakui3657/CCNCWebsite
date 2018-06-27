@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="3gdmnVcR2K" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="中北建工建筑工程设计">
+	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+	<!--首页样式引入-->
+	<link href="${siteurl}views/zbjg/css/index.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 1 /]
+
+<!-- 新闻轮播图 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<!-- 圆点列表 -->
+	<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+	</ol>
+	<!--图片列表 -->
+	<div class="carousel-inner" role="listbox">
+		[#if homePictureList??]
+		[#list homePictureList as homePicture]
+		<div class="item [#if homePicture_index == 0]active[/#if]">
+			<a href="[#if (homePicture.openLink) == 1]#[#else]${homePicture.linkUrl}[/#if]">
+				<img src="${homePicture.bigPicture!''}" alt="...">
+			</a>
+			<div class="carousel-caption">
+			</div>
+		</div>
+		[/#list]
+		[/#if]
+	</div>
+	<!-- 左右按钮 -->
+	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<em class="iconfont icon-zuoyou1"></em>
+	</a>
+	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<em class="iconfont icon-zuoyou"></em>
+	</a>
+</div>
+<!--经典案列-->
+<div class="classic-case">
+	<div class="classic-content">
+		<h3 class="head-title">
+			经<i>|</i>典<i>|</i>案<i>|</i>列
+		</h3>
+		<div id="case-rotation">
+			<ul id="case-list">
+				[@catalogprojectsall]
+				[#if list??]
+				[#list list as catalogproject]
+				<li class="item [#if catalogproject_index == 0]active[/#if]">
+					<a class="classification" href="${siteurl}projectcataloglist.htm?catid=${catalogproject.id}">
+						<img src="${siteurl}${catalogproject.iconUrl}" alt="" />
+						<b></b>
+						<span>
+							<em>${(catalogproject.name)!''}更多案例</em>
+							<i class="iconfont icon-gengduo"></i>
+						</span>
+					</a>
+					<a class="title-details" href="${siteurl}projectcataloglist.htm?catid=${catalogproject.id}">
+						<i>${(catalogproject.name)!''}</i>
+						<b>${(catalogproject.nameTag)!''}</b>
+					</a>
+				</li>
+				[/#list]
+				[/#if]
+				[/@catalogprojectsall]
+			</ul>
+		</div>
+	</div>
+</div>
+<!--了解更多关于公司-->
+<div class="about-company">
+	<img class="background" src="${siteurl}views/zbjg/images/about_bg.jpg"/>
+	<div class="about-decription">
+		<img src="${siteurl}views/zbjg/images/logo_white.png" alt="" />
+		<p>中北建工有限公司为中北集团旗下全资子公司，成立于2001年，是集市政、公路、隧道、水利水电、通信、机电安装、电力、房建、冶金矿山等领域于一体的大型综合性施工企业。公司拥有市政、公路、水利水电、房建、机电安装、电力、冶炼、通信等多项工程总承包资质，拥有桥梁、公路路基、公路路面、消防设施、钢结构等工程专业承包资质以及电力承装承修类五级资质。</p>
+		<a href="${siteurl}history.htm" class="more">了解更多<i class="iconfont icon-gengduo"></i></a>
+	</div>
+</div>
+<!--新闻活动-->
+<div class="news-activities">
+	<div class="news-content">
+		<h3 class="head-title">
+			新<i>|</i>闻<i>|</i>活<i>|</i>动
+		</h3>
+		<ul>
+			[@newslast size = 10]
+			[#if list??]
+			[#list list as item]
+			<li>
+					<span class="date">
+						<i class="day">
+							[#if item.publishDate??]
+								${item.publishDate?string('dd')}
+							[/#if]
+						</i>
+						<i class="years">
+							[#if item.publishDate??]
+								${item.publishDate?string('yyyy / MM')}
+							[/#if]
+						</i>
+					</span>
+				<span class="news-bg">
+						<a href="${siteurl}newsdetails.htm?id=${item.id}"><img src="${siteurl}${item.iconUrl!''}" alt="" /></a>
+					</span>
+				<span class="news-description">
+						<h4 class="overflow-wrap"><a href="${siteurl}newsdetails.htm?id=${item.id}">${(item.title)!''}</a></h4>
+						<p>
+							<a href="${siteurl}newsdetails.htm?id=${item.id}">
+								[#if item.intro?? && item.intro?length gt 120]
+                                    ${item.intro[0..121]}...
+                                [#else]
+                                    ${item.intro!''}
+                                [/#if]
+							</a>
+						</p>
+						<a href="${siteurl}newsdetails.htm?id=${item.id}" class="currnews-more">了解更多 >></a>
+					</span>
+			</li>
+			[/#list]
+			[/#if]
+			[/@newslast]
+		</ul>
+		<div class="more-news">
+			<em>空标签</em>
+			<div class="more-news-del">
+					<span>
+						<a href="${siteurl}news.htm" class="news-btn">
+							查看更多		
+							<i class="iconfont icon-gengduo"></i>
+						</a>
+					</span>
+			</div>
+		</div>
+	</div>
+</div>
+<!--资质能力-->
+<div class="qualification">
+	<div class="qualf-content">
+		<h3 class="head-title">
+			资<i>|</i>质<i>|</i>能<i>|</i>力
+		</h3>
+		<ul>
+			[#if catalogQualificationsRecomends??]
+			[#list catalogQualificationsRecomends as catalogQualificationRecommend]
+			<li>
+				<img src="${siteurl}${(catalogQualificationRecommend.iconUrl)!''}" alt="" />
+				<div class="qualf-layout">
+					<a href="${siteurl}aptitude.htm">${(catalogQualificationRecommend.name)!''}</a>
+				</div>
+				<div class="dynamic-layout">
+					<p ><em>${(catalogQualificationRecommend.name)!''}</em></p>
+					[#list catalogQualificationRecommend.qualificationsList as qualification]
+					<a class="overflow-wrap" href="${siteurl}aptitude.htm">${(qualification.name)}
+						${(qualification.catalogQualificationsLevel.name)!''}
+					</a>
+					[#if qualification_index > 0]
+					[#break]
+					[/#if]
+					[/#list]
+					<a href="${siteurl}aptitude.htm" class="more">查看更多<i class="iconfont icon-gengduo"></i></a>
+				</div>
+			</li>
+			[/#list]
+			[/#if]
+			<li class="curr">
+				<img src="${siteurl}views/zbjg/images/qualf_bg.jpg" alt="" />
+				<div class="qualf-layout">
+					<a href="${siteurl}aptitude.htm">资质证书</a>
+				</div>
+				<div class="dynamic-layout">
+					<a href="${siteurl}aptitude.htm" class="more">点击查看详情<i class="iconfont icon-gengduo"></i></a>
+				</div>
+			</li>
+		</ul>
+		<div class="qualf-decription">
+			<div class="decr-content">
+				<p>中北建工有限公司具有施工总承包资质，分别是公路工程二级、市政公用工程二级、水利水电工程二级、建筑
+					工程二级、电力工程二级、冶金工程二级、通信工程二级、机电工程二级等资质。</p>
+				<p>中北建工有限公司还具有专业承包资质，分别是消防设施工程二级、桥梁工程二级、公路路面工程二级、公路路
+					基工程二级、钢结构工程二级等资质。</p>
+				<p>其他专业资质涉及公路养护工程二级甲等、公路养护工程二级乙等等相关资质。</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script src="${siteurl}views/zbjg/js/index.js"></script>
+
+</body>
+</html>

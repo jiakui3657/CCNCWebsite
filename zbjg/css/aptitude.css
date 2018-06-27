@@ -1,0 +1,155 @@
+/*
+ 资质证书
+ * */
+.certificate {
+	width: 100%;
+	overflow: hidden;
+}
+.certificate-content {
+	width: 1200px;
+	overflow: hidden;
+	border-bottom: 1px solid #dcdcdc;
+	padding-bottom: 50px;
+}
+.certificate-img {
+	width: 968px;
+	overflow: hidden;
+}
+.certificate-img span {
+	width: 220px;
+	height: 317px;
+	float: left;
+	overflow: hidden;
+	margin-right: 22px;
+	margin-bottom: 28px;
+}
+.certificate-img span img {
+	height: 317px;
+	cursor: pointer;
+}
+.certificate-img img:nth-child(4n) {
+	margin: 0;
+}
+/*
+ 文字证书描述
+ * */
+.classification {
+	width: 100%;
+	overflow: hidden;
+}
+.classification-content {
+	width: 1200px;
+	overflow: hidden;
+}
+.classifi-item {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 50px;
+}
+.classifi-item p {
+	text-align: center;
+	overflow: hidden;
+	color: #1791ee;
+}
+.classifi-item p i {
+	display: block;
+	line-height: 72px;
+	font-size: 70px;
+}
+.classifi-item p b {
+	display: block;
+	line-height: 32px;
+	font-size: 16px;
+}
+.classifi-list {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 50px;	
+}
+.classifi-list li {
+	float: left;
+	width: 45%;
+	padding: 0 10px;
+	border-bottom: 1px solid #dcdcdc;
+	line-height: 45px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.classifi-list li.curr {
+	border-bottom: 1px solid #fff;
+	bottom: 0;
+}
+.classifi-list li:hover i{
+	color: #1791EE;
+}
+.classifi-list li i {
+	float: left;
+	width: 75%;
+	white-space: nowrap;
+	text-overflow:ellipsis; 
+	overflow:hidden;	
+}
+.classifi-list li b {
+	float: right;
+	color: #1791EE;
+	width: 25%;
+	text-align: right;
+	white-space: nowrap;
+	text-overflow:ellipsis; 
+	overflow:hidden;
+}
+.classifi-list li:nth-child(2n) {
+	float: right;
+}
+/*图片放大*/
+.layout {
+	display: none;
+	position: fixed;
+	top:0;
+	left:0;
+	bottom: 0;
+	right: 0;
+	filter:alpha(opacity=50);
+	opacity:0.5;
+	background: #000;
+}
+.layoutImg {
+	display: none;
+	height:100%;
+	width: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 9999;
+	text-align: center;
+
+}
+.layoutImg img {
+	overflow: hidden;
+	position: absolute;
+	width: 420px;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+}
+@media only screen and (max-width: 1200px) {
+	.certificate-content {
+		width: 900px;
+	}
+	.certificate-img {
+		width: 900px;
+	}
+	.certificate-img span {
+		margin-right: 16px;
+		width: 209px;
+		height: 302px;
+		margin-bottom: 16px;
+	}
+	.certificate-img span img {
+		height: 302px;
+	}
+	.classification-content {
+		width: 900px;
+	}
+}

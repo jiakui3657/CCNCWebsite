@@ -1,0 +1,337 @@
+/*背景图，选项卡*/
+body {
+    color: #666;
+    position: relative;
+    font-size: 0.25rem;
+}
+a {
+    color: #666;
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color: #666;
+}
+.header_bg img {
+    width:100%;
+    margin-top: 60px;
+}
+.history_tab {
+    box-shadow: 0 3px 5px rgba(102,102,102,.3);
+}
+.history_tab .swiper-wrapper span {
+    padding:0 0.2rem;
+    float: left;
+    text-align: center;
+    width: auto;
+    font-size: 0.3rem;
+    line-height:1rem;
+    color:#999;
+}
+.history_tab .swiper-wrapper span.curr {
+    color: #375ed2;
+    border-bottom:2px solid #375ed2;
+    font-weight: 600;
+}
+/*背景图，选项卡*/
+
+/*公用样式*/
+#swiper-container2  .swiper-wrapper {
+    height: auto;
+}
+.list_content {
+    text-align: center;
+    overflow: hidden;
+}
+.list_content img {
+    width: 100%;
+    margin-top:0.3rem;
+}
+.list_content img.curr {
+    padding: 0 0.3rem;
+}
+.list_content img.img_curr {
+    margin-bottom:0.3rem;
+}
+.list_content p {
+    text-align: left;
+    font-size:0.25rem;
+    line-height: 0.5rem;
+    padding: 0 0.2rem;
+    overflow: hidden;
+}
+.list_content b {
+    display: inline-block;
+    background: #669ed9;
+    color: #fff;
+    padding:0.1rem 0.2rem;
+    font-size: 0.24rem;
+    font-weight: normal;
+    margin-bottom: 0.2rem;
+    margin-top:0.1rem;
+}
+.list_content p i {
+    float: left;
+    background: #669ed9;
+    color: #fff;
+    padding: 0 0.2rem;
+    line-height: 0.6rem;
+    margin-right:0.2rem;
+    margin-bottom: 0.2rem;
+}
+.list_content p.curr {
+    font-weight: 600;
+    text-align: center;
+    font-size:0.3rem;
+    line-height: 0.8rem;
+    margin-top: 0.3rem
+}
+.list_content p.curr_next {
+    line-height: 0.6rem;
+}
+.list_content p.bcurr {
+    line-height: 0.6rem;
+}
+.list_content p.first {
+    margin-top: 0.3rem;
+}
+section div h4 {
+    font-size:0.36rem;
+    font-weight:600;
+    color: #333;
+    width:100%;
+    text-align: center;
+    line-height: 42px;
+    position: relative;
+    margin:40px 0 0 0;
+    padding: 0 1rem;
+}
+section div h4 span {
+    width:40px;
+    height:2px;
+    display: inline-block;
+    background: #496dd6;
+    position:absolute;
+    left:50%;
+    bottom:-5px;
+    margin-left:-20px;
+}
+.list_content div {
+    margin-bottom: 0rem;
+}
+.related_items  {
+    display: block;
+}
+.related_items ul {
+    width: 300%;
+    overflow: hidden;
+}
+.related_items ul li {
+    float: left;
+    width:33.3%;
+    padding: 0 0.2rem;
+}
+.related_items ul li a.items_topic {
+    overflow: hidden;
+    display: block;
+    line-height: 1rem;
+    padding: 0 0.8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: #f5f6f9;
+    border: 1px solid #dedddd;
+    border-top:none;
+}
+.list_content .dynamic {
+    width:100%;
+    margin-top:0.2rem;
+    overflow: hidden;
+}
+.list_content a.more {
+    display: inline-block;
+    line-height: 0.6rem;
+    border-bottom:1px solid #bbbbbb;
+}
+.list_content .dynamic ul {
+    overflow: hidden;
+}
+.list_content .dynamic ul li {
+    color: #fff;
+    background: #669ed9;
+    padding: 0 0.2rem;
+    display: inline-block;
+    line-height: 0.5rem;
+    margin-right: 0.15rem;
+}
+.list_content .design_product ul {
+    padding: 0 0.2rem;
+}
+.list_content .design_product ul.curr {
+    overflow: hidden;
+    padding:0;
+}
+.list_content .design_product ul.curr li {
+    color: #fff;
+    background: #669ed9;
+    width:1rem;
+    display: inline-block;
+    line-height: 0.5rem;
+    margin-right: 0.15rem;
+}
+.design_product i {
+    line-height:0.8rem;
+    display: inline-block;
+    padding: 0 1rem;
+    background: #e5e5e5;
+    font-size:0.3rem;
+    margin: 0.5rem 0;
+}
+.design_product ol {
+    width: 65%;
+    overflow: hidden;
+}
+.design_product ol li {
+    border:1px dashed #669ed9;
+    line-height: 0.5rem;
+    width:45%;
+    float: left;
+    margin-bottom: 0.2rem;
+}
+.design_product ol li:nth-child(2n) {
+    float: right;
+}
+.design_product ul li a.topic {
+    overflow: hidden;
+    display: block;
+    line-height: 1rem;
+    padding: 0 0.8rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+}
+.zb_service {
+    width: 100%;
+}
+.zb_service h4:first-child {
+    margin-bottom: 0.3rem;
+}
+.zb_service ul {
+    background: #f5f5f5;
+    overflow: hidden;
+    padding: 0 0.2rem;
+    margin:0;
+}
+.zb_service ul li {
+    overflow: hidden;
+    margin:0.3rem 0 ;
+}
+.zb_service ul li i{
+    display: inline-block;
+    padding:0 0.3rem;
+    line-height: 0.6rem;
+    background: #669ed9;
+    color: #fff;
+    margin:0.2rem 0;
+}
+.zb_service ul li span {
+    display: block;
+    text-align: left;
+    line-height: 0.5rem;
+}
+.zb_service p {
+    padding:0.6rem 0.2rem;
+    background: #f5f5f5;
+}
+/*公用样式*/
+/*设计咨询新动态*/
+.design_consul {}
+/*设计咨询新动态*/
+/*建造新动态*/
+.put_up {}
+/*建造新动态*/
+/*工业新动态*/
+.industry .zb_service ul {
+    text-align: center;
+}
+.industry .zb_service ul li {
+    width:33.3%;
+    overflow: hidden;
+    padding:0 0.1rem;
+    color: #fff;
+    margin:0.5rem 0 0.2rem 0;
+    float: left;
+}
+.industry .zb_service ul li:nth-child(4) {
+    margin:0 0 0.2rem 16.5%;
+}
+.industry .zb_service ul li:nth-child(5) {
+    margin:0 0 0.2rem 0;
+}
+.industry .zb_service ul li span {
+    padding: 0.1rem 0;
+    display: block;
+    background: #669ed9;
+}
+.industry .zb_service ul li span dfn {
+    display: block;
+    text-align: center;
+    font-size: 0.5rem;
+}
+.industry .zb_service ul li span em {
+    display: block;
+    text-align: center;
+}
+.industry .zb_service p {
+    padding: 0.3rem 0.2rem;
+}
+/*工业新动态*/
+/*新能源行业新动态*/
+.new_energy .dynamic .blue_curr {
+    line-height: 0.6rem;
+}
+.new_energy .dynamic .blue_curr strong {
+    display: block;
+    text-align: center;
+    background: #669ed9;
+    color: #fff;
+    font-weight: normal;
+}
+.new_energy .dynamic .border_curr {
+    margin-top:0.4rem;
+}
+.new_energy .dynamic .border_curr strong{
+    border:1px solid #669ed9;
+    display: block;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.2rem;
+}
+.tabActive {
+    position:fixed;
+    top:60px;
+    z-index:1001;
+    background-color:#fff;
+    width:100%;
+}
+.jk {
+    height:1rem;
+}
+/*新能源行业新动态*/
+/*互联网行业新动态*/
+.internet {
+}
+/*互联网行业新动态*/
+/*旅游文化新动态*/
+.tourism {
+}
+/*旅游文化新动态*/
+/*环保产业行业新动态*/
+.environ_protection {
+}
+/*环保产业行业新动态*/
+/*产业园区行业新动态*/
+.industrial_park {
+}
+/*产业园区行业新动态*/
+/*PPP行业新动态*/
+.ppp_industry {
+}
+/*PPP行业新动态*/

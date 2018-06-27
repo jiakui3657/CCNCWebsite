@@ -1,0 +1,288 @@
+/*
+ * 公司介绍css样式
+ * auther : 
+ * */
+
+/*
+ 公司介绍
+ * */
+.intro {
+	width: 100%;
+	overflow: hidden;
+}
+.intro-content {
+	width: 1200px;
+	overflow: hidden;	
+}
+.blue-intro {
+	width: 80%;
+	padding: 70px 0 70px 40px;
+	background: #1791ee;
+	float: left;
+	position: relative;
+	margin-bottom: 150px;
+}
+.blue-intro span {
+	color: #fff;
+	width: 50%;
+	float: left;
+	line-height: 30px;
+}
+.blue-bg {
+	position: absolute;
+	right: -240px;
+	top: 180px;
+	z-index: 99;
+}
+.white-intro {
+	width: 100%;
+	padding: 0 50px 0 25px;
+	float: left;
+}
+.white-intro p {
+	line-height: 30px;
+}
+.white-intro p.title {
+	font-size: 16px;
+}
+/*分支架构*/
+.branch {
+	width: 100%;
+	overflow: hidden;
+}
+.branch-content {
+	width: 1200px;
+	overflow: hidden;
+}
+.branch-list {
+	width: 100%;
+	overflow: hidden;
+}
+.branch-list li {
+	float: left;
+	width: 45%;
+	background: #ebf3fb;
+	padding: 30px;
+	height: 275px;
+	margin-bottom: 50px;
+}
+.branch-list li:nth-child(2n){
+	float: right;
+}
+.branch-list li span {
+	float: left;
+	background: #1791ee;
+	color: #fff;
+	font-size: 32px;
+	padding: 40px 50px;
+	writing-mode: tb-rl;
+	letter-spacing: 10px;
+}
+.branch-list li p {
+	float: right;
+	width: 320px;
+	padding: 5px 0;
+}
+.branch-list li p i {
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+	font-size: 18px;
+}
+.branch-list li p em {
+	float: right;
+	width: 280px;
+}
+.branch-list li p.title {
+	color: #333;
+	font-size: 22px;
+	line-height: 60px;
+	border-bottom: 1px solid #dddddd;
+	text-indent: 2em;
+	margin-bottom: 20px;
+}
+/*企业文化*/
+.culture {
+	width: 100%;
+	overflow: hidden;
+}
+.culture-content {
+	width: 1200px;
+	overflow: hidden;
+}
+.culture p.decription {
+	padding: 0 100px;
+	text-align: center;
+	line-height: 32px;
+	margin-bottom: 30px;
+}
+.culture-list {
+	width: 100%;
+	overflow: hidden;
+}
+.culture-list li {
+	float: left;
+	width: 222px;
+	height: 302px;
+	border: 1px solid #dcdcdc;
+	padding: 0 20px;
+	text-align: center;
+	cursor: pointer;
+	margin-right: 22px;
+}
+.culture-list li:last-child {
+	margin: 0;
+}
+.culture-list li i {
+	display: block;
+	font-size: 64px;
+	line-height: 50px;
+	margin-bottom: 10px;
+	margin-top: 100px;
+	transition: all 300ms;
+	color: #d8b373;
+}
+.culture-list li p {
+	line-height: 30px;
+	font-size: 16px;
+}
+.culture-list li p.curr {
+	display: none;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.culture-list li:hover {
+	background: #1791ee;
+	color: #fff;
+}
+.culture-list li:hover i {
+	margin-top: 70px;
+	color: #fff;
+}
+.culture-list li:hover p.curr {
+	display: block;
+}
+/*企业愿景*/
+.vision {
+	width: 100%;
+	overflow: hidden;
+}
+.vision img {
+	width: 100%;
+}
+/*社会活动*/
+.society {
+	width: 100%;
+	overflow: hidden;
+}
+.society-content {
+	width: 1200px;
+	overflow: hidden;
+}
+#case-rotation {
+	width: 100%;
+	overflow: hidden;
+	height: 279px;
+}
+.society-list {
+	overflow: hidden;
+}
+.society-list li {
+	width: 400px;
+	overflow: hidden;
+	padding: 0 10px;
+	float: left;
+	position: relative;
+}
+.society-list li a {
+	overflow: hidden;
+	display: block;
+}
+.society-list li a img {
+	width: 100%;
+	transition: all 300ms;
+}
+.society-list li:hover a img {
+	transform: scale(1.2);
+}
+.society-list li b {
+	position: absolute;
+	height: 50px;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+	z-index: 99;
+	background: #256DD9;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+.society-list li i {
+	position: absolute;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 50px;
+	bottom: 0;
+	left: 10px;
+	right: 10px;
+	z-index: 999;
+	color: #fff;
+	text-align: center;
+}
+@media only screen and (max-width: 1200px) {
+	.intro-content {
+		width: 900px;
+	}
+	.blue-intro span {
+		width: 55%;
+	}
+	.blue-bg {
+		width: 450px;
+		top: 255px;
+		right: -180px;
+	}
+	.blue-intro {
+		margin-bottom: 110px;
+	}
+	.branch-content {
+		width: 900px;
+	}
+	.branch-list li {
+		padding: 30px 20px;
+		width: 48%;
+	}
+	.branch-list li p {
+		width: 250px;
+	}
+	.branch-list li p em {
+		width: 210px;
+	}
+	.branch-list li p.title {
+		text-indent: 1.5em;
+	}
+	.branch-list li span {
+		padding: 40px 30px;
+	}
+	.culture-content {
+		width: 900px;
+	}
+	.culture p.decription {
+		padding: 0 50px;
+	}
+	.culture-list li {
+		width: 170px;
+		margin-right: 12px;
+		height: 225px;
+	}
+	.culture-list li i {
+		margin-top: 75px;
+	}
+	.culture-list li:hover i {
+		margin-top: 20px;
+	}
+	.society-content {
+		width: 900px;
+	}
+	.society-list li {
+		width: 300px;
+	}
+}

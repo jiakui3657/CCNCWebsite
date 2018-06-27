@@ -1,0 +1,261 @@
+﻿body,html {
+    font-family:"Microsoft Yahei";
+    font-weight: 100;
+}
+/*顶部*/
+header {
+    height:120px;
+}
+.container {
+    height:100%;
+    padding:0px;
+    position: relative;
+}
+header .container img {
+    float:left;
+    margin-top:44px;
+}
+header .container .recruitment {
+    float: right;
+    margin: 25px 16px 0 0;
+    font-size:0;
+}
+header .container .recruitment a:nth-child(1) {
+    display: inline-block;
+    width:135px;
+    text-align:center;
+    font-size:16px;
+    color:#999;
+    border-right:1px solid #e5e5e5;
+    text-decoration: none;
+}
+header .container .recruitment a:nth-child(2) {
+    display: inline-block;
+    width:135px;
+    text-align:center;
+    font-size:16px;
+    color:#999;
+    border-left:1px solid #999;
+    text-decoration: none;
+}
+header .container .list {
+    float:right;
+    position: absolute;
+    right:45px;
+    bottom:0px;
+    height:53px;
+}
+header .container .list span {
+     border-bottom:3px solid #193583;
+     width:40px;
+     display: block;
+     margin: 0;
+     position:absolute;
+     left:77px;
+}
+header .container .list ul {
+    overflow:hidden;
+}
+header .container .list ul li {
+    float:left;
+    margin-left:70px;
+    text-align:center;
+    height:50px;
+    line-height:50px;
+}
+header .container .list ul li a {
+    display:inline-block;
+    height:50px;
+    line-height:50px;
+    text-decoration: none;
+    font-size:18px;
+    color:#666;
+}
+header .container .list ul li a:hover {
+    color:#193583;
+}
+header .container .list ul li .current {
+
+}
+/*banner图*/
+.banner {
+     width: 100%;
+     position: relative;
+     color: #fff;
+ }
+.banner img {
+     width: 100%;
+}
+/*底部*/
+footer {
+    background-color:#fff;
+    border-top:1px solid #ccc;
+    padding:50px 0;
+}
+footer .address {
+    padding:0;
+}
+footer .address img {
+    width:140px;
+}
+footer .address p {
+    color:#999;
+    font-size:14px;
+    line-height:30px;
+}
+footer .address p:nth-child(2) {
+    margin-top:35px;
+    color:#666;
+    font-size:16px;
+}
+footer .link {
+    padding:0;
+    position:relative;
+}
+footer .link ul {
+    overflow:hidden;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 23px;
+}
+footer .link ul li{
+    float:left;
+    margin-left:36px;
+    margin-left:29px\9;
+}
+footer .link ul li a {
+    font-size:16px;
+    color:#999;
+    text-decoration:none;
+}
+footer .link ul li a:hover {
+    color:#666;
+}
+footer .link .footer-icon {
+    float:right;
+    margin:45px 57px 0 0;
+}
+footer .link .footer-icon span {
+    font-size:50px;
+    color:green;
+    cursor: pointer;
+}
+footer .link img {
+    width:200px;
+    position:absolute;
+    top:-13px;
+    right:100px;
+    display:none;
+}
+.back-top {
+    width:50px;
+    height:50px;
+    border-radius: 25px;
+    background-color:#000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    position: absolute;
+    left: 96%;
+    bottom: 23%;
+    text-align:center;
+    line-height:50px;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+    display:none;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    header .container .list ul li {
+        margin-left:20px;
+    }
+    footer .link ul li{
+        margin-left:14px;
+    }
+    footer .link ul li a {
+        font-size:12px;
+    }
+    footer .address p {
+        font-size:12px;
+    }
+    footer .link .footer-icon {
+        margin:45px 62px 0 0;
+        }
+    .back-top {
+        left: 93%;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 975px;
+    }
+    header .container .list ul li {
+        margin-left:40px;
+    }
+    footer .link ul li{
+        margin-left:23px;
+    }
+    footer .link ul li a {
+        font-size:14px;
+    }
+    footer .address p {
+        font-size:14px;
+    }
+    footer .link .footer-icon {
+        margin:45px 68px 0 0;
+    }
+    .back-top {
+        left: 94%;
+    }
+}
+@media (min-width: 1230px) {
+    .container {
+        width: 1200px;
+    }
+    header .container .list ul li {
+        margin-left:70px;
+    }
+    footer .link ul li{
+        margin-left:36px;
+        margin-left:30px\9;
+    }
+    footer .link ul li a {
+        font-size:14px;
+    }
+     footer .address p {
+        font-size:14px;
+     }
+     footer .link .footer-icon {
+         margin:45px 57px 0 0;
+     }
+     .back-top {
+         left: 96%;
+     }
+}
+@media (max-width: 768px) {
+    .container {
+        width: 750px;
+    }
+    header .container .list ul li {
+        margin-left:20px;
+    }
+    footer .link ul li{
+        margin-left:14px;
+    }
+    footer .link ul li a {
+        font-size:12px;
+    }
+    footer .address p {
+        font-size:12px;
+    }
+    footer .link .footer-icon {
+        margin:45px 62px 0 0;
+    }
+    .back-top {
+        left: 93%;
+    }
+    .banner {
+        width:750px;
+    }
+}

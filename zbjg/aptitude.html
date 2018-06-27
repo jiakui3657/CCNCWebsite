@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+ 	<title>中北集团、中北建工建筑工程设计</title>
+	<!--公用引入部分-->
+	[#include "./common/commonpart.html"]
+	[@commonpart /]
+    <!--资质能力样式引入-->
+	<link href="${siteurl}views/zbjg/css/aptitude.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+[#include "./common/nav.html"]
+[@nav 3 /]
+
+<img src="${siteurl}views/zbjg/images/aptitude.jpg"class="sign-photo"/>
+	<!--资质证书-->
+	<div class="certificate">
+		<div class="certificate-content">
+			<h3 class="head-title"> 
+				资<i>|</i>质<i>|</i>证<i>|</i>书
+			</h3>
+			<div class="certificate-img">
+				[@qualificationcerts]
+					[#if list??]
+					[#list list as qualicert]
+						<span>
+							<img src="${siteurl}${(qualicert.iconUrl)!''}" title="点击查看大图" alt="图片找不到了，刷新一下试试"/>
+						</span>
+					[/#list]
+					[/#if]
+				[/@qualificationcerts]
+			</div>
+		</div>
+	</div>
+	<!--文字证书描述-->
+	<div class="classification">
+		<div class="classification-content">
+			[#if list??]
+			[#list list as quFrontVo]
+				<!--分类及其列表-->
+				<div class="classifi-item">
+					<p>
+						<i class="iconfont">&${quFrontVo.fontIcon!''}</i>
+						<b>${(quFrontVo.catalogName)!''}</b>
+					</p>
+					<ul class="classifi-list">
+						[#list quFrontVo.quList as item]
+						[#if item_index == quFrontVo.quList?size-1 || item_index == quFrontVo.quList?size-2]
+							<li class="curr">
+								<i>${(item.name)!''}</i>
+								<b>${(item.catalogQualificationsLevel.name)!''}</b>
+							</li>
+						[#else]
+							<li>
+								<i>${(item.name)!''}</i>
+								<b>${(item.catalogQualificationsLevel.name)!''}</b>
+							</li>
+						[/#if]
+						[/#list]
+					</ul>
+				</div>
+			[/#list]
+			[/#if]
+		</div>
+	</div>
+<div class="layout">
+
+</div>
+<div class="layoutImg">
+	<img  src="${siteurl}views/ccnc/images/honor9.jpg" >
+</div>
+<!--页面底部-->
+[#include "./common/footer.html"]
+[@footer /]
+<script src="${siteurl}views/zbjg/js/aptitude.js"></script>
+
+</body>
+</html>

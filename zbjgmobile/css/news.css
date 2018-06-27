@@ -1,0 +1,99 @@
+/*新闻列表*/
+.news {
+    width: 100%;
+    overflow: hidden;
+}
+.news-list {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    float: left;
+    padding-top: 0.5rem;
+}
+.news-list li {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0.4rem;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+}
+.news-list li a {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+.news-list li a h4 {
+    width: 100%;
+    line-height: 1rem;
+    font-size: 0.32rem;
+    font-weight: bold;
+    color: #333;
+}
+.img-time {
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.img-time img {
+    width: 100%;
+}
+.date {
+    position: absolute;
+    left: 0.2rem;
+    bottom: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+.date i {
+    color: #fff;
+    font-weight: bold;
+}
+.date i.day {
+    font-size: 0.6rem;
+    display: inline-block;
+    padding: 0 0.2rem;
+    border-bottom: 1px solid #fff;
+}
+.date i.years {
+    font-size: 0.26rem;
+    display: block;
+    line-height: 0.6rem;
+}
+.news-list li a p {
+    width: 100%;
+    padding-top: 0.4rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+}
+footer {
+    float: left;
+    margin-top: 0.5rem;
+}
+/*加载更多*/
+.down_refresh {
+    width: 100%;
+    text-align: center;
+    font-size: 0.24rem;
+    margin-top: 0.5rem;
+    height: 1rem;
+    display: none;
+}
+.down_refresh img {
+    height: 0.3rem;
+    display: none;
+    margin-top: 0.35rem;
+    margin-right: 0.15rem;
+    transform: rotateZ(0deg);
+}
+.down_refresh img.curr {
+    display: inline-block;
+    transform: rotateZ(1080deg);
+    transition: all 3000ms;
+}
+.down_refresh i{
+    display: inline-block;
+    line-height: 1rem;
+    color:#999;
+}
+/*加载更多*/

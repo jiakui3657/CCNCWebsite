@@ -1,0 +1,75 @@
+/*关于我们 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container p span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container p i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+    padding:61px 99px 83px 99px;
+    overflow:hidden;
+}
+.content .container .aptitude .tab {
+    font-size:28px;
+    color:#333333;
+    line-height:63px;
+    height:63px;
+    border-bottom:1px solid #e0e0e0;
+}
+.content .container .aptitude .tab a {
+    float:right;
+    font-size:16px;
+    color:#999;
+    text-decoration: none;
+    margin-right:30px;
+}
+.content .container .aptitude .tab a:hover {
+    color:#0771c2;
+}
+.content .container .aptitude .cen {
+
+}
+.content .container .aptitude .cen ul {
+    overflow:hidden;
+    margin-top:55px;
+}
+.content .container .aptitude .cen ul li {
+    float:left;
+    font-size:16px;
+    line-height:36px;
+    color:#666666;
+    width:50%;
+}
+.content .container .aptitude .cen h4 {
+    height:25px;
+    padding-left:13px;
+    border-left:6px solid #f4eddb;
+    line-height:25px;
+    color:#cc9933;
+    margin-top:35px;
+    margin-bottom:10px;
+}
+.content .container .aptitude .cen p {
+    font-size:16px;
+    line-height:36px;
+    color:#666666;
+    width:80%;
+    margin:0;
+}

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="中北交通建设集团有限公司是一家拥有 150-500人 规模的 民营公司，是致力于交通、建筑、水利行业的设计、施工及投资的多元化的企业集团。">
+    <meta name="keywords" content="中北交通，建设，公司网站，官网">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <title>中北交通建设集团有限公司&nbsp;公司资质</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${siteurl}views/ednc/bootstrap/css/bootstrap.min.css"/>
+    <!--图标引入-->
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/Global.css"/>
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/public.css"/>
+    <link rel="stylesheet" href="${siteurl}views/ednc/css/project.css">
+    <script>
+        var siteurl = "${siteurl}";
+    </script>
+</head>
+<body>
+<!--顶部-->
+[#include "/theme/ednc/common/header.html"]
+<!--banner图-->
+<div class="banner">
+    <img src="${siteurl}views/ednc/img/project.jpg" alt="">
+</div>
+<div class="content">
+    <div class="container">
+        <p><span>项目展示</span><i>当前：首页 > 项目展示</i></p>
+        <div class="aptitude">
+            <div class="tab">
+                <ul>
+                    <li class="current">
+                        <i class="iconfont">&#xe65b;</i>
+                        <p>全部</p>
+                    </li>
+                    [#if catalogProjectVoList??]
+                    [#list catalogProjectVoList as catalogProjectVo]
+                    <li class="${catalogProjectVo.catId!''}">
+                        <i class="iconfont">&${catalogProjectVo.fontIcon!''}</i>
+                        <p>${catalogProjectVo.catalogName!''}</p>
+                    </li>
+                    [/#list]
+                    [/#if]
+                </ul>
+            </div>
+            <div class="cen"  page="1">
+                <ul>
+                    [@projectall num = 1 size = 9]
+                    [#list list as project]
+                    <li data-toggle="modal" data-target=".bs-example-modal-lg" index="${project.id}">
+                            <img src="${siteurl}${project.iconUrl!''}" alt="">
+                            <p>${(project.name)!''}</p>
+                    </li>
+                    [/#list]
+                    [/@projectall]
+                </ul>
+                <div class="page">
+                    <span class="iconfont">&#xe6e1;</span>
+                    <span class="iconfont">&#xe6e0;</span>
+                </div>
+            </div>
+            [@catalogprojectrecomends pSize=9]
+            [#if list??]
+            [#list list as catalogProjectVo]
+            <div class="cen" index="${(catalogProjectVo.catId)!''}" page="1">
+                <ul>
+                    [#list catalogProjectVo.projectList as project]
+                    <li index="${project.id}" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <img src="${siteurl}${project.iconUrl!''}" alt="">
+                            <p>${(project.name)!''}</p>
+                    </li>
+                    [/#list]
+                </ul>
+                <div class="page">
+                    <span class="iconfont">&#xe6e1;</span>
+                    <span class="iconfont">&#xe6e0;</span>
+                </div>
+            </div>
+            [/#list]
+            [/#if]
+            [/@catalogprojectrecomends]
+        </div>
+    </div>
+</div>
+<!--遮罩层-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="iconfont" aria-hidden="true">&#xe6e1;</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="iconfont" aria-hidden="true">&#xe6e0;</span>
+                </a>
+            </div>
+            <div class="text">
+                <p>项目地点：<span>河南省光山县</span></p>
+                <p>项目介绍：<span>河南北路市政基础设施项目（弦山桥-龙山水库段），总投资2.57亿元，长约10公里，规划面积约10平方公里，建设内容为道路、桥涵、给排水、绿化、交通、照明、通信、燃气。通过本项目能催进沿线地块及旅游资源开发，方便当地群众出行、为光山县人民出行游玩增加新去处，提升光山县城的品牌形象。</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+[#include "/theme/ednc/common/footer.html"]
+<script src="${siteurl}views/ednc/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${siteurl}views/ednc/bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ednc/js/public.js"></script>
+<script src="${siteurl}views/ednc/js/project.js"></script>
+</body>
+</html>

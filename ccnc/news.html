@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>新闻活动 - 中北工程设计咨询有限公司</title>
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/ccnc_news.css">
+    <!--[if lt IE 9]>
+    <script src="${siteurl}views/ccnc/lib/respond/respond.js"></script>
+    <script src="${siteurl}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/public.js"></script>
+    <script type="text/javascript" src="${siteurl}views/ccnc/js/selectivizr.js"></script>
+    <![endif]-->
+       [#include "/theme/ccnc/common/commons.html"]
+   </head>
+   <body>
+   <!-- 导航栏目 -->
+[#include "/theme/ccnc/common/channel.html"]
+[@channel 5 /]
+<div class="container-fluid">
+    <div class="container">
+        <div class="tab">
+            <ul class="tab_ul">
+                <a href="javascript:void(0)"><li class="tab_li curr"></li></a>
+                [#if catalogs??]
+                    [#list catalogs as item]
+                        <a href="${siteurl}news.htm?catalogId=${item.id}">
+                            <li class="tab_li one [#if so.catalogId == item.id]active[/#if]" >
+                                ${item.name}
+                            </li>
+                        </a>
+                    [/#list]
+                [/#if]
+                <a href="javascript:void(0)">
+                    <li class="tab_li last">
+                        <img class="img" src="${siteurl}views/ccnc/images/font.png" alt="">
+                    </li>
+                </a>
+                <input type="hidden" value="${so.catalogId!''}" id="catalogId"/>
+            </ul>
+        </div>
+        <div style="display: block" class="cont cont1">
+            <ul>
+                [#if list??]
+                [#list list as item]
+                    <li>
+                        [#if item.interview?? && item.interview == true]
+                            <a class="jump" href="${siteurl}interview.htm?id=${item.id}"><img src="${siteurl}${item.iconUrl!''}" alt=""></a>
+                            <div class="cont_right">
+                            <div class="cont_right_top">
+                                <h3>
+                                    <a href="${siteurl}interview.htm?id=${item.id}">${item.title!''}</a>
+                                </h3>
+                            </div>
+                            <div class="cont_right_bottom">
+                                <a><span>发布时间 ：</span>
+                                    [#if item.publishDate??]
+                                        ${item.publishDate?string('yyyy-MM-dd')}
+                                    [/#if]
+                                </a>
+                            </div>
+                            <a href="${siteurl}interview.htm?id=${item.id}">
+                                [#if item.intro?? && item.intro?length gt 120]
+                                    ${item.intro[0..121]}...
+                                [#else]
+                                    ${item.intro!''}
+                                [/#if]
+                            </a>
+                        </div>
+                        [#else]
+                            <a class="jump" href="${siteurl}newsdetails.htm?id=${item.id}"><img src="${siteurl}${item.iconUrl!''}" alt=""></a>
+                            <div class="cont_right">
+                                <div class="cont_right_top">
+                                    <h3>
+                                        <a href="${siteurl}newsdetails.htm?id=${item.id}">${item.title!''}</a>
+                                    </h3>
+                                </div>
+                                <div class="cont_right_bottom">
+                                    <a><span>发布时间 ：</span>
+                                        [#if item.publishDate??]
+                                            ${item.publishDate?string('yyyy-MM-dd')}
+                                        [/#if]
+                                    </a>
+                                </div>
+                                <a href="${siteurl}newsdetails.htm?id=${item.id}">
+                                    [#if item.intro?? && item.intro?length gt 122]
+                                    ${item.intro[0..121]}...
+                                    [#else]
+                                    ${item.intro!''}
+                                    [/#if]
+                                </a>
+                            </div>
+                        [/#if]
+                    </li>
+                [/#list]
+                [/#if]
+            </ul>
+            <div class="cont_bottom">
+                [@pager page=page   /]
+            </div>
+        </div>
+        <div style="display: none" class="cont cont2">
+            2
+        </div>
+    </div>
+</div>
+<!--底部-footer区-->
+[#include "/theme/ccnc/common/footer.html"]
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<script src="${siteurl}views/ccnc/lib/underscore/underscore-min.js"></script>
+<script src="${siteurl}views/ccnc/js/ccnc_news.js"></script>
+<script type="text/javascript">
+    $.pageSkip = function(pageNumber) {
+        var catalogId = $("#catalogId").val();
+        var areaId = $("#select").val();
+        window.location.href="${siteurl}news.htm?catalogId="+catalogId+"&pageNumber="+pageNumber;
+        return false;
+    };
+</script>
+</body>
+</html>

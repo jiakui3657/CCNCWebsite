@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>新闻活动 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}views/ccnc/css/Global.css" rel="stylesheet">
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/news.css">
+
+    <script src="${siteurl}views/ccncmobile/js/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript">
+        var siteurl = "${siteurl}";
+        console.log("sieturl:" + siteurl);
+    </script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 5 /]
+<section class="header_bg">
+    <img src="${siteurl}views/ccncmobile/images/5.jpg" alt="">
+</section>
+<section class="project_tab swiper-container" id="swiper-container1">
+    <div class="swiper-wrapper">
+        [#if catalogs??]
+        [#list catalogs as item]
+        <div class="swiper-slide news_name [#if so.catalogId == item.id]curr[/#if]" id="${item.id}"><a href="javascript:void(0);" class="${siteurl}news.htm?catalogId=${item.id}">${item.name!''}</a></div>
+        [/#list]
+        [/#if]
+    </div>
+</section>
+<section id="swiper-container2" class="swiper-container">
+    <section class="swiper-wrapper">
+        [@catalognews size = 5]
+        [#if list??]
+        [#list list as catalogNewsVo]
+        [#if catalogNewsVo_index == 0]
+        <div class="swiper-slide content">
+            <ul id="personkit_article_ul">
+                [#list catalogNewsVo.newsList as item]
+                    [#if item.interview?? && item.interview == true]
+                        <li class="pin">
+                        <a href="${siteurl}interview.htm?id=${item.id}">
+                            <p class="text">${(item.title)!''}</p>
+                            <div class="bottom">
+                                <img src="${siteurl}${(item.iconUrl)!''}" alt="${siteurl}${(item.iconUrl)!''}">
+                                <p class="demo">
+                                    [#if item.intro?? && item.intro?length gt 35]
+                                        ${item.intro[0..36]}...
+                                    [#else]
+                                        ${item.intro!''}
+                                    [/#if]
+                                </p>
+                                <p>
+                                    <span>
+                                        发布时间 ：
+                                        [#if item.publishDate??]
+                                            ${item.publishDate?string('yyyy-MM-dd')}
+                                        [/#if]
+                                    </span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    [#else]
+                        <li class="pin">
+                    <a href="${siteurl}newsdetails.htm?id=${item.id}">
+                        <p class="text">${(item.title)!''}</p>
+                        <div class="bottom">
+                            <img src="${siteurl}${(item.iconUrl)!''}" alt="">
+                            <p class="demo">
+                                [#if item.intro?? && item.intro?length gt 35]
+                                ${item.intro[0..36]}...
+                                [#else]
+                                ${item.intro!''}
+                                [/#if]
+                            </p>
+                            <p>
+                                    <span>
+                                        发布时间 ：
+                                        [#if item.publishDate??]
+                                            ${item.publishDate?string('yyyy-MM-dd')}
+                                        [/#if]
+                                    </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                    [/#if]
+                [/#list]
+            </ul>
+            <div class="down_refresh">
+                <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+                <i class="release" page = "1">上拉加载更多</i>
+            </div>
+        </div>
+        [/#if]
+        [#if catalogNewsVo_index == 1]
+        <div class="swiper-slide content">
+            <ul id="personkit_article_ul1">
+                [#list catalogNewsVo.newsList as item]
+                    [#if item.interview?? && item.interview == true]
+                        <li class="pin">
+                        <a href="${siteurl}interview.htm?id=${item.id}">
+                            <p class="text">${(item.title)!''}</p>
+                            <div class="bottom">
+                                <img src="${siteurl}${(item.iconUrl)!''}" alt="">
+                                <p class="demo">
+                                    [#if item.intro?? && item.intro?length gt 35]
+                                        ${item.intro[0..36]}...
+                                    [#else]
+                                        ${item.intro!''}
+                                    [/#if]
+                                </p>
+                                <p>
+                                    <span>
+                                        发布时间 ：
+                                    [#if item.publishDate??]
+                                        ${item.publishDate?string('yyyy-MM-dd')}
+                                    [/#if]
+                                    </span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    [#else]
+                        <li class="pin">
+                    <a href="${siteurl}newsdetails.htm?id=${item.id}">
+                        <p class="text">${(item.title)!''}</p>
+                        <div class="bottom">
+                            <img src="${siteurl}${(item.iconUrl)!''}" alt="">
+                            <p class="demo">
+                                [#if item.intro?? && item.intro?length gt 35]
+                                ${item.intro[0..36]}...
+                                [#else]
+                                ${item.intro!''}
+                                [/#if]
+                            </p>
+                            <p>
+                                    <span>
+                                        发布时间 ：
+                                    [#if item.publishDate??]
+                                        ${item.publishDate?string('yyyy-MM-dd')}
+                                    [/#if]
+                                    </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                    [/#if]
+                [/#list]
+            </ul>
+            <div class="down_refresh">
+                <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+                <i class="release" page = "1">上拉加载更多</i>
+            </div>
+        </div>
+        [/#if]
+        [/#list]
+        [/#if]
+        [/@catalognews]
+    </section>
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+<script src="${siteurl}views/ccncmobile/js/news.js"></script>
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script>
+//console.log($("p").text());
+  function show(){
+  var scrollHeight=$(window).scrollTop();
+  var headerHeight=$('header').height();
+  var height=$('.project_tab').offset().top;
+  var aptitudeHeight=$(".header_bg").height();
+  var tt=$('.history_tab').height();
+  if(scrollHeight+headerHeight>=height) {
+       $(".jk").remove();
+       $('.project_tab').addClass("tabActive");
+       $('.header_bg img').after('<div class="jk"></div>');
+  }
+  if(scrollHeight<=headerHeight+tt) {
+       $(".jk").remove();
+       $('.project_tab').removeClass("tabActive");
+  }
+  if(scrollHeight==0) {
+       $(".jk").remove();
+       $('.project_tab').removeClass("tabActive");
+  }
+}
+var timer=setInterval(show,1);
+var url = encodeURIComponent(location.href.split('#')[0]);
+var incomingTitle = '中北集团设计院-新闻活动';
+var incomingDesc = '公司最新动态，行业最新政策资讯抢先看';
+getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

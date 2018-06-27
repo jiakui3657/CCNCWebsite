@@ -1,0 +1,78 @@
+/*资质 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container p span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container p i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+
+}
+.content .container .aptitude .tab {
+   padding:100px 56px 0px 56px;
+
+}
+.content .container .aptitude .tab ul {
+   overflow:hidden;
+   border-bottom:1px solid #e5e5e5;
+   padding-bottom:45px;
+   padding-left:35px;
+}
+.content .container .aptitude .tab ul li {
+   float:left;
+   padding:7px 16px;
+   text-align:center;
+   font-size:16px;
+   color:#666666;
+   border-radius:15px;
+   margin:10px 0;
+   cursor: pointer;
+}
+.content .container .aptitude .cen {
+    display:none;
+}
+.content .container .aptitude .cen .information {
+    padding:33px 0 45px 90px;
+}
+.content .container .aptitude .cen .information img {
+    float:left;
+}
+.content .container .aptitude .cen .information .title p {
+    font-size:16px;
+    line-height:32px;
+    margin-left:110px;
+}
+.content .container .aptitude .cen .information .title p:nth-child(1) {
+    font-weight: 600;
+}
+.content .container .aptitude .cen:nth-child(2) {
+    display:block;
+}
+.map {
+    height:634px;
+}
+#allmap {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+#l-map{height:500px;width:100%;}
+		#r-result{width:100%;}
+.content .container .aptitude .tab ul .current {
+    background-color:#0771c2;
+    color:#fff;
+}
+

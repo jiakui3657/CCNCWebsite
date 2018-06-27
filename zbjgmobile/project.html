@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="中北建工建筑工程设计">
+    <meta name="description" content="中北建工建筑工程设计">
+    <title>中北集团、中北建工建筑工程设计</title>
+    <!--公用引入部分-->
+    [#include "./common/commonpart.html"]
+    [@commonpart /]
+    <!--首页样式引入-->
+    <link href="${siteurl}views/zbjgmobile/css/project.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+[#include "./common/nav.html"]
+[@nav /]
+
+<img class="header-menu-background" src="${siteurl}views/zbjgmobile/images/project_header.jpg" alt="">
+<!--项目分类及其推荐项目-->
+<section class="project">
+    [#if catalogProjectVoList??]
+    [#list catalogProjectVoList as catalogProjectVo]
+        <div class="project-content">
+            <div class="category-name">
+                <em><b>${(catalogProjectVo.catalogName)!''}</b><i>${(catalogProjectVo.tagName)!''}</i></em>
+            </div>
+            <div class="category-list swiper-container">
+                <ul class="swiper-wrapper">
+                    [#list catalogProjectVo.projectList as project]
+                    [#if project_index < 4]
+                        <li class="swiper-slide">
+                            <a href="${siteurl}projectcataloglist.htm?catid=${catalogProjectVo.catId}&index=${project_index}&id=${ project.id }">
+                                <img src="${siteurl}${project.iconUrl!''}" alt="" />
+                            </a>
+                            <div class="qualf-layout overflow-wrap">${(project.name)!''}</div>
+                        </li>
+                    [/#if]
+                    [/#list]
+                </ul>
+                <!--<div class="swiper-button-prev swiper-button-white iconfont icon-zuoyoujian2"></div>
+                <div class="swiper-button-next swiper-button-white iconfont icon-zuoyoujian"></div>-->
+            </div>
+            <div class="more">
+                <a class="see-more" href="${siteurl}projectcataloglist.htm?catid=${catalogProjectVo.catId}&index=0&id=${catalogProjectVo.projectList[0].id}">
+                    查看更多
+                    <i class="iconfont icon-gengduo"></i>
+                </a>
+            </div>
+        </div>
+    [/#list]
+    [/#if]
+</section>
+
+<!--底部-->
+[#include "./common/footer.html"]
+[@footer /]
+
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay:3000,
+        loop : true,
+        loopAdditionalSlides : 1,
+        autoplayDisableOnInteraction : false/*,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next'*/
+    });
+</script>
+</body>
+</html>

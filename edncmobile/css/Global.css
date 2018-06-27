@@ -1,0 +1,195 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+ * 公司名称 CSS Library 2.0
+ * @desc 部分CSS样式使用CSS3
+ * Copyright(c) 2016 版权所有 公司名称
+ * Author 作者
+ * @desc DATE 2016-8-16
+ */
+
+/*
+ * 将具有默认 html 取消浏览器字号限制
+ * @overlay *
+ * @desc 在手持设备或webkit中不会解析12px以下字体
+ */
+html {
+	-ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%; 
+	SCROLLBAR-FACE-COLOR: #f0f0f0;
+	SCROLLBAR-HIGHLIGHT-COLOR: #f5f5f5;
+	SCROLLBAR-SHADOW-COLOR: #8b8c8c;
+	SCROLLBAR-3DLIGHT-COLOR: #fff;
+	SCROLLBAR-ARROW-COLOR: #240024;
+	SCROLLBAR-TRACK-COLOR: #fcfcfc;
+	SCROLLBAR-DARKSHADOW-COLOR: #ccc;
+	SCROLLBAR-BASE-COLOR: #f4f4f4;
+}
+/* Global 常用标签_@Start */
+/*
+ * 基本标签默认样式取消
+ * @overlay HTML标签
+ * @desc 取消基本标签默认样式,防止不同浏览器显示效果不同
+ * @Prop text-align:center; 解决不同浏览器剧中问题
+ */
+body,div,span,dl,dd,h1,h2,h3,h4,h5,h6,p,form,ul,ol,input{
+	margin:0 auto;
+	padding:0;
+}
+body{
+	color:#666;
+	background:#fff;
+	font: 12px/1 "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+/*
+ * 标签属性
+ * @overlay select
+ * @desc 默认设置select效果
+ */
+select{
+	outline:none;
+	color:#666;
+}
+/*
+ * 标签属性
+ * @overlay textarea
+ * @desc 默认设置textarea效果
+ */
+textarea,input {
+	color:#666;
+	font-size:12px;
+	word-wrap:break-word;
+	word-break:break-all;
+	overflow:hidden;
+	box-sizing: border-box;
+	outline:none;
+	font-family: "宋体";
+}
+
+/*
+ * 标签属性
+ * @overlay input
+ * @desc 去掉IE10文本框上的清除按钮
+ */
+input::-ms-clear{display:none;}
+input[type='text'],input[type='password']{
+	color:#666;
+	border:1px solid #ccc;
+}
+input[type='buttom']{
+	border:none;
+}
+/*
+ * 标签属性
+ * @overlay table td th
+ * @desc 强制输入时内容超出时换行
+ */
+table {
+	width:100%;
+	border-collapse:collapse;
+}
+td,th{font-size:12px;}
+/*
+ * 清除列表标记的样式
+ * @overlay  ul,ol,li
+ * @desc ul,ol,li列表更多的用在不需要列表前置符号的样式里
+ */
+ul,ol{list-style-type:none;}
+/*
+ * 定义图片边框
+ * @overlay img
+ * @desc 去除边框及图片底产无缘无故多出3px
+ */
+img{
+	border:none;
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic;
+}	
+/*
+ * 定义默认的链接样式
+ * @overlay a
+ * @desc	仅仅是作为默认样式提供，可以在各自的实例中覆盖掉
+ */
+a{
+	color: #666;
+	text-decoration:none;
+	outline: none;
+	white-space: nowrap;
+	work-break: keep-all;
+}
+a:hover{
+	text-decoration:none;
+}
+a:active,a:focus {
+	outline: none;
+}
+/* 去掉链接的虚线框*/
+
+/*
+ * 定义H系列标签
+ * @overlay HN
+ * @desc  覆盖H系列标签默认属性
+ */
+h1{font-size:28px;}
+h2{font-size:25px;}
+h3{font-size:22px;}
+h4{font-size:20px;}
+h5{font-size:18px;}
+h6{font-size:14px;}
+/*
+ * 定义其他标签
+ * @overlay em,i,b,strong
+ */
+dfn,em,i,b,strong {
+	font-style:normal;
+	font-weight:normal;
+}
+.line {
+	display: block;
+	width: 100%;
+	font-size: 0;
+	height: 0px;
+	line-height: 0px;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #FFFFFF;
+}
+/* @Global 常用标签_@end */
+
+/* @group 通用属性定义_@Start */
+/*  鼠标样式 */
+.pointer{cursor:pointer;}
+/*
+ * 字母和单词换行设置
+ * @class Break 强制内容换行
+ * @class Nobreak 强制内容不换行
+ */
+.Break{word-break:break-all;word-wrap:break-word;}
+.Nobreak{word-break:keep-all;word-wrap:normal;}
+/*
+ * 浮动定义
+ */
+.fl{float:left;}
+.fr{float:right;}
+
+/* @group 通用属性定义_@end */
+
+/* @group 隐藏元素_@Start */
+.o-hidden{overflow:hidden;}
+.invisible{visibility:hidden;}
+.hidden{display: none;}
+.block {display:block;}
+/* @group 隐藏元素_@end */
+
+/*
+ *  备注
+ */
+
+/*
+ * 在终极页面中调用该通用样式时,应该注意显示效果的不同,因为后台上传信息时编辑器里面样式并没有调用本默认样式表.
+ * 所以在编辑器中标签会有默认的属性,用户在添加信息时,这些信息都是附带默认样式的.
+ * 如果用我们在终极页面也调用本默认CSS文件的话,许多标签如:p,td,li......标签默认样式都被取消,因此显示效不同.
+ *
+ * 解决办法:
+ * 在终极页面显示内容区域还原这些标签的默认属性.
+ * 版权所有 公司名称
+ */

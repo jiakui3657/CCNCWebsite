@@ -1,0 +1,126 @@
+/*头部*/
+body {
+    min-width: 320px;
+}
+p {
+    margin:0;
+}
+a:focus,a:hover {
+    color: #666;
+    text-decoration: none;
+}
+header {
+    width: 100%;
+    height: 60px;
+    background: #1745d1;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100111;
+}
+header img {
+    height:100%;
+    float: left;
+    vertical-align: middle;
+}
+header i.iconfont {
+    line-height: 60px;
+    color: #fff;
+    font-size: 0.6rem;
+    float: right;
+    width: 60px;
+    text-align: right;
+}
+/*头部*/
+/*底部*/
+footer {
+    width: 100%;
+    overflow: hidden;
+    color: #fff;
+    background: #1846d1;
+    height:3rem;
+    line-height:3rem;
+    padding-top:0.6rem;
+    padding-left:0.1rem;
+    margin-top:1rem;
+}
+footer img {
+    overflow: hidden;
+    width: 33%;
+    text-align: center;
+    float: left;
+    width:1.68rem;
+    height:1.8rem;
+    margin-right:0.2rem;
+}
+footer .about {
+    margin:0;
+}
+footer div p {
+    width: 100%;
+    font-size: 0.24rem;
+    line-height:0.5rem;
+    color:#fff;
+}
+footer div p.curr {
+    font-weight:600;
+    font-size:0.3rem;
+    margin-top: -0.1rem;
+}
+
+/*底部*/
+/*头部菜单*/
+.header_menu_layout {
+    width: 100%;
+    position: fixed;
+    left: 100%;
+    top: 1.2rem;
+    bottom: 0;
+    z-index: 9999;
+    transition: all 300ms;
+}
+.layout_left {
+    width:40%;
+    float: left;
+    height:100%;
+}
+.layout_right {
+    width:60%;
+    float: left;
+    height:100%;
+}
+.header_menu {
+    width: 60%;
+    position: fixed;
+    left: 100%;
+    top: 60px;
+    bottom:0;
+    padding:0.5rem 0;
+    transition: all 300ms;
+    z-index:11111111;
+    background-color: rgba(56, 95, 213, 0.9);
+}
+.header_menu ul {
+    overflow: hidden;
+    margin: 0;
+}
+.header_menu ul li {
+    overflow: hidden;
+}
+.header_menu ul li a{
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+.header_menu ul li a i {
+    display: inline-block;
+    color: #fff;
+    line-height: 0.6rem;
+    margin: 0.24rem 0;
+    font-size:0.34rem;
+}
+.header_menu ul li.curr a i {
+    border-bottom: 1px solid #fff;
+}
+/*头部菜单*/

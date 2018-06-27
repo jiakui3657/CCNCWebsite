@@ -1,0 +1,150 @@
+
+/*公司介绍--*/
+.intro {
+    width: 100%;
+    overflow: hidden;
+}
+.intro p {
+    line-height: 0.6rem;
+    padding:0 0.2rem;
+    font-size: 0.28rem;
+}
+.intro p.white-text {
+    background: #1791ee;
+    color: #fff;
+    padding:0.4rem 0.2rem;
+}
+.intro p.scale {
+    margin-top: 0.3rem;
+    font-weight: bold;
+}
+/*分支架构*/
+.branch {
+    width: 100%;
+    overflow: hidden;
+    padding:0 0.2rem;
+}
+.branch-list {
+    width: 100%;
+    overflow: hidden;
+}
+.branch-list li {
+    width: 100%;
+    overflow: hidden;
+    background: #ebf3fb;
+    margin-bottom: 0.3rem;
+    float: left;
+    padding: 0.3rem 0;
+}
+.branch-list li span {
+    float: left;
+    background: #1791ee;
+    color: #fff;
+    font-size: 0.5rem;
+    padding: 0.5rem 0.45rem;
+    writing-mode: tb-rl;
+    letter-spacing: 10px;
+    margin-left: 0.2rem;
+}
+.branch-list li p {
+    float: right;
+    width: 68%;
+    padding: 0.05rem 0;
+}
+.branch-list li p i {
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+}
+.branch-list li p em {
+    width: 88%;
+    float: right;
+}
+.branch-list li p.title {
+    color: #333;
+    font-size: 0.32rem;
+    line-height: 0.6rem;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 0.2rem;
+    padding: 0 0.3rem;
+}
+/*企业文化*/
+.culture {
+    width: 100%;
+    overflow: hidden;
+    padding:0 0.2rem;
+}
+.culture p.decription {
+    line-height: 0.5rem;
+    font-size: 0.3rem;
+}
+.culture-list {
+    width: 100%;
+    overflow: hidden;
+}
+.culture-list li {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+}
+.culture-list li i {
+    float: left;
+    width: 20%;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #d8b373;
+}
+.culture-list li span {
+    width: 80%;
+    float: left;
+    line-height: 0.4rem;
+    color: #333;
+    padding: 0.4rem 0;
+    font-size: 0.28rem;
+}
+.culture-list li span p.curr {
+    color: #666;
+    font-size: 0.26rem;
+}
+/*企业愿景*/
+.vision {
+    width: 100%;
+    overflow: hidden;
+}
+.vision img {
+    width: 100%;
+}
+/*社会活动*/
+.news {
+    width: 100%;
+    overflow: hidden;
+}
+.news  ul li {
+    padding: 0 0.2rem;
+}
+.news  ul li a {
+    overflow: hidden;
+    display: block;
+}
+.news  ul li a img {
+    width: 100%;
+}
+.news-layout {
+    background: #256dd9;
+    opacity: 0.8;
+    filter:Alpha(opacity=80);
+    position: absolute;
+    bottom: 0;
+    left: 0.2rem;
+    color: #fff;
+    right: 0.2rem;
+    z-index: 99;
+}
+.news-layout a {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+    display: block;
+}

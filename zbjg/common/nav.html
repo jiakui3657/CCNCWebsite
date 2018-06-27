@@ -1,0 +1,17 @@
+<!--顶部导航-->
+[#macro nav index]
+<!--页面头部-->
+    <div class="header">
+        <div class="header-content">
+            <a href="${siteurl}index.htm"><img src="${siteurl}views/zbjg/images/logo.png" alt="" /></a>
+            <ul class="header-menu">
+                <a href="${siteurl}index.htm" class="[#if index == 1]curr[/#if]"><li>建工首页<i></i></li></a>
+                <a href="${siteurl}history.htm" class="[#if index == 2]curr[/#if]"><li>公司介绍<i></i></li></a>
+                <a href="${siteurl}aptitude.htm" class="[#if index == 3]curr[/#if]"><li>资质能力<i></i></li></a>
+                <a href="${siteurl}project.htm" class="[#if index == 4]curr[/#if]"><li>经典案列<i></i></li></a>
+                <a href="${siteurl}news.htm" class="[#if index == 5]curr[/#if]"><li>新闻活动<i></i></li></a>
+                <a href="${siteurl}contactus.htm" class="[#if index == 6]curr[/#if]"><li>联系我们<i></i></li></a>
+            </ul>
+        </div>
+    </div>
+[/#macro]

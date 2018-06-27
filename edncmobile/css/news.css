@@ -1,0 +1,129 @@
+/*内容*/
+.text {
+    height: 1.11rem;
+    line-height: 1.11rem;
+    font-size: 0.28rem;
+    color: #999;
+    margin-left: 0.49rem;
+    margin-top: 1rem;
+}
+.content {
+    background-color:#fff;
+    overflow: hidden;
+}
+.content .tab {
+    width: 100%;
+    padding: 0 0.45rem;
+}
+.content .tab .swiper-container1 .swiper-wrapper .swiper-slide {
+    width: 50%;
+    text-align: center;
+    height: 1.13rem;
+    line-height: 1.13rem;
+    color: #999;
+    font-size: 0.3rem;
+}
+.content .tab .swiper-container1 {
+    border-bottom: 2px solid #ececec;
+}
+.content .tab .swiper-container1 .swiper-wrapper .swiper-slide a {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.14rem;
+}
+.swiper-container2 {
+    padding: 0.4rem 0 0rem 0;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide {
+    padding: 0 0.35rem;
+    padding-bottom:1rem;
+    background-color:#fff;
+    height:auto;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul {
+
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li {
+    margin-top: 0.2rem;
+    overflow: hidden;
+    display:flex;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li img {
+    width: 3rem;
+    height: 2rem;
+    float: left;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li .instruction {
+    width: 3.7rem;
+    float: left;
+    padding-left: 0.27rem;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li .instruction a {
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    white-space: normal;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li .instruction a:nth-child(1) {
+    font-size: 0.3rem;
+    color: #666;
+    line-height: 0.36rem;
+    margin-top: 0.08rem;
+
+}
+.swiper-container2 .swiper-wrapper .swiper-slide ul li .instruction a:nth-child(2) {
+    font-size: 0.23rem;
+    color: #999;
+    margin-top: 0.4rem;
+    line-height: 0.34rem;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide .page {
+    margin-top: 0.8rem;
+    text-align: center;
+}
+.swiper-container2 .swiper-wrapper .swiper-slide .page span {
+    width: 0.7rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    display: inline-block;
+    background-color: #eee;
+    margin-right: 0.07rem;
+    color: #fff;
+    transform: rotate(90deg);
+}
+.swiper-container2 .swiper-wrapper .swiper-slide .page i {
+    width: 0.7rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    text-align: center;
+    display: inline-block;
+    background-color: #396b99;
+    margin-left: 0.07rem;
+    color: #fff;
+    transform: rotate(-90deg);
+}
+.down_refresh {
+    width: 100%;
+    text-align: center;
+    font-size: 0.24rem;
+    height: 1rem;
+}
+.down_refresh img {
+    height: 0.5rem;
+    display: none;
+    margin-top: 0.25rem;
+    margin-right: 0rem;
+    transform: rotateZ(0deg);
+    display: inline-block;
+    width:0.5rem;
+}
+.down_refresh i {
+    display: inline-block;
+    line-height: 1rem;
+    color: #999;
+}
+.content .tab .swiper-container1 .swiper-wrapper .swiper-slide .active {
+    color: #1573bf;
+    border-bottom: 4px solid #1573bf;
+}

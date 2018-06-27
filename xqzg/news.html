@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="中北建工建筑工程设计">
+	<meta name="description" content="西桥重工有限公司是由西安工业投资集团与中北交通集团共同组建的特大型企业，主要从事钢结构及产品、钢桥梁及零部件产品的生产、安装、销售、改造维护、施工安装。">
+	<title>西桥重工有限公司</title>
+	<!--资质能力样式引入-->
+	<link rel="icon" type="image/png" sizes="192x192" href="${cdn}views/ccnc/images/favicon.ico">
+	<link rel="stylesheet" href="${cdn}views/xqzg/bootstrap/css/bootstrap.min.css"/>
+	<!--图标引入-->
+	<link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+	<link rel="stylesheet" href="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.css">
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/Global.css"/>
+	<!--[if lt IE 9]>
+	<script src="${cdn}views/ccnc/lib/respond/respond.js"></script>
+	<script src="${cdn}views/ccnc/lib/html5shiv/html5shiv.min.js"></script>
+	<script type="text/javascript" src="${cdn}views/ccnc/js/selectivizr.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="${cdn}views/xqzg/css/public.css"/>
+	<link href="${cdn}views/xqzg/css/news.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<!--页面头部-->
+<header>
+	<div class="row">
+		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+			<img class="logo" src="${cdn}views/xqzg/img/logo.jpg" alt="">
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+			<ul class="navigation">
+				<li class="col-md-2 col-lg-2"><a href="javascript:0;"></a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=1">官网首页</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=2">公司介绍</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}project.htm">项目案例</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2 active"><a href="${cdn}news.htm" class="active">新闻活动</a></li>
+				<li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="${cdn}index.htm?id=5">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+[#include "/theme/xqzg/common/page.html"]
+	<img src="${cdn}views/zbjg/images/news.jpg" class="sign-photo"/>
+	<!--新闻列表-->
+	<div class="news-activities">
+		<div class="news-content">
+			<ul>
+				[#if list??]
+				[#list list as item]
+				<li>
+					<span class="date">
+						<i class="day">
+							[#if item.publishDate??]
+								${item.publishDate?string('dd')}
+							[/#if]
+						</i>
+						<i class="years">
+							[#if item.publishDate??]
+								${item.publishDate?string('yyyy-MM')}
+							[/#if]
+						</i>
+					</span>
+					<span class="news-bg">
+						<a href="${cdn}newsdetails.htm?id=${item.id}"><img src="${cdn}${(item.iconUrl)!''}" alt="" /></a>
+					</span>
+					<span class="news-description">
+						<h4 class="overflow-wrap"><a href="${cdn}newsdetails.htm?id=${item.id}">${item.title}</a></h4>
+						<p>
+							<a href="${cdn}newsdetails.htm?id=${item.id}">
+								[#if item.intro?? && item.intro?length gt 120]
+                                    ${item.intro[0..121]}...
+                                [#else]
+                                    ${item.intro!''}
+                                [/#if]
+							</a>
+						</p>
+						<a href="${cdn}newsdetails.htm?id=${item.id}" class="currnews-more">了解更多 >></a>
+					</span>
+				</li>
+				[/#list]
+				[/#if]
+			</ul>
+		</div>
+		</div>
+	</div>
+	<!--页码-->
+	<div class="news-page">
+		<div class="inside-page">
+			<div class="page-number page-curr">
+				[@pager page=page   /]
+			</div>
+		</div>
+	</div>
+
+	<!--遮罩层-->
+	<div class="layout"></div>
+
+<!--底部-->
+[#include "/theme/xqzg/common/footer.html"]
+<script src="${cdn}views/xqzg/plugins/jquery/jquery-1.11.0.js"></script>
+<script src="${cdn}views/xqzg/bootstrap/js/bootstrap.min.js"></script>
+<script src="${cdn}views/xqzg/plugins/swiper/swiper-2.7.6.js"></script>
+<script src="${cdn}views/xqzg/js/public.js"></script>
+<script type="text/javascript" src="${cdn}views/xqzg/js/project.js"></script>
+</body>
+</html>

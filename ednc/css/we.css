@@ -1,0 +1,59 @@
+/*关于我们 * 内容页*/
+.content {
+    width:100%;
+    background-color:#f7f7f7;
+}
+.content .container {
+    padding:35px 0;
+}
+.content .container p span {
+    display:inline-block;
+    width:208px;
+    height:77px;
+    text-align:center;
+    line-height:77px;
+    background-color:#0771c2;
+    color:#fff;
+    font-size:24px;
+}
+.content .container p i {
+    font-size:14px;
+    color:#999;
+    margin-left:22px;
+}
+.content .container .aptitude {
+    background-color:#fff;
+    padding:56px 42px 83px 42px;
+    overflow:hidden;
+}
+thead {
+    background-color: #e9eef5;
+}
+thead tr th {
+    background-color: #e9eef5;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+}
+tbody tr {
+    height: 87px;
+    line-height: 87px;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 7px 0;
+    text-align: center;
+    current: pointer;
+}
+tbody tr td a {
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    margin-top: 7px;
+    width: 100%;
+    font-size: 16px;
+    color: #666;
+}
+tbody tr:hover a {
+    background-color:#f2f2f2;
+}

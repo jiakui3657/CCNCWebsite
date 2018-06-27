@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="3gdmnVcR2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="中北工程设计咨询有限公司简称中北集团设计院，拥有甲级资质的建筑工程设计企业，现已发展成集工程咨询、勘察、设计、城乡规划、项目管理、EPC 、PPP、互联网等业务于一体的大型咨询和工程设计机构。">
+    <title>加入我们 - 中北工程设计咨询有限公司</title>
+    <link rel="icon" type="image/png" href="${siteurl}views/ccnc/images/favicon.ico">
+    <link rel="stylesheet" href="${fontStyle.fontIconUrl!''}" type='text/css' />
+    <link href="${siteurl}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${siteurl}views/ccnc/css/Global.css">
+    <!--图标引入-->
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/public.css">
+    <link rel="stylesheet" href="${siteurl}views/ccncmobile/css/we.css">
+    <script src="${siteurl}views/ccncmobile/js/rem.js"></script>
+</head>
+<body>
+[#include "/theme/ccncmobile/common/header.html"]
+[@channelItem 6 /]
+<section>
+    <img class="aptitude_bg" src="${siteurl}views/ccncmobile/images/6.jpg" alt="">
+    <div class="xl">
+        <span>选择区域</span>
+        <!--<div class="cc">
+            <select id="select" onchange="selArea()">
+                <option value="">全部</option>
+                [#if areas??]
+                [#list areas as item]
+                <option value="${item.id!''}" [#if so.areaId?? && item.id == so.areaId]selected="selected"[/#if]>${item.name!''}</option>
+                [/#list]
+                [/#if]
+            </select>
+            <label for="select" class="iconfont icon-xiala"></label>
+        </div>-->
+        <div class="show_part">
+            <div class="show_part_title">
+                [#if so.areaId??]
+                [#if areas??]
+                    [#list areas as item]
+                    [#if so.areaId?? && item.id == so.areaId]
+                        ${item.name!''}
+                    [/#if]
+                    [/#list]
+                [/#if]
+                [#else]
+                    全部
+                [/#if]
+            </div>
+            <em class="iconfont icon-xiala"></em>
+        </div>
+        <ul class="down_list">
+            <li value="">全部</li>
+            [#if areas??]
+            [#list areas as item]
+            <li value="${item.id!''}" class="[#if so.areaId?? && item.id == so.areaId]active[/#if]">${item.name!''}</li>
+            [/#list]
+            [/#if]
+        </ul>
+    </div>
+    <div class="content">
+        <ul>
+            [#if list??]
+            [#list list as item]
+            <li class="">
+                <a href="${siteurl}wedetails.htm?id=${item.id}">
+                    <span>${item.addDate?string('yyyy-MM-dd')}</span>
+                    <span>${item.name!''}</span>
+                    <i>${item.companyName!''}</i>
+                </a>
+            </li>
+            [/#list]
+            [/#if]
+        </ul>
+    </div>
+    <div class="down_refresh">
+        <img src="${siteurl}views/ccncmobile/images/loading.png" alt="">
+        <i class="release" page="1">上拉加载更多</i>
+    </div>
+</section>
+[#include "/theme/ccncmobile/common/footer.html"]
+<script>
+    var listFlag = true;
+    $(".show_part").on("click",function(event){
+        event.stopPropagation();
+        if(listFlag) {
+            $(".down_list").slideDown("fast");
+            listFlag = false;
+        }else {
+            $(".down_list").slideUp("fast");
+            listFlag = true;
+        }
+    });
+    $("body").on("click",function(){
+        if(!listFlag) {
+            $(".down_list").slideUp("fast");
+            listFlag = true;
+        }
+    });
+    $(".down_list li").on("click",function(event){
+        event.stopPropagation();
+        var areaId = $(".down_list li").eq($(this).index()).attr("value");
+        window.location.href="${siteurl}we.htm?&areaId="+areaId;
+        if(!listFlag) {
+            $(".down_list").slideUp("fast");
+            listFlag = true;
+        }
+    });
+    $(function () {
+        var areaId;
+        /*根据当前页面url所传参数，展示页面相应部分*/
+        var history = window.location.search;
+        var analyzing = "areaId";
+        if(history.indexOf(analyzing)< 0 ){
+            areaId = -1;
+        }else if (history.indexOf(analyzing) >= 0){
+            areaId = history.match(/areaId=(\S*)/)[1];
+            if(areaId == ""){
+                areaId = -1;
+            }
+        }
+        /*根据当前页面url所传参数，展示页面相应部分*/
+        retrieveData(areaId,1,6);
+        /*加载更多*/
+        $(".content").on('touchstart',function(e){
+            e=e.originalEvent.touches[0];//获取对应触摸对象
+            var sx=0,sy=0;
+            sx=e.pageX;
+            sy=e.pageY;
+            var projectIndex = $(this).index();
+            $(this).on("touchmove",function(e){
+                e=e.originalEvent.changedTouches[0];
+                var sx1 = e.pageX;
+                if((sy-e.pageY)>50&&$(".release").text() == "上拉加载更多"){
+                    var newPage = parseInt($(".release").attr("page"));
+                    newPage +=1;
+                    $(".release").attr("page",newPage);
+
+                    $(".down_refresh").children("img").css("display","inline-block")
+                    $(".release").text("松开立即刷新");
+                }
+                $(".down_refresh").css("display","block");
+            })
+            $(this).on('touchend',function(e){
+                e=e.originalEvent.changedTouches[0];//获取对应触摸对象
+                var sx1 = e.pageX;
+                if((sy-e.pageY)>50){//如果滑动距离大于50px就认为是要触发左滑动事件了
+                    if($(".release").text() == "松开立即刷新"){
+                        var incomingPage = parseInt($(".release").attr("page"));
+                        $(".down_refresh").children("img").addClass("curr");
+                        $(".release").text("正在加载中");
+                        retrieveData(areaId,incomingPage,6);
+                        setTimeout(function() {
+                            $(".down_refresh").css("display", "none");
+                        },5000)
+                    }else {
+                        $(".down_refresh").css("display", "none");
+                    }
+                }
+                $(this).unbind('touchend');
+            });
+        })
+        /*加载更多*/
+    });
+    function retrieveData(areaId,page,size){
+        $.ajax({
+            type:"post",
+            url:"loadMoreRecruits",
+            async:true,
+            data :{ "areaId":areaId,"page": page,"size":size},
+            success : function(data){
+                //console.log(data)
+                if($(".content ul li").length == data.total){
+                    $(".down_refresh").children("i").text("暂无更多招聘信息");
+                }else if($(".content ul li").length < data.total&& page !=1 ){
+                    var html = "";
+                    for (var i=0;i<data.list.length;i++){
+                        html+='<li class=""><a href="${siteurl}wedetails.htm?id='+data.list[i].id+'">'+
+                            '<span>'+data.list[i].addDate+'</span><span>'+data.list[i].name+'</span>'+
+                            '<i>'+data.list[i].companyName+'</i></a></li>'
+                    }
+                    setTimeout(function(){
+                        $(".content ul").append(html);
+                        //console.log($(".content ul li").length);
+                        $(".down_refresh").css("display","none");
+                        if( $(".content ul li").length == data.total){
+                            $(".release").text("暂无更多招聘信息");
+                        }else {
+                            $(".release").text("上拉加载更多");
+                        }
+                        $(".down_refresh img").removeClass("curr");
+                        $(".down_refresh img").css("display","none");
+                    },2000);
+                }
+            },
+            error : function(){
+                console.log("请求错误!!!")
+            }
+        });
+    }
+</script>
+<!--微信-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="${siteurl}views/ccncmobile/js/share.js"></script>
+<script type="text/javascript">
+    var url = encodeURIComponent(location.href.split('#')[0]);
+    var incomingTitle = '中北集团设计院-加入我们';
+    var incomingDesc = '我们渴望和优秀的你一起，在中北，遇见更好的自己';
+    getWeixinParame(url,incomingTitle,incomingDesc,0);
+</script>
+</body>
+</html>

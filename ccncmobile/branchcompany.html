@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+[@newslast size = 4]
+[#if list??]
+[#list list as news]
+<li>
+    <i class="iconfont icon-shuangyou"></i>
+    <a href="${siteurl}newsdetails.htm?id=${news.id}">${news.intro!''}</a>
+    <img class="itemimg" src="${siteurl}/mob/img/280/190/dengbili/${(news.iconUrl)!''}.htm" alt="">
+</li>
+[/#list]
+[/#if]
+[/@newslast]
+
+</body>
+</html>
